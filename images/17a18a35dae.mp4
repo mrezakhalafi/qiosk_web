@@ -1,0 +1,2040 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script type="text/javascript" src="http://192.168.0.56/js/jquery-3.4.1.min.js?v=2.11"></script>
+
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <script src="jquery.ui.touch-punch.min.js"></script>
+
+  <!-- AOS -->
+  <link rel="stylesheet" type="text/css" href="http://192.168.0.56/css/aos.css?v=2.11">
+  <script type="text/javascript" src="http://192.168.0.56/js/aos.js?v=2.11"></script>
+
+  <!-- DOM purifier -->
+  <script type="text/javascript" src="http://192.168.0.56/dompurify/dist/purify.min.js?v=2.11"></script>
+
+
+  <script type="text/javascript" src="http://192.168.0.56/js/custom.js?v=2.11"></script>
+
+  <link rel="icon" type="image/x-icon" href="http://192.168.0.56/palio_logo_round.png">
+
+  <!-- code prettify -->
+  <script type="text/javascript" src="http://192.168.0.56/js/prettify.js?v=2.11"></script>
+  <script type="text/javascript" src="http://192.168.0.56/js/lang-kotlin.js?v=2.11"></script>
+
+  <link rel="stylesheet" href="http://192.168.0.56/bower_components/font-awesome/css/font-awesome.min.css?v=2.11">
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="http://192.168.0.56/bootstrap/css/bootstrap.min.css?v=2.11" rel="stylesheet">
+
+  <!--ROBOTO-->
+  <link rel="stylesheet" href="http://192.168.0.56/fonts/roboto/style.css?v=2.11">
+
+  <!-- POPPINS -->
+  <link rel="stylesheet" href="http://192.168.0.56/fonts/poppins/style.css?v=2.11">
+
+  <!-- SEGOE -->
+  <link rel="stylesheet" href="http://192.168.0.56/fonts/segoe-ui/style.css?v=2.11">
+
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Work+Sans:500,700&display=swap" rel="stylesheet">
+
+  <!-- Core -->
+  <script src="http://192.168.0.56/js/api_web.js?v=2.11"></script>
+
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" type="text/css" href="http://192.168.0.56/css/animate.css?v=2.11">
+  <link rel="stylesheet" type="text/css" href="http://192.168.0.56/css/api_web.css?v=2.11">
+  <link rel="stylesheet" type="text/css" href="http://192.168.0.56/css/custom.css?v=2.11">
+
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" type="text/css" href="http://192.168.0.56/css/owl.carousel.css?v=2.11">
+  <link rel="stylesheet" type="text/css" href="http://192.168.0.56/css/owl.theme.default.css?v=2.11">
+
+
+  <script type="text/javascript" src="http://192.168.0.56/js/owl.carousel.js?v=2.11"></script>
+
+  <!-- Theme included stylesheets -->
+  <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+
+  <!-- Core build with no theme, formatting, non-essential modules -->
+  <link href="//cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet">
+  <script src="//cdn.quilljs.com/1.3.6/quill.core.js"></script>
+
+  <!-- Main Quill library -->
+  <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
+
+  <!-- Clipboard.js -->
+  <script type="text/javascript" src="http://192.168.0.56/js/clipboard.min.js?v=2.11"></script>
+
+  <!-- Sticky -->
+  <script type="text/javascript" src="http://192.168.0.56/js/sticky.min.js?v=2.11"></script>
+
+  <script type="text/javascript">
+    var _0x3ef6 = ['8751SWUJMt', '360071YKVlEo', 'protocol', '8rxpCmf', '39676yrZrDa', '582167ODidae', '39xpaWjS', 'http://www.trustlogo.com/', 'https:', '938918uqjnlE', '1431846UYuvCn', 'write', '1vAcQJz', '%3Cscript\x20src=\x27', '3ABXQQC', 'https://secure.trust-provider.com/', 'location', '30581quyEFY', 'trustlogo/javascript/trustlogo.js\x27\x20type=\x27text/javascript\x27%3E%3C/script%3E'];
+    var _0x58b2 = function(_0x135b85, _0x1c3068) {
+      _0x135b85 = _0x135b85 - 0x117;
+      var _0x3ef610 = _0x3ef6[_0x135b85];
+      return _0x3ef610;
+    };
+    var _0xffb599 = _0x58b2;
+    (function(_0x527e91, _0x55a4d7) {
+      var _0x4ad307 = _0x58b2;
+      while (!![]) {
+        try {
+          var _0x678b3b = -parseInt(_0x4ad307(0x119)) * parseInt(_0x4ad307(0x129)) + parseInt(_0x4ad307(0x120)) + -parseInt(_0x4ad307(0x11c)) * parseInt(_0x4ad307(0x11a)) + -parseInt(_0x4ad307(0x117)) + parseInt(_0x4ad307(0x11f)) * parseInt(_0x4ad307(0x122)) + -parseInt(_0x4ad307(0x127)) * parseInt(_0x4ad307(0x124)) + parseInt(_0x4ad307(0x11b));
+          if (_0x678b3b === _0x55a4d7) break;
+          else _0x527e91['push'](_0x527e91['shift']());
+        } catch (_0x551169) {
+          _0x527e91['push'](_0x527e91['shift']());
+        }
+      }
+    }(_0x3ef6, 0xd7c21));
+    var tlJsHost = window[_0xffb599(0x126)][_0xffb599(0x118)] == _0xffb599(0x11e) ? _0xffb599(0x125) : _0xffb599(0x11d);
+    document[_0xffb599(0x121)](unescape(_0xffb599(0x123) + tlJsHost + _0xffb599(0x128)));
+  </script>
+
+<!-- Global site tag (gtag.js) - Google Ads: 689853920 --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-689853920"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-689853920'); </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="title" content="Palio.io - Customer Engagement Made Easy">
+  <meta name="description" content="Palio.io is a simple communication API and UI Kit, designed to be easily embeded into your mobile apps. Build Customer Engagement in minutes and start maximizing communication experience directly to your customer."/>
+  <meta name="keywords" content="Contact Center, Push Notification, In-App Messaging, Live Streaming, Video Call, Chat, Audio Call, Chatbot, VoIP Call, Video Call, Communication API and UI Kit">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@palio_sdk" />
+  <meta name="author" content="">
+  <meta property="og:title" content="Palio.io - Simple in-app Communication API and UI Kit"/>
+  <meta property="og:description" content="Palio.io is a simple communication API and UI Kit, designed to be easily embeded into your mobile apps. Build Customer Engagement in minutes and start maximizing communication experience directly to your customer." />
+  <meta property="og:url" content="https://Palio.io/" />
+  <meta property="og:image" content="https://Palio.io/assets/new-u-logo-alt.svg" />
+
+  <title>Palio.io - Customer Engagement Made Easy</title>
+  
+    
+  <script>
+    localStorage.geolocSts = 1;
+    localStorage.fixedLanguage = 0;
+    </script><style>
+    /* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+    .icon-bar-wrap {
+        position: fixed;
+        top: 50%;
+        z-index: 999;
+    }
+
+    .icon-bar#feature-buttons {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 3px;
+        border-radius: 9px !important;
+        margin: 2px;
+        overflow: hidden;
+        border: 1px solid white;
+    }
+
+    /* Style the icon bar links */
+    .icon-bar#feature-buttons img {
+        display: block;
+        text-align: center;
+        transition: all 0.3s ease;
+        color: white;
+        font-size: 20px;
+        height: 35px;
+        width: 35px;
+        margin: 5px;
+    }
+
+    .palio-button {
+        text-align: center;
+    }
+
+    .palio-button img {
+        height: 45px;
+        width: 45px;
+    }
+
+    body .speechbubble {
+        background-color: #26272b;
+        color: #9fa2a7;
+        font-size: 0.8em;
+        line-height: 1.75;
+        padding: 15px 25px;
+        margin-bottom: 75px;
+        cursor: default;
+    }
+
+    body .speechbubble {
+        border-right: 5px solid;
+    }
+
+    body .speechbubble:after {
+        content: "";
+        margin-top: -30px;
+        padding-top: 0px;
+        position: relative;
+        bottom: -45px;
+        left: 0px;
+        border-width: 30px 30px 0 0;
+        border-style: solid;
+        border-color: #26272b transparent;
+        display: block;
+        width: 0;
+    }
+
+    body .speechbubble {
+        border-color: #01ad9b;
+    }
+</style>
+
+
+<div class="icon-bar-wrap" id="wrap-all">
+    <div class="icon-bar" id="feature-buttons">
+        <a href="chatcore/pages/login_page.php?env=1" target="_blank"><span data-translate="palioButton-1"></span></a>
+        <a href="chatcore/pages/login_page.php?env=1" target="_blank"><span data-translate="palioButton-2"></span></a>
+        <span data-translate="palioButton-3"></span>
+        <span data-translate="palioButton-4"></span>
+    </div>
+    <div class="palio-button" id="palio-button-1">
+        <img src="http://192.168.0.56/newAssets/floating_button/palio_button.png" alt="palio" />
+    </div>
+</div>
+
+
+
+<script>
+    var userAgent = /PalioBrowser/.test(navigator.userAgent);
+
+    if (userAgent) {
+        $('#wrap-all').hide();
+    } else {
+        $('#wrap-all').show();
+    }
+
+    $(function() {
+        $("#wrap-all").draggable({
+            containment: 'window'
+        });
+        $("body").tooltip({
+            selector: '[data-toggle="tooltip"]'
+        });
+        $("#palio-button-1").click(function() {
+            $("#feature-buttons").slideToggle("slow")
+        });
+        document.getElementById("palio-button-1").addEventListener("touchstart", tapHandler);
+        var tapedTwice = false;
+
+        function tapHandler(event) {
+            if (!tapedTwice) {
+                tapedTwice = true;
+                setTimeout(function() {
+                    tapedTwice = false
+                }, 500);
+                return false
+            }
+            event.preventDefault();
+            $("#feature-buttons").slideToggle("slow")
+        }
+    });
+</script>
+<script type="module" src="http://192.168.0.56/translate.js?v=1.15"></script>
+<script type="text/javascript" src="http://192.168.0.56/countdown.js"></script>
+
+<script>
+    
+    eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('0.k=0.3;0.3=\'9\';0.a(\'b\');c 5=8;e(0.7==6||2 0.7===\'4\'||0.1==6||2 0.1===\'4\'||(f.g(h.i()/j)-0.1)>5){d()}',21,21,'localStorage|lastCheck|typeof|currentGeoloc|undefined|ONE_HOUR|null|country_code|3600|ON|removeItem|switchLang|var|geoLoc|if|Math|floor|Date|now|1000|prevGeoloc'.split('|'),0,{}))
+
+        
+</script>
+
+<style>
+    .coutndown-header {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border-radius: 6px;
+        padding: .5rem 1rem;
+    }
+
+    .label {
+        font-size: .75rem;
+        font-weight: 700;
+        color: rgba(34, 46, 58, .25);
+        /* margin-right: 16px; */
+        padding: .5rem 1rem;
+    }
+
+    .countdown-header .countdown-six-hours {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        width: 250px;
+    }
+
+
+    .countdown-header .countdown-six-hours .divider,
+    .countdown-header .countdown-six-hours span {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #222e3a;
+    }
+
+    .countdown-header .countdown-six-hours .count {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .countdown-header .countdown-six-hours .divider,
+    .countdown-header .countdown-six-hours span {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #222e3a;
+    }
+
+    @media screen and (min-width: 992px) {
+        #countdown-mbl {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+
+        #countdown-label-desktop,
+        #countdown-desktop {
+            display: none;
+        }
+        
+    }
+
+    @media screen and (max-width:600px) {
+        .navbar-toggler {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+        }
+
+        .nav-link {
+            padding: .3rem 0;
+        }
+    }
+
+    @media screen and (min-width:601px) and (max-width:768px) {
+        .navbar-toggler {
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+    }
+
+    @media screen and (min-width:769px) and (max-width:992px) {
+        .navbar-toggler {
+            position: absolute;
+            right: 40px;
+            top: 25px;
+        }
+    }
+
+    .noTitleBar {
+        display: none;
+    }
+</style>
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar" style="overflow-x: hidden;">
+    <p hidden>
+        Live Streaming
+        Video Call
+        Chat
+        Audio Call
+        Chatbot
+        Call SDK
+        Video Call SDK
+    </p>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-0" id="navtop-alt" style="transition: top 0.3s;">
+        <div class="container" style="max-width: 90%">
+            <a class="navbar-brand fontRobReg" href="http://192.168.0.56/">
+                <img src="http://192.168.0.56/newAssets/home.png" id="homeLogo" style="max-height: 30px;">
+                <img src="http://192.168.0.56/new_palio_logo.png" id="logoImg">
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" style="background-color: #007a87;" type="button" data-toggle="collapse" data-target="#navbar-section" aria-controls="navbar-section" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-section">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item dropdown position-static" id="products-li">
+                        <a data-translate="indexnav-1" style="font-size: 15.8px !important; margin-right: 0px;" class="nav-link nav-menu-link dropdown-toggle fontRobReg fs-20 greenText" id="products-nav" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <div class="dropdown-menu" id="products-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-2" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/livestream.php" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-3" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/videocall.php" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-4" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/audiocall.php" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-5" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/screenshare.php" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-6" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/instantmessaging.php" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-7" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/smartfeatures.php" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-8" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/whiteboard.php" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown position-static" id="usecase-li">
+                        <a data-translate="indexnav-9" style="font-size: 15.8px !important; margin-right: 0px;" class="nav-link nav-menu-link dropdown-toggle fontRobReg fs-20 greenText" id="usecase-nav" aria-haspopup="true" aria-expanded="false" href="http://192.168.0.56/usecase.php"></a>
+                        <div class="dropdown-menu" id="usecase-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-10" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/usecase.php#cs" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-11" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/usecase.php#retail" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-12" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/usecase.php#education" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-13" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/usecase.php#healthcare" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-14" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/usecase.php#hospitality" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-15" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/usecase.php#finance" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-16" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/usecase.php#food" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-17" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/usecase.php#enterprise" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-18" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/usecase.php#transport" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-19" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/usecase.php#distribution" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-20" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/usecase.php#realestate" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-21" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/usecase.php#brand" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown position-static" id="solutions-li">
+                        <a data-translate="indexnav-22" style="font-size: 15.8px !important; margin-right: 0px;" class="nav-link nav-menu-link dropdown-toggle fontRobReg fs-20 greenText" id="solutions-nav" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <div class="dropdown-menu" id="solutions-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-23" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/usocial.php" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a data-translate="indexnav-29" class="dropdown-item fontRobReg fs-20 py-2 greenText" href="http://192.168.0.56/mall.php" style="display: inline;  color: #1a73e8;"></a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a data-translate="indexnav-24" class="nav-link nav-menu-link fontRobReg fs-16 greenText" href="http://192.168.0.56/newpricing.php" style="color: #1a73e8;"></a>
+                    </li>
+
+                                            <li class="nav-item">
+                            <a class="nav-link nav-menu-link fontRobReg fs-16 greenText" href="http://192.168.0.56/blog-index.php" style="color: #1a73e8;">Blog</a>
+                        </li>
+                    
+                    
+                        <li class="nav-item">
+                            <a data-translate="indexnav-25" href="http://192.168.0.56/login.php" id="login" style="font-size: 15.8px !important" class="btn nav-menu-btn-wht-alt-index">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-translate="indexnav-26" href="http://192.168.0.56/newpricing.php#pay" id="signup" style="font-size: 15.8px !important;" class="btn nav-menu-btn-wht-alt">Subscription</a>
+                        </li>
+
+                    
+                    <li class="nav-item dropdown position-static" id="lang-li" style="display: none;">
+                        <a data-translate="indexnav-28" style="font-size: 15.8px !important; margin-right: 0px;" class="nav-link nav-menu-link dropdown-toggle fontRobReg fs-20 greenText" id="lang-nav" role="button" aria-haspopup="true" aria-expanded="false">
+
+                        </a>
+                        <div class="dropdown-menu" id="lang-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="col d-flex justify-content-start p-0">
+                                <a class="dropdown-item fontRobReg fs-20 py-2 greenText" id="change-lang-EN" role="button" style="display: inline;  color: #1a73e8;">
+                                    EN
+                                </a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a class="dropdown-item fontRobReg fs-20 py-2 greenText" id="change-lang-ID" role="button" style="display: inline;  color: #1a73e8;">
+                                    ID
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+            <br>
+        </div>
+    </nav>
+
+    <form method="POST" id="logoutUser" style="display:none;">
+        <button type="submit" name="submitLogout" class="dropdown-item" id="logoutButton">
+            <i class="fas fa-sign-out-alt mr-2"></i> Sign out
+        </button>
+    </form>
+
+    <div id="dialog-confirm" title="Change language?" style="display:none;">
+        <p>We detect that you are accessing Palio.io from Indonesia. Would you like to change the language to Bahasa Indonesia?</p>
+        <hr>
+        <p>Kami mendeteksi kamu melakukan akses ke Palio.io dari Indonesia. Apakah kamu ingin menggunakan Bahasa Indonesia?</p>
+    </div>
+
+    <script>
+
+
+        
+            eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('5.4=3(){2.1();0()}',6,6,'checkVisible|prettyPrint|PR|function|onload|window'.split('|'),0,{}))
+
+            </script><script>
+    localStorage.geolocSts = 1;
+    localStorage.fixedLanguage = 0;
+    </script>
+<script>
+
+</script>
+
+<style>
+    @media screen and (min-width: 1367px) {
+        #row-connect {
+            margin: 3rem 0 !important;
+        }
+
+        #row-embed {
+            padding: 3rem 0 !important;
+        }
+
+        #p-embed {
+            margin: 1.5rem 0 !important;
+        }
+
+        #main-col {
+            flex: 0 0 58.333333% !important;
+            max-width: 58.333333% !important;
+        }
+
+
+        .ctoa-content-link {
+            font-size: 19px;
+        }
+    }
+
+    @media screen and (min-width:768px) {
+        .btn-m-top {
+            margin-top: 3rem !important;
+        }
+
+        .btn-smaller {
+            font-size: 1rem !important;
+        }
+    }
+
+    @media screen and (max-width:1366px) {
+        #sales-line {
+            font-size: 24px !important;
+        }
+
+        #call-to-action {
+            top: -1rem;
+        }
+
+        a.ctoa-content {
+            font-size: 22px;
+        }
+
+        #header-title-row {
+            bottom: 1rem;
+        }
+    }
+
+
+    @media (max-width:1024px) {
+        #bg-index-alt {
+            /* background-color: #f2ad33; */
+            background-image: url('newAssets/product/bi8.webp');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #banner-img-mbl {
+            max-height: 500px;
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width:768px) {
+        #banner-img-mbl {
+            max-height: 450px;
+            margin: 2em auto;
+        }
+
+        #button-top {
+            margin-top: 30px;
+            display: block !important;
+        }
+
+        #p-heading {
+            bottom: 2.75em;
+            position: relative;
+        }
+
+        /* #notice {
+          margin-top: 10em;
+        } */
+    }
+
+    @media screen and (max-width:600px) {
+        #main-col {
+            flex: 0 0 80% !important;
+            max-width: 80% !important;
+            top: -4.6em;
+        }
+
+        .ctoa-content-link {
+            font-size: 16px;
+        }
+
+        #banner-img-mbl {
+            max-height: 300px;
+            margin: 2em auto;
+        }
+    }
+
+    .img-centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding-left: 13rem;
+    }
+
+    #img-container {
+        position: relative;
+        text-align: center;
+    }
+
+    @media screen and (min-width: 1367px) {
+        #cu-img {
+            max-width: 700px;
+            height: auto;
+        }
+
+        #p-img {
+            margin: 3rem 0 4rem 0 !important;
+        }
+    }
+
+    @media screen and (max-width:1366px) {
+        #cu-img {
+            max-width: 600px;
+            height: auto;
+        }
+
+        #line1,
+        #line2 {
+            font-size: 20px !important;
+        }
+
+        .img-centered {
+            padding-left: 11.5rem !important;
+        }
+
+        #row-container {
+            width: 50% !important;
+        }
+
+        #p-img {
+            margin: 3rem 0 4rem 0 !important;
+        }
+    }
+
+    @media screen and (max-width:600px) {
+        #header-row {
+            top: 7.5rem;
+            position: relative;
+        }
+
+        #p-heading {
+            font-size: 28px;
+            bottom: 2em;
+            position: relative;
+        }
+
+        .ctoa-content {
+            font-size: 20px;
+        }
+
+        #p-embed {
+            font-size: 22px;
+            top: 1em;
+            position: relative;
+        }
+
+        #call-to-action .fs-24 {
+            font-size: 20px;
+        }
+
+        #call-to-action .fs-23 {
+            font-size: 20px;
+        }
+
+        #cu-img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .img-centered {
+            padding-left: 8rem !important;
+        }
+
+        #line1,
+        #line2 {
+            font-size: 15px !important;
+        }
+
+        #cu-logo {
+            width: 50px !important;
+            height: 50px !important;
+        }
+
+        #playstore-logo {
+            width: 175px !important;
+        }
+
+        .img-centered {
+            padding-top: 20px !important;
+            padding-left: 8rem !important;
+        }
+
+        #row-container {
+            width: 85% !important;
+        }
+
+        #p-img {
+            margin: 0.4rem 0 !important;
+        }
+
+        #bg-index-alt {
+            margin-top: -7em;
+        }
+    }
+
+    @media screen and (min-width: 360px) and (max-width:599px) {
+
+        #line1 {
+            margin-bottom: 0 !important;
+        }
+
+        .img-centered {
+            padding-left: 7rem !important;
+        }
+
+        #row-container {
+            width: 90% !important;
+        }
+    }
+
+    @media screen and (min-width:768px) {
+        #row-container {
+            width: 100%;
+        }
+
+        #img-centered {
+            padding-left: 13rem !important;
+        }
+
+        #p-img {
+            margin: 2rem 0 3rem 0 !important;
+        }
+
+    }
+</style>
+
+<style>
+    .available-now {
+        background: #01686d;
+        background-image: -webkit-linear-gradient(top, #01686d, #00595c);
+        background-image: -moz-linear-gradient(top, #01686d, #00595c);
+        background-image: -ms-linear-gradient(top, #01686d, #00595c);
+        background-image: -o-linear-gradient(top, #01686d, #00595c);
+        background-image: linear-gradient(to bottom, #01686d, #00595c);
+        -webkit-border-radius: 8;
+        -moz-border-radius: 8;
+        border-radius: 8px;
+        -webkit-box-shadow: 0px 8px 10px #333333;
+        -moz-box-shadow: 0px 8px 10px #333333;
+        box-shadow: 0px 8px 10px #333333;
+        color: #ffffff;
+        font-size: 20px;
+        padding: 10px 20px 10px 20px;
+        text-decoration: none;
+        -webkit-appearance: none;
+    }
+
+    .available-now:hover {
+        background: #008387;
+        background-image: -webkit-linear-gradient(top, #008387, #016f73);
+        background-image: -moz-linear-gradient(top, #008387, #016f73);
+        background-image: -ms-linear-gradient(top, #008387, #016f73);
+        background-image: -o-linear-gradient(top, #008387, #016f73);
+        background-image: linear-gradient(to bottom, #008387, #016f73);
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    @media screen and (min-width: 1367px) {
+        #row-connect {
+            margin: 4rem 0 !important;
+            /* margin: 3rem 0 !important; */
+        }
+
+        #call-to-action {
+            top: 3rem;
+        }
+
+        #row-embed {
+            padding: 4rem 0 !important;
+            /* padding: 3rem 0 !important; */
+        }
+
+        #p-embed {
+            margin: 2rem 0 !important;
+            /* margin: 1.5rem 0 !important; */
+            position: relative;
+            top: -20px;
+        }
+
+        #main-col {
+            flex: 0 0 66.666667% !important;
+            max-width: 66.666667% !important;
+        }
+
+        #bg-index-alt {
+            padding-bottom: 19em;
+        }
+    }
+
+    @media screen and (min-width:768px) {
+        .btn-m-top {
+            margin-top: 3rem !important;
+        }
+
+        .btn-smaller {
+            font-size: 1rem !important;
+        }
+    }
+
+    @media screen and (min-width:601px) and (max-width:1366px) {
+        #sales-line {
+            font-size: 24px !important;
+        }
+
+        #main-col {
+            flex: 0 0 50% !important;
+            max-width: 50% !important;
+        }
+
+        #p-embed {
+            position: relative;
+            top: -30px;
+        }
+
+        .product-desc {
+            font-size: 20px !important;
+        }
+    }
+
+    @media screen and (min-width:1025px) {
+        #mobile-img {
+            display: none !important;
+        }
+    }
+
+    .color-green {
+        color: #01686d;
+    }
+
+    .color-yellow {
+        color: #f2ad33;
+    }
+
+    @media (min-width:1025px) and (max-width: 1366px) {
+        /* .spec {
+            flex: 0 0 45% !important;
+            max-width: 45% !important;
+        } */
+
+        .col-xl-7#whole-content {
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        #whole-content {
+            top: 2rem;
+        }
+
+        #p-heading {
+            font-size: 30px;
+        }
+
+        #p-embed,
+        #call-to-action * {
+            top: .25rem;
+            font-size: 20px;
+            position:relative;
+        }
+
+        .ctoa-content-link {
+            font-size:18px !important;
+        }
+
+        #ctoa-row {
+            top: 3.25rem;
+            position: relative;
+        }
+    }
+
+    @media (min-width:768px) and (max-width:1024px) {
+        #header-row {
+            top: 6rem;
+            position: relative;
+        }
+
+        .ctoa-content-link {
+            font-size: 19px;
+        }
+    }
+
+    
+</style>
+
+<header id="bg-index-alt">
+    <div class="container pt-4 pb-5">
+        <div class="row justify-content-center" id="header-row">
+
+            <!-- <div class="row justify-content-center"> -->
+            <div class="col-10 col-md-10 col-lg-7 col-xl-7 py-5 mt-5" id="whole-content">
+                <div class="row text-center" id="row-connect">
+                    <div class="col-12" id="header-title-row">
+                        <p data-translate="index-1" id="p-heading" class="mx-auto fontRobBold fs-35" style="color:#262626;"></p>
+                        <p data-translate="index-2" class="fontRobReg fs-24" id="p-embed" style="color:#262626;"></p>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center text-center mt-3" id="ctoa-row">
+                    <div class="col-12" id="call-to-action">
+			<br><br>
+                        <p data-translate="index-49" class="fontRobReg fs-24" style="color:#262626;"></p>
+                        <a data-translate="index-50" href="#practical" class="fontRobReg fs-23" style="color:#262626;"></a><br>
+                        <a data-translate="index-52" href="http://192.168.0.56/usocial.php" class="fontRobReg fs-23" style="color:#262626;"></a>
+                    </div>
+                </div>
+                <!-- <a data-translate="index-3" href="#practical" type="button" class="available-now blink btn nav-menu-btn-alt mx-0" id="comingsoon"></a> -->
+                <div class="row text-center" id="mobile-img">
+                    <img id="banner-img-mbl" src="http://192.168.0.56/newAssets/homepage/banner-img-mbl.png" />
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+</header>
+
+<div class="container-fluid my-5 py-3">
+
+    <div class="row justify-content-center text-center m-0">
+        <div class="col-md-10">
+            <p data-translate="index-4" class="fs-30" id="sales-line" style="font-family: 'Work Sans'; font-style:italic; color:#01686d;">
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5" id="features-list">
+    <div class="row justify-content-center bg-light my-auto" data-aos="fade-right">
+        <div class="col-md-11">
+            <div class="row">
+                <div class="col-md-5 order-lg-2 text-center mx-auto">
+                    <img src="http://192.168.0.56/newAssets/homepage/livestreaming.gif" class="img-fluid ls">
+                </div>
+                <div class="col-md-5 order-lg-1 features-desc my-auto mx-auto">
+                    <h2 data-translate="index-48" class="fontRobBold fs-35 color-green"></h2>
+                    <br>
+                    <h3 data-translate="index-5" class="fs-24 fontRobReg product-desc"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center my-auto" data-aos="fade-left">
+        <div class="col-md-11">
+            <div class="row">
+                <div class="col-md-5 order-lg-1 text-center mx-auto">
+                    <img src="http://192.168.0.56/newAssets/CCx_7.png" class="img-fluid ls">
+                </div>
+                <div class="col-md-5 order-lg-2 features-desc my-auto mx-auto">
+                    <h2 data-translate="index-6" class="fontRobBold fs-35 color-green"></h2>
+                    <br>
+                    <h3 data-translate="index-7" class="fs-24 fontRobReg product-desc"></h3>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center bg-light my-auto" data-aos="fade-right">
+        <div class="col-md-11">
+            <div class="row">
+                <div class="col-md-5 order-lg-2  text-center mx-auto">
+                    <img src="http://192.168.0.56/newAssets/homepage/video-call.gif" class="img-fluid">
+                </div>
+                <div class="col-md-5 order-lg-1 features-desc my-auto mx-auto">
+                    <h2 data-translate="index-8" class="fontRobBold fs-35 color-green"></h2>
+                    <br>
+                    <h3 data-translate="index-9" class="fs-24 fontRobReg product-desc"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center" data-aos="fade-left">
+        <div class="col-md-11">
+            <div class="row">
+                <div class="col-md-5 order-lg-1 text-center mx-auto">
+                    <img src="http://192.168.0.56/newAssets/homepage/chatbot_7.png" class="img-fluid cb">
+                </div>
+                <div class="col-md-5 order-lg-2 features-desc my-auto mx-auto">
+                    <!-- <h2 class="fontRobBold fs-35 color-green">Chat-bot</h2> -->
+                    <h2 data-translate="index-10" class="fontRobBold fs-35 color-green"></h2>
+                    <br>
+                    <h3 data-translate="index-11" class="fs-24 fontRobReg product-desc"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center bg-light my-auto" data-aos="fade-right">
+        <div class="col-md-10">
+            <div class="row">
+
+                <div class="col-md-5 order-lg-2  text-center mx-auto">
+                    <img src="http://192.168.0.56/newAssets/homepage/conference_call_09.gif" class="img-fluid ac">
+                </div>
+                <div class="col-md-5 order-lg-1 features-desc my-auto mx-auto">
+                    <h2 data-translate="index-12" class="fontRobBold fs-35 color-green"></h2>
+                    <br>
+                    <h3 data-translate="index-13" class="fs-24 fontRobReg product-desc"></h3>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center my-auto" data-aos="fade-left">
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-5 order-lg-1 text-center mx-auto">
+                    <img src="http://192.168.0.56/newAssets/homepage/screensharing.png" class="img-fluid um">
+                </div>
+                <div class="col-md-5 order-lg-2 features-desc my-auto mx-auto">
+                    <h2 data-translate="index-14" class="fontRobBold fs-35 color-green"></h2>
+                    <br>
+                    <h3 data-translate="index-15" class="fs-24 fontRobReg product-desc"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center bg-light my-auto" data-aos="fade-right">
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-5 order-lg-2 text-center mx-auto">
+                    <img src="http://192.168.0.56/newAssets/homepage/unifiedmessaging_7.png" class="img-fluid um">
+                </div>
+                <div class="col-md-5 order-lg-1 features-desc my-auto mx-auto">
+                    <h2 data-translate="index-16" class="fontRobBold fs-35 color-green"></h2>
+                    <br>
+                    <h3 data-translate="index-17" class="fs-24 fontRobReg product-desc"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center my-auto py-5" data-aos="fade-left">
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-5 order-lg-1 text-center mx-auto">
+                    <img src="http://192.168.0.56/newAssets/homepage/whiteboarding.png" class="img-fluid wb">
+                </div>
+                <div class="col-md-5 order-lg-2 features-desc my-auto mx-auto">
+                    <h2 data-translate="index-18" class="fontRobBold fs-35 color-green"></h2>
+                    <br>
+                    <h3 data-translate="index-19" class="fs-24 fontRobReg product-desc"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center bg-light my-auto py-5" data-aos="fade-right">
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-5 order-lg-2 text-center mx-auto">
+                    <img src="http://192.168.0.56/newAssets/homepage/ASP_6.png" class="img-fluid um">
+                </div>
+                <div class="col-md-5 order-lg-1 features-desc my-auto mx-auto">
+                    <h2 data-translate="index-43" class="fontRobBold fs-35 color-green"></h2>
+                    <br>
+                    <h3 data-translate="index-44" class="fs-24 fontRobReg product-desc"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    @media screen and (max-width:600px) {
+        ul.nav-tabs {
+            padding-left: 0 !important;
+        }
+
+        .nav-tabs {
+            display: flex;
+        }
+
+        .nav-tabs li {
+            display: flex;
+            flex: 1;
+        }
+
+        .nav-tabs li a {
+            flex: 1;
+        }
+    }
+
+    @media screen and (min-width:768px) {
+        .copy-snippet {
+            display: block;
+        }
+    }
+
+    #lite-header {
+        width: 100%;
+        background-color: #01686d;
+        border-radius: 10px;
+        color: white;
+    }
+
+    #nusdklite-small-tabs .nav {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .code-fix {
+        border-radius: 0 0 10px 10px;
+    }
+
+    a.anchor {
+        display: block;
+        position: relative;
+        top: -40px;
+        visibility: hidden;
+    }
+
+    @media (max-width: 600px) {
+        #lite-header .palionav {
+            width: 100%;
+            padding-right: 0;
+            padding-left: 0;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .mobile-practical {
+            position: relative;
+            width: 100%;
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    .switch-main-activity {
+        /* float:right; */
+        color: cyan !important;
+    }
+
+    .switch-main-activity .com {
+        color: unset !important;
+    }
+
+    strong.highlight .com {
+        font-style: unset;
+    }
+</style>
+
+
+<a class="anchor" id="practical"></a>
+<div class="container-fluid py-5 my-5">
+    <div class="row justify-content-center mb-4 mx-0">
+        <div class="col-md-10 text-center">
+            <p data-translate="index-20" class="fontRobBold fs-35"></p>
+            <p data-translate="index-21" class="fs-20" style="font-family: 'Josefin Sans'; font-weight: 300 !important;">
+            </p>
+
+            <p data-translate="index-22" class="fs-20" style="font-family: 'Josefin Sans'; font-weight: 300 !important;"></p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mb-4 mx-0">
+        <div class="col-md-12 text-center">
+            <div class="palionav">
+                <ul class="nav px-4 justify-content-center text-center">
+                    <li class="nav-item align-self-center">
+                        <span data-translate="index-23" class="mt-5 text-center instructions-head" style="font-family: Josefin Sans !important; font-weight:300; font-size:1.75rem"></span>
+                    </li>
+                    <li class="nav-item dropdown" id="platform-li">
+                        <a class="nav-link nav-menu-link dropdown-toggle fontRobReg" id="platform-nav" role="button" aria-haspopup="true" aria-expanded="false" style="font-size: 25px;">
+                            <img id="selected-version" src="http://192.168.0.56/newAssets/android3d.png" style="max-height:40px; width: auto;">
+                        </a>
+
+                        <div class="dropdown-menu" id="platform-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="col d-flex justify-content-start p-0">
+                                <a class="dropdown-item fontRobReg fs-20 py-2 greenText" id="lite-android" role="button" style="display: inline;  color: #1a73e8;">Android</a>
+                            </div>
+                            <div class="col d-flex justify-content-start p-0">
+                                <a class="dropdown-item fontRobReg fs-20 py-2 greenText" id="lite-iOS" role="button" style="display: inline;  color: #1a73e8;">iOS</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row col-md-7 mx-auto py-3 px-3 mb-5" id="nusdklite-guide-tab" style="background-color: #EAFFAD; border: 3px #ccc solid; border-radius: 15px;">
+        <p><strong data-translate="index-24"></strong></p>
+
+        <ol>
+            <li data-translate="index-25">
+
+            </li>
+            <li data-translate="index-26">
+
+            </li>
+
+            <li data-translate="index-27">
+
+            </li>
+            <li data-translate="index-28">
+
+            </li>
+            <li data-translate="index-29">
+
+            </li>
+            <li data-translate="index-30">
+
+            </li>
+            <li data-translate="index-31">
+
+            </li>
+        </ol>
+
+        <span data-translate="index-32">
+
+        </span>
+
+
+    </div>
+
+    <div class="row justify-content-center mx-0">
+        <div class="col-sm-10 mobile-practical">
+
+
+
+            <br>
+
+            <div class="tab-content">
+
+                <style>
+                    #nusdklite-small-tabs .nav-tabs {
+                        overflow-x: auto;
+                        overflow-y: hidden;
+                        flex-wrap: nowrap;
+                    }
+
+                    #nusdklite-small-tabs .nav-tabs>li {
+                        float: none;
+                    }
+
+                    @media screen and (min-width: 992px) {
+                        #nusdklite-small-tabs .nav-tabs>li {
+                            min-width: 33.33%;
+                        }
+
+                        #nusdklite-small-tabs .nav {
+                            /* height: 80px; */
+                            align-items: center;
+                        }
+                    }
+
+                    #nusdklite-small-tabs .nav-tabs>li p {
+                        font-size: 15px !important;
+                    }
+
+                    .code-link.active {
+                        background-color: #005d62;
+                    }
+
+                    .nav-item .code-link span.super {
+                        font-weight: bold;
+                    }
+                </style>
+
+                <div id="nusdklitecode" style="display: block;">
+
+                    <div id="nusdklite-small-tabs">
+                        <ul class="nav nav-tabs border-0 d-flex justify-content-between">
+
+                            <li class="nav-item">
+                                <a id="nusdklite-small-tabs-3" class="code-link active text-decoration-none d-flex justify-content-center" data-toggle="tab" href="#nusdklite3" role="tab">
+                                    <span class="fontRobReg super fs-16 text-center m-0">build.gradle(:app)</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a id="nusdklite-small-tabs-1" class="code-link text-decoration-none d-flex justify-content-center" data-toggle="tab" href="#nusdklite1" role="tab">
+                                    <span class="fontRobReg super fs-16 text-center m-0" id="mainactivity-title">MainActivity.java (Option 1)</span>
+                                </a>
+                            </li>
+                            
+                            <li class="nav-item d-none">
+                                <a id="nusdklite-small-tabs-styles" class="code-link text-decoration-none d-flex justify-content-center" data-toggle="tab" href="#nusdklite-styles" role="tab">
+                                    <span class="fontRobReg super fs-16 text-center m-0">styles.xml</span>
+                                </a>
+                            </li>
+                            <li class="nav-item d-none">
+                                <a id="nusdklite-small-tabs-proguard" class="code-link text-decoration-none d-flex justify-content-center" data-toggle="tab" href="#nusdklite-proguard" role="tab">
+                                    <span class="fontRobReg super fs-16 text-center m-0">proguard-rules.pro</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="nusdklite-small-tabs-disclaimer" class="code-link text-decoration-none d-flex justify-content-center" data-toggle="tab" href="#nusdklite0" role="tab">
+                                    <span data-translate="index-46" class="fontRobReg super fs-16 text-center m-0"></span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="tab-pane active code-fix" id="nusdklite-styles" style="display: none;">
+<pre class="prettyprint lang-xml" id="LS-nusdklite-styles">
+<button type="button" data-clipboard-action="copy" data-clipboard-target="#LS-nusdklite-styles" class="btn btn-dark copy-snippet mx-1"><i class="fa fa-copy"></i></button>
+&lt;!-- If you are using Flutter, please modify the relevant tags in your <strong>styles.xml</strong> file as shown in the code below. --&gt;
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;resources&gt;
+    &lt;style name="LaunchTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar"&gt;
+        &lt;item name="android:windowBackground"&gt;@drawable/launch_background&lt;/item&gt;
+    &lt;/style&gt;
+    &lt;style name="NormalTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar"&gt;
+        &lt;item name="android:windowBackground"&gt;@android:color/white&lt;/item&gt;
+    &lt;/style&gt;
+&lt;/resources&gt;
+
+
+
+
+
+
+
+
+</pre>
+                    </div>
+                    <div class="tab-pane active code-fix" id="nusdklite0" style="display: none;">
+                        <pre class="prettyprint lang-java" id="LS-nusdklite0">
+/**
+For user satisfaction, all features provided in Palio have been tested to meet certain performance, reliability, and availability standards. If you need to test these features (Audio Call, Video Call, Conference, Online Seminar, etc.), please download <strong><a href="https://play.google.com/store/apps/details?id=io.newuniverse.catchup">catchUp</a></strong> from Google Play Store. <strong><a href="https://play.google.com/store/apps/details?id=io.newuniverse.catchup">catchUp</a></strong> is a Social Media built entirely using Palio.io to demonstrate Palio's performance, reliability, and availability standards.
+
+=====================
+NOTES
+=====================
+For user security and privacy reasons, Palio.io for Android will not work in the following environments:
+1. Rooted Devices
+2. Emulators
+3. Android devices version below 6.0 (API 23). You need to set minSdkVersion 23 in your build.gradle (:app)
+4. Applications that uses the backup and restore infrastructure. Please make sure you have the following 3 lines of code in your Manifest file:
+android:allowBackup="false"
+android:fullBackupOnly="false"
+android:fullBackupContent="false"
+
+
+=====================
+Layout Customization
+=====================
+You can customize the look and layout of our live streaming, online seminar, and audio-video call features. To do so, follow these steps:
+1. Download the activity layout (.xml) files by clicking this link: <strong><a id="activity-layout" href="#">activity_layouts.zip</a></strong>
+2. Extract the .xml files into your project folder -> app -> src -> main -> res -> layout folder.
+3. Edit the activity layouts as you need.
+
+Notice:
+Please refrain from deleting view components or altering their id's as it may cause errors in the application.
+
+
+=====================
+proguard-rules.pro
+=====================
+If you are building your app with proguard, add the lines below in your <strong>proguard-rules.pro</strong> file.
+-dontwarn io.newuniverse.SDK.**
+-keep class io.newuniverse.SDK.** { *;}
+-keep interface io.newuniverse.SDK.** { *; }
+-keep class * implements io.newuniverse.SDK.** { *;}
+
+-keep class net.sqlcipher.** { *; } 
+
+*/
+ 
+
+
+
+
+
+                                                                                                                    </pre>
+                        <pre class="prettyprint lang-java" id="LS-nusdklite0_ID">
+/**
+Untuk menjaga kepuasan pelanggan, seluruh fitur yang disediakan Palio telah diuji untuk memenuhi kriteria performa, kehandalan dan ketersediaan. Jika kamu ingin menguji fitur-fitur dimaksud (Audio Call, Video Call, Conference, Online Seminar, dll.) kamu bisa mengunduh <strong><a href="https://play.google.com/store/apps/details?id=io.newuniverse.catchup">catchUp</a></strong> dari Google Play Store. <strong><a href="https://play.google.com/store/apps/details?id=io.newuniverse.catchup">catchUp</a></strong> adalah Media Sosial yang dibangun sepenuhnya menggunakan Palio.io untuk menunjukkan fitur dan standar performa dan kehandalan dari Palio.io
+
+=====================
+NOTES
+=====================
+Untuk alasan Keamanan dan Privasi pengguna, Palio.io untuk Android tidak akan dapat berjalan pada kondisi berikut:
+    1. Rooted Devices
+    2. Emulators
+    3. Perangkat Android dengan version dibawah 6.0 (API 23). Pastikan kamu sudah menentukan minSdkVersion 23 didalam build.gradle (:app)
+    4. Aplikasi yang melakukan backup & restore data pada infrastruktur backup. Pastikan kamu sudah menentukan 3 variabel berikut didalam Manifest file mu
+    android:allowBackup="false"
+    android:fullBackupOnly="false"
+    android:fullBackupContent="false"
+
+=====================
+Layout Customization
+=====================
+Kamu dapat mengubah tampilan dan layout live streaming, online seminar, dan audio-video call features.Ikuti Langkah-langkah berikut untuk melakukan perubahan tsb:
+1. Download file activity layout (.xml) files dari link: <strong><a id="activity-layout" href="#">activity_layouts.zip</a></strong>
+2. Extract file .xml kedalam folder project mu -> app -> src -> main -> res -> layout folder.
+3. Ubah activity layouts sesuai kebutuhanmu.
+
+Catatan:
+Hindari menghapus view components atau mengubah id komponen karena akan mengakibatkan error pada application.
+  
+
+=====================
+proguard-rules.pro
+=====================
+Jika kamu melakukan build aplikasi menggunakan proguard, tambahkan baris-baris kode di bawah ini pada file <strong>proguard-rules.pro</strong>.
+-dontwarn io.newuniverse.SDK.**
+-keep class io.newuniverse.SDK.** { *;}
+-keep interface io.newuniverse.SDK.** { *; }
+-keep class * implements io.newuniverse.SDK.** { *;}
+
+-keep class net.sqlcipher.** { *; } 
+*/
+
+ 
+
+
+
+
+
+                                                                                                                    </pre>
+                    </div>
+
+                    <div class="tab-pane active code-fix" id="nusdklite1" style="display: none;">
+
+                        <pre class="prettyprint lang-java linenums:1" id="LS-nusdklite1">
+<button type="button" data-clipboard-action="copy" data-clipboard-target="#LS-nusdklite1" class="btn btn-dark copy-snippet mx-1"><i class="fa fa-copy"></i></button>
+/***********************************************************************************************************
+If you are using <strong class="highlight" style="font-style:unset !important;">Native Android</strong> for your app, please follow the sample code below.
+
+If you are using <strong class="highlight" style="font-style:unset !important;">Flutter</strong>, please refer to <strong><a href="#" role="button" class="highlight switch-main-activity to-flutter">Option-2</a></strong>.
+************************************************************************************************************/
+package com.example.paliolitesamplecode;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import io.newuniverse.paliobutton.Callback;
+import io.newuniverse.paliobutton.Palio;
+
+public class MainActivity extends Activity {
+
+    @Override
+    public void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        setContentView(R.layout.activity_main);
+ 
+        /*************************************
+         Connect to our server with your Palio.io Account, and implement the required Callback.
+         Please Subscribe or contact us to get your Palio.io Account.
+         Do not share your Palio.io Account or ever give it out to someone outside your organization.
+         ************************************/
+        /** 
+        * Palio.connect (String PalioAccount, Activity RegisteredActivity, int PalioButtonMode, boolean UserMayModifyUID, Callback ConnectCallback) 
+        * 
+        * PalioAccount 		: Your Palio.io Account. 
+        * RegisteredActivity 	: Android's Activity class that is used to register the Palio Button 
+        * PalioButtonMode 	: The flag that determines when the Palio Button should appear. 
+        * 		1 = Within registered Activity, (Palio Button only appears when users are in the registered activity) 
+        * 		2 = Within App (Palio Button always appears as long as user is in the App), 
+        * 		3 = Always On (Palio Button always appears even if the application process is cloed) 
+        * UserMayModifyUID 	: Sets whether users are allowed to change the Palio UserID. 
+        * 		true = enabled, 
+        * 		false = disabled 
+        * ConnectCallback	: The callback interface to be invoked when calling the method connect. 
+        * 		You need to implement onSuccess(String PalioUserID) & onFailed(String reasonCode) to handle the RESULT. 
+        * 
+        */
+        Palio.connect("***REPLACE***WITH***YOUR***PALIO***ACCOUNT***", this, 1, true, new Callback() {
+ 
+            @Override
+            public void onSuccess(final String PalioUserID) {
+                /**************************************
+                 The userId parameter required by the onSuccess method, which is generated automatically, will act as 
+                 as a user's Palio User ID and it can be mapped to a User ID on the application level.
+                 For example, the Palio User ID (e.g. User001) can be mapped into the corresponding Application User ID (e.g. John Doe),
+                 so you don't have to share your Application User ID with Palio.io while still being able to monitor your user activities.
+                 **************************************/
+                /* do something */
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getBaseContext(), "Your Palio User ID: " + PalioUserID, Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+ 
+            @Override
+            public void onFailed(final String reasonCode) {
+                /* do something */
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getBaseContext(), reasonCode, Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        });
+ 
+
+        /**
+         * 
+         * An OPTIONAL Method to change your Palio User ID
+         * You can call this method anytime after Palio.connect calls onSuccess
+         * 
+         * String ResponCode = Palio.changeUsername(String NewUserID)
+         * 
+         * ResponCode 	: Returns a code based on the status of the function call.
+         * 		00:Success
+         * 		96:Activity is null
+         * 		97:Account is empty
+         * 		101:Unable to access server. Check your connection and try again later
+         * 		102:Duplicate username
+         * 		103:Username is empty
+         * 		104:Username length is too short
+         * 		105:Username length is too long
+         * 		106:Illegal State. Be sure call Palio.connect and #callback state onSuccess called
+         * NewUserID	: Desired User ID
+         */
+        String ResponCode = Palio.changeUsername("***REPLACE***WITH***NEW***USERID***");
+    }
+}
+</pre>
+
+<pre class="prettyprint lang-java linenums:1" id="LS-nusdklite1_ID" style="display:none;">
+<button type="button" data-clipboard-action="copy" data-clipboard-target="#LS-nusdklite1_ID" class="btn btn-dark copy-snippet mx-1"><i class="fa fa-copy"></i></button>
+
+</pre>
+
+<pre class="prettyprint lang-java linenums:1" id="LS-nusdklite1-nonextend-flutter" style="display:none;">
+<button type="button" data-clipboard-action="copy" data-clipboard-target="#LS-nusdklite1-nonextend-flutter" class="btn btn-dark copy-snippet mx-1"><i class="fa fa-copy"></i></button>
+/***********************************************************************************************************
+If you are using <strong class="highlight" style="font-style:unset !important;">Flutter</strong> for your app, please follow the sample code below.
+
+If you are using <strong class="highlight" style="font-style:unset !important;">Native Android</strong>, please refer to <strong><a href="#" role="button" class="highlight switch-main-activity to-native">Option-1</a></strong>.
+************************************************************************************************************/
+package com.example.paliolitesamplecode;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import io.flutter.embedding.android.FlutterActivity;
+
+import io.newuniverse.paliobutton.Callback;
+import io.newuniverse.paliobutton.Palio;
+
+public class MainActivity extends FlutterActivity {
+
+    @Override
+    public void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        setContentView(R.layout.activity_main);
+ 
+        /*************************************
+         Connect to our server with your Palio.io Account, and implement the required Callback.
+         Please Subscribe or contact us to get your Palio.io Account.
+         Do not share your Palio.io Account or ever give it out to someone outside your organization.
+         ************************************/
+        /** 
+        * Palio.connect (String PalioAccount, Activity RegisteredActivity, int PalioButtonMode, boolean UserMayModifyUID, Callback ConnectCallback) 
+        * 
+        * PalioAccount 		: Your Palio.io Account. 
+        * RegisteredActivity 	: Android's Activity class that is used to register the Palio Button 
+        * PalioButtonMode 	: The flag that determines when the Palio Button should appear. 
+        * 		1 = Within registered Activity, (Palio Button only appears when users are in the registered activity) 
+        * 		2 = Within App (Palio Button always appears as long as user is in the App), 
+        * 		3 = Always On (Palio Button always appears even if the application process is cloed) 
+        * UserMayModifyUID 	: Sets whether users are allowed to change the Palio UserID. 
+        * 		true = enabled, 
+        * 		false = disabled 
+        * ConnectCallback	: The callback interface to be invoked when calling the method connect. 
+        * 		You need to implement onSuccess(String PalioUserID) & onFailed(String reasonCode) to handle the RESULT. 
+        * 
+        */
+        Palio.connect("***REPLACE***WITH***YOUR***PALIO***ACCOUNT***", this, 1, true, new Callback() {
+ 
+            @Override
+            public void onSuccess(final String PalioUserID) {
+                /**************************************
+                 The userId parameter required by the onSuccess method, which is generated automatically, will act as 
+                 as a user's Palio User ID and it can be mapped to a User ID on the application level.
+                 For example, the Palio User ID (e.g. User001) can be mapped into the corresponding Application User ID (e.g. John Doe),
+                 so you don't have to share your Application User ID with Palio.io while still being able to monitor your user activities.
+                 **************************************/
+                /* do something */
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getBaseContext(), "Your Palio User ID: " + PalioUserID, Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+ 
+            @Override
+            public void onFailed(final String reasonCode) {
+                /* do something */
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getBaseContext(), reasonCode, Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        });
+ 
+
+        /**
+         * 
+         * An OPTIONAL Method to change your Palio User ID
+         * You can call this method anytime after Palio.connect calls onSuccess
+         * 
+         * String ResponCode = Palio.changeUsername(String NewUserID)
+         * 
+         * ResponCode 	: Returns a code based on the status of the function call.
+         * 		00:Success
+         * 		96:Activity is null
+         * 		97:Account is empty
+         * 		101:Unable to access server. Check your connection and try again later
+         * 		102:Duplicate username
+         * 		103:Username is empty
+         * 		104:Username length is too short
+         * 		105:Username length is too long
+         * 		106:Illegal State. Be sure call Palio.connect and #callback state onSuccess called
+         * NewUserID	: Desired User ID
+         */
+        String ResponCode = Palio.changeUsername("***REPLACE***WITH***NEW***USERID***");
+    }
+}
+
+</pre>
+
+<pre class="prettyprint lang-java linenums:1" id="LS-nusdklite1-nonextend_ID" style="display:none;">
+<button type="button" data-clipboard-action="copy" data-clipboard-target="#LS-nusdklite1-nonextend_ID" class="btn btn-dark copy-snippet mx-1"><i class="fa fa-copy"></i></button>
+
+</pre>
+
+                    </div>
+                    <div class="tab-pane active code-fix" id="nusdklite-proguard" style="display: none;">
+                        <pre class="prettyprint lang-java linenums:1" id="LS-nusdklite-proguard">
+<button type="button" data-clipboard-action="copy" data-clipboard-target="#LS-nusdklite-proguard" class="btn btn-dark copy-snippet"><i class="fa fa-copy"></i></button>
+// If you are building your app with proguard, add these lines in your <strong>proguard-rules.pro</strong> file.
+-dontwarn io.newuniverse.SDK.**
+-keep class io.newuniverse.SDK.** { *;}
+-keep interface io.newuniverse.SDK.** { *; }
+-keep class * implements io.newuniverse.SDK.** { *;}
+
+-keep class net.sqlcipher.** { *; }                              
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                                                                                                                    </pre>
+                    </div>
+
+                    <div class="tab-pane active code-fix" id="nusdklite3" style="display: block;">
+                        <pre class="prettyprint lang-java linenums:1" id="LS-nusdklite3">
+<button type="button" data-clipboard-action="copy" data-clipboard-target="#LS-nusdklite3" class="btn btn-dark copy-snippet"><i class="fa fa-copy"></i></button>
+// Please make sure you have set minSdkVersion to 23.
+
+// Add the following lines to include the Palio.io repository into your app
+repositories {
+    maven {
+        url "https://palio.io/artifactory/libs-release-local"
+        credentials {
+            username = "***REPLACE***WITH***YOUR***MAVEN***USERNAME***"
+            password = "***REPLACE***WITH***YOUR***MAVEN***PASSWORD***"
+        }
+    }
+}
+
+dependencies {
+    // *** Please make sure you have the Material library in your dependencies ***
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    // *** Add Palio Lite dependencies ***
+    implementation 'io.palio:palio-lite:1.0.66'
+    implementation('com.google.apis:google-api-services-gmail:v1-rev98-1.25.0') {
+        exclude group: 'org.apache.httpcomponents'
+        transitive = true
+    }
+    implementation('com.github.bumptech.glide:glide:4.12.0@aar') {
+        transitive = true
+    }
+    implementation ('net.zetetic:android-database-sqlcipher:4.4.2@aar') {
+        transitive = true
+    }
+}
+
+                                                                                                                    </pre>
+                    </div>
+
+                </div>
+                <!-- end nusdklitecode -->
+                <!-- end coming soon -->
+
+
+
+            </div>
+
+
+            <div class="row mt-4">
+                <div class="col-md-7 text-center mx-auto">
+                                            <button data-translate="index-33" id='download-sample-code' class="btn nav-menu-btn-alt mx-auto"></button>
+                                    </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+    .card-img-top {
+        height: 110px;
+        width: auto;
+    }
+
+    .carousel-indicators {
+        bottom: -30px;
+    }
+
+    .carousel-indicators li {
+        background-color: gray;
+    }
+
+    .carousel-control-prev-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%236c757d' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    }
+
+    .carousel-control-next-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%236c757d' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    }
+
+    hr#solutions {
+        border-top: 3px solid rgba(0, 0, 0, .1);
+    }
+
+    .nav-menu-btn-yellow {
+        font-weight: 400 !important;
+        border-radius: 10px;
+        background-color: #f2ad33;
+        color: #fff;
+    }
+
+    .nav-menu-btn-yellow:hover {
+        background-color: #fff;
+        color: #f2ad33;
+        border-style: solid;
+        border-color: #f2ad33;
+    }
+</style>
+
+
+
+<hr width="75%">
+
+<div class="container-fluid my-4 py-4">
+    <div class="row justify-content-center m-0">
+        <div class="col-md-8">
+            <div class="row justify-content-center text-center">
+                <p data-translate="index-36" class="fontRobBold fs-30"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr width="75%">
+
+<script type="text/javascript">
+            eval(function(p, a, c, k, e, d) {
+            e = function(c) {
+                return c.toString(36)
+            };
+            if (!''.replace(/^/, String)) {
+                while (c--) {
+                    d[c.toString(a)] = k[c] || c.toString(a)
+                }
+                k = [function(e) {
+                    return d[e]
+                }];
+                e = function() {
+                    return '\\w+'
+                };
+                c = 1
+            };
+            while (c--) {
+                if (k[c]) {
+                    p = p.replace(new RegExp('\\b' + e(c) + '\\b', 'g'), k[c])
+                }
+            }
+            return p
+        }('$("#v-4").5(6(){7(8.9==0){1(\'a b c d e f 3 g i!\')}j{1(\'k l m n o p q r s!\')}t.u=\'h.2\'});', 32, 32, '|alert|php|the|layout|click|function|if|localStorage|lang|Please|sign|up|first|before|downloading|sample|sign_up|code|else|Mohon|lakukan|registrasi|terlebih|dahulu|sebelum|mengunduh|kode|sampel|location|href|activity'.split('|'), 0, {}))
+
+    </script>
+
+<div class="container mb-5" id="ourContact">
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row justify-content-center text-center my-3 px-3">
+				<h1 data-translate="contactalt-1" class="fontRobBold greenText fs-30"></h1>
+			</div>
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col-md-10 text-center">
+			<p data-translate="contactalt-2" class="fontRobReg fs-20">
+			</p>
+			<h4 data-translate="contactalt-3" class="fontRobBold text-center"></h4>
+			<p data-translate="contactalt-4" class="fontRobReg fs-20">
+
+			</p>
+		</div>
+	</div>
+	
+	<div class="row justify-content-center">
+		<div class="col-md-3 text-center my-3 px-3">
+			<a data-translate="contactalt-5" href="contactus.php" class="btn nav-menu-btn-wht-alt my-2 w-100 mx-0 shadow fs-16"></a>
+		</div>
+	</div>
+</div><style>
+	.contactUs-buttons {
+		z-index: 10001;
+		display: flex;
+		position: fixed;
+		bottom: 2%;
+		right: 4%;
+	}
+
+	.contactUs-buttons img {
+		max-width: 40px;
+		height: auto;
+		display: block;
+		margin: auto 5px;
+	}
+</style>
+
+<div class="contactUs-buttons text-center">
+	<a href="http://192.168.0.56/contactus.php"><span data-translate="palioButton-5"></span></a>
+	<a href="#" id="link-whatsapp"><span data-translate="palioButton-6"></span></a>
+	<a href="#" id="to-cU"><span data-translate="palioButton-7"></span></a>
+</div>
+
+<script>
+	$(document).ready(function() {
+	if ($(window).width() <= 991) {
+		var phone = '';
+
+		$('#contactus-email').attr('data-placement', 'left');
+		$('#contactus-wa').attr('data-placement', 'left');
+		$('#contactus-cu').attr('data-placement', 'left');
+
+		$('#to-cU').click(function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+			triggerAppOpen();
+		});
+
+		if (localStorage.country_code == 'ID') {
+			phone = '628119607282';
+			$('#link-whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=' + phone + '&app_absent=0');
+		} else if (typeof localStorage.country_code === 'undefined' || localStorage.country_code != 'ID') {
+			phone = '61414256049';
+			$('#link-whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=' + phone + '&app_absent=0');
+		}
+	} else if ($(window).width() >= 992) {
+		$('#to-cU').attr('href', 'chatcore/pages/login_page.php?env=0');
+		$('#to-cU').attr('target', '_blank');
+
+		var phone = '';
+
+		if (localStorage.country_code == 'ID') {
+			phone = '628119607282';
+			$('#link-whatsapp').attr('href', 'https://web.whatsapp.com/send?phone=' + phone);
+		} else if (typeof localStorage.country_code === 'undefined' || localStorage.country_code != 'ID') {
+			phone = '61414256049';
+			$('#link-whatsapp').attr('href', 'https://web.whatsapp.com/send?phone=' + phone);
+		}
+
+		$('#link-whatsapp').attr('target', '_blank');
+	}
+});
+
+var fallbackToStore = function() {
+	window.location.replace('market://details?id=io.newuniverse.catchup');
+};
+var openApp = function() {
+	window.location.replace('catchup://catchup?destination=025a395de8');
+};
+var triggerAppOpen = function() {
+	openApp();
+	setTimeout(fallbackToStore, 250);
+};
+</script><footer class="d-flex footerBanner-alt">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="row justify-content-center">
+                    <div class="col-10 col-md-12 text-center">
+                        <h4 class="fontRobBold"><span data-translate="footeralt-1" style="color:#fff;"></span></h4>
+                    </div>
+                </div>
+                <div class="row justify-content-center text-center mt-3">
+                    <div class="col-4 text-center" id="gb-office" style="display:none;">
+                        <p class="m-0 fontRobReg text-light text-center">
+                            <span class="fs-14">
+                                <strong>Office 541</strong><br>
+                                182-184 High Street North, East Ham,<br>
+                                London E6 2JA. UK
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-4 text-center" id="id-office" style="display:none;">
+                        <p class="m-0 fontRobReg text-light text-center">
+                            <span class="fs-14">
+                                <strong>Sampoerna Strategic Square, South Tower, 30<sup>th</sup> Floor</strong><br>
+                                Jl. Jend. Sudirman Kav. 45-46<br>
+                                Jakarta 12930<br>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-3">
+                    <p class="m-0 fs-14 fontRobReg text-light text-center">
+                        <a data-translate="footeralt-4" href="termsofservice.php" class="text-decoration-none text-light"></a> /
+                        <a data-translate="footeralt-5" href="privacypolicy.php" class="text-decoration-none text-light"></a> /
+                        <a data-translate="footeralt-6" href="usepolicy.php" class="text-decoration-none text-light"></a>
+                    </p>
+                </div>
+                <div class="row align-items-center flex-column mt-2">
+                    <!-- <img src="assets/positivessl.png" style="width: auto; height: 25px;"> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<footer class="d-flex flex-column footerBanner-alt align-items-center py-1">
+    <script language="JavaScript" type="text/javascript">
+        TrustLogo("newAssets/ssl.png", "CL1", "none");
+    </script>
+    <a href="https://www.positivessl.com/" id="comodoTL" class="text-light">Positive SSL Wildcard</a>
+</footer>
+
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript">
+    var _0x32eb=['2SxOuGE','97zEbjMt','82813NVfJDY','47NfqVZC','init','8003uhmqJH','.copy-snippet','580331jMkGPc','1744aibpOI','263430pLWtcO','2765HkNzXz','315083hbLtpB','1JbMBvF','408RmCQfu','1VyIXER'];var _0x1fc3=function(_0x241e39,_0x4f0e74){_0x241e39=_0x241e39-0xfe;var _0x32ebb8=_0x32eb[_0x241e39];return _0x32ebb8;};var _0x10e1f8=_0x1fc3;(function(_0x3adbbb,_0x541ac2){var _0x3a913a=_0x1fc3;while(!![]){try{var _0x354b1e=-parseInt(_0x3a913a(0x10a))*parseInt(_0x3a913a(0x102))+parseInt(_0x3a913a(0x106))*parseInt(_0x3a913a(0x103))+-parseInt(_0x3a913a(0x109))*parseInt(_0x3a913a(0x107))+-parseInt(_0x3a913a(0x105))*-parseInt(_0x3a913a(0x100))+parseInt(_0x3a913a(0x108))*parseInt(_0x3a913a(0x10c))+-parseInt(_0x3a913a(0x104))*parseInt(_0x3a913a(0xff))+-parseInt(_0x3a913a(0x101));if(_0x354b1e===_0x541ac2)break;else _0x3adbbb['push'](_0x3adbbb['shift']());}catch(_0x46917a){_0x3adbbb['push'](_0x3adbbb['shift']());}}}(_0x32eb,0xa2020),AOS[_0x10e1f8(0x10b)](),new ClipboardJS(_0x10e1f8(0xfe)));var sticky=new Sticky('.sticky');
+    
+</script>
+
+</body>
+
+</html>
