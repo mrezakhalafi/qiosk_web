@@ -336,7 +336,7 @@
 
 					</div>
 					<div class="col-6 col-md-6 col-lg-6" style="margin-left: -5px; margin-right: 5px">
-						<div class="row profile-name" onclick="profileAndroid()" style=>
+						<div class="row profile-name" onclick="profileAndroid()" style="font-size: 12px; margin-bottom: 4px">
 
                         	<!-- IF USER HAVEN'T CHANGED PROFILE = NAME IS RED -->
 
@@ -456,8 +456,8 @@
 						<div class="single-upload-cover-listing">
 							<div class="image-upload">
 								<label for="file-input-1" class="row" style="--bs-gutter-x: none">
-								<img src="../assets/img/icons/btn-add-white.png" style="background-color: #9a9a9a; padding: 15px; border: 2px solid #FFFFFF; height: 60px; width: 60px; border-radius: 50%; margin-bottom: 4px">
-									<div style="width: 60px; height: 60px; border: 1px dashed #9a9a9a; border-radius: 50%; position: absolute"></div>
+								<img src="../assets/img/icons/btn-add-white.png" style="background-color: #d4d4d4; padding: 15px; border: 2px solid #FFFFFF; height: 60px; width: 60px; border-radius: 50%; margin-bottom: 4px">
+									<div style="width: 60px; height: 60px; border: 1px dashed #d4d4d4; border-radius: 50%; position: absolute"></div>
 								</label>
 							</div>
 						</div>

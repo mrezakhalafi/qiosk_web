@@ -1,18 +1,16 @@
 body {
-    background-color: #e0e0e0;
+    /* background-color: #e0e0e0; */
+    font-family: 'Poppins';
+    font-size: 0.8125rem;
 }
 
 #buttond_send {
     width: 40px;
     height: 40px;
-    background: #374556;
+    background: #6945a5;
     border-radius: 50%;
     display: flex;
     justify-content: center;
-}
-
-#triangle-right {
-    transform: rotate(90deg);
 }
 
 #input {
@@ -21,13 +19,7 @@ body {
 
 #header {
     margin-left: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
     width: 100%;
-}
-
-#header-layout {
-    background: #374556;;
 }
 
 #header-title {
@@ -51,6 +43,11 @@ body {
 
 div.prod-desc[data-readmore] {
     /* overflow: hidden; */
+}
+
+input#input {
+    border: 1px solid lightgrey;
+    border-radius: 20px;
 }
 
 /* #title-bar {

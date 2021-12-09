@@ -7,7 +7,7 @@ $product_thumb_id = $product[0]["THUMB_ID"];
 $product_name = $product[0]["NAME"];
 $product_description = $product[0]["DESCRIPTION"];
 $product_date = $product[0]["CREATED_DATE"];
-$shop_thumb = explode('|',$product[0]["SHOP_THUMB_ID"]);
+$shop_thumb = explode('|', $product[0]["SHOP_THUMB_ID"]);
 $shop_thumb_id = $shop_thumb[0];
 $seconds = intval(intval($product_date) / 1000);
 $printed_date = date("H:i", $seconds);
@@ -39,8 +39,11 @@ if (!(substr($shop_thumb_id, 0, 4) === "http")) {
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="../assets/css/roboto.css" />
-  <link rel="stylesheet" href="../assets/css/style-comment.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style-comment.css?v=<?= time(); ?>" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <link rel="stylesheet" href="../assets/css/paliopay.css?random=<?= time(); ?>" />
   <script src="../assets/js/script-data-comment.js?random=<?= time(); ?>"></script>
@@ -49,11 +52,24 @@ if (!(substr($shop_thumb_id, 0, 4) === "http")) {
 
 <body>
   <div id="header-layout" class="sticky-top">
-    <div id="header" class="row justify-content-between">
+    <!-- <div id="header" class="row justify-content-between">
       <div class="col-auto">
         <i class="fas fa-arrow-left" style="color: white;" onclick="goBack()"></i>
         &ensp;
         <span id="header-title" class="align-middle" data-translate="comment-1">Komentar</h4>
+      </div>
+    </div> -->
+    <div class="bg-purple mb-3" id="header">
+      <div class="row mx-0" style="background-color: #6945A5; padding: 10px 0 10px 0;">
+        <div class="col-4">
+          <a onclick="goBack();">
+            <img src="../assets/img/tab5/Back-(White).png" style="width:30px">
+          </a>
+        </div>
+        <div class="col-4 text-center d-flex align-items-center justify-content-center text-white">
+          <span>Comment</span>
+        </div>
+        <div class="col-4"></div>
       </div>
     </div>
   </div>
@@ -68,18 +84,19 @@ if (!(substr($shop_thumb_id, 0, 4) === "http")) {
           <?php echo $product_name; ?>
         </div>
         <div style="font-weight: 300;" class="my-1 mr-3">
-          <!-- <div class="prod-desc"><?php //echo $product_description; ?></div> -->
+          <!-- <div class="prod-desc"><?php //echo $product_description; 
+                                      ?></div> -->
           <div class="prod-desc <?php
-            if (strlen($product_description) > 50) {
-              echo "truncate mb-3";
-            }
-          ?>">
+                                if (strlen($product_description) > 50) {
+                                  echo "truncate mb-3";
+                                }
+                                ?>">
             <?php echo $product_description; ?>
           </div>
           <?php
-            if (strlen($product_description) > 50) {
-              echo '<span class="truncate-read-more" style="color:#999999;" data-translate="comment-4">Selengkapnya...</span>';
-            }
+          if (strlen($product_description) > 50) {
+            echo '<span class="truncate-read-more" style="color:#999999;" data-translate="comment-4">Selengkapnya...</span>';
+          }
           ?>
         </div>
         <div style="font-weight: 300; color: grey;" class="my-1">
@@ -87,7 +104,7 @@ if (!(substr($shop_thumb_id, 0, 4) === "http")) {
         </div>
       </div>
     </div>
-    <hr style="border-top: 3px solid #bbb;" class="ml-3 mr-3">
+    <hr style="border-top: 2px solid #eee;" class="ml-3 mr-3">
     <?php
     $comments = include_once($_SERVER['DOCUMENT_ROOT'] . '/qiosk_web/logics/fetch_products_comments.php');
 
@@ -181,7 +198,7 @@ if (!(substr($shop_thumb_id, 0, 4) === "http")) {
     ?>
   </div>
 
-  <div class="row fixed-bottom py-2" style="background-color: #e0e0e0;">
+  <div class="row fixed-bottom py-2">
     <div style="width: 100%; height: 40px; background: #b0bec6;" class="d-none row mb-2 pt-2" id="reply-div">
       <div class="col-10" style="color: grey; font-weight: 300; padding-left: 40px;" id="content-reply">
       </div>
@@ -189,12 +206,12 @@ if (!(substr($shop_thumb_id, 0, 4) === "http")) {
         <i class="fas fa-times" style="color: white;" onclick="onReply(false);"></i>
       </div>
     </div>
-    <div class="col-10 pl-4">
-      <input type="text" name="message" id="input" placeholder="Tulis Komentar" data-translate-placeholder="comment-3"  onclick="onFocusInput()" class="border-0 px-3 py-2 rounded shadow-sm">
+    <div class="col-10 pl-4 pr-0">
+      <input type="text" name="message" id="input" placeholder="Tulis Komentar" data-translate-placeholder="comment-3" onclick="onFocusInput()" class="pl-3 py-2">
     </div>
     <div class="col-2 px-0">
-      <div id="buttond_send" class="px-3 py-2" onclick="commentProduct('<?php echo $product_code; ?>')">
-        <img src="../assets/img/arrow_send.png" id="triangle-right">
+      <div id="buttond_send" class="px-2 py-1" onclick="commentProduct('<?php echo $product_code; ?>')">
+        <img src="../assets/img/icons/Send-(White).png" id="triangle-right">
       </div>
     </div>
   </div>
@@ -203,7 +220,7 @@ if (!(substr($shop_thumb_id, 0, 4) === "http")) {
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <!-- <script type="text/javascript" src="../assets/js/pulltorefresh.js"></script> -->
   <script src="../assets/js/update-score.js?random=<?= time(); ?>"></script>
-   <script src="../assets/js/script-comment.js?random=<?= time(); ?>"></script>
+  <script src="../assets/js/script-comment.js?random=<?= time(); ?>"></script>
 </body>
 
 </html>

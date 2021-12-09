@@ -338,7 +338,7 @@
 
                 </div>
                 <div class="col-6 col-md-6 col-lg-6" style="margin-left: -5px; margin-right: 5px">
-                    <div class="row profile-name" onclick="profileAndroid()">
+                    <div class="row profile-name" onclick="profileAndroid()" style="font-size: 12px; margin-bottom: 4px">
 
                         <!-- IF USER HAVEN'T CHANGED PROFILE = NAME IS RED -->
 

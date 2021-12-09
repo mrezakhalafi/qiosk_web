@@ -9,7 +9,7 @@ var comment = {
         'id': 'Balas',
     },
     'comment-3': {
-        'en': 'Write Your Comment',
+        'en': 'Add Comment',
         'id': 'Tulis Komentar',
     },
     'comment-4': {
