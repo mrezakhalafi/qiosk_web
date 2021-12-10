@@ -19,6 +19,8 @@ if (mysqli_query($dbconn, $query)){
         header("Location: ../../pages/tab5-profile.php?id_visit=".$l_pin);
     }elseif($_GET['src']=="collection"){
         header("Location: ../../pages/tab5-collection.php?id_visit=".$l_pin."&collection_code=".$id_collection);    
+    }elseif($_GET['src']=="following"){
+        header("Location: ../../pages/tab5-following");    
     }else{
         header("Location: ../../pages/tab5-followers.php");
     }

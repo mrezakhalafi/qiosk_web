@@ -27,14 +27,21 @@
 
   if (isset($_GET['query'])){
 
-    $query = $_GET['query'];
+    $search_query = $_GET['query'];
 
     $query = $dbconn->prepare("SELECT * FROM SHOP_FOLLOW LEFT JOIN SHOP ON SHOP.CODE = 
                                 SHOP_FOLLOW.STORE_CODE WHERE SHOP_FOLLOW.F_PIN = '$id_user' AND 
-                                SHOP.NAME LIKE '%".$query."%' ORDER BY SHOP_FOLLOW.FOLLOW_DATE DESC");
+                                SHOP.NAME LIKE '%".$search_query."%' ORDER BY SHOP_FOLLOW.FOLLOW_DATE DESC");
     $query->execute();
-    $user_following = $query->get_result();
+    $user_following_a = $query->get_result();
     $query->close();
+
+    $query = $dbconn->prepare("SELECT * FROM FOLLOW_LIST LEFT JOIN USER_LIST ON FOLLOW_LIST.L_PIN = 
+                              USER_LIST.F_PIN WHERE FOLLOW_LIST.F_PIN = '$id_user' AND USER_LIST.FIRST_NAME LIKE
+                              '%".$search_query."%'");
+    $query->execute();
+    $user_following_b = $query->get_result();
+    $query->close();  
 
   }else{
 
@@ -42,8 +49,14 @@
                               SHOP_FOLLOW.STORE_CODE WHERE SHOP_FOLLOW.F_PIN = '$id_user' 
                               ORDER BY SHOP_FOLLOW.FOLLOW_DATE DESC");
     $query->execute();
-    $user_following = $query->get_result();
+    $user_following_a = $query->get_result();
     $query->close();
+
+    $query = $dbconn->prepare("SELECT * FROM FOLLOW_LIST LEFT JOIN USER_LIST ON FOLLOW_LIST.L_PIN = 
+                              USER_LIST.F_PIN WHERE FOLLOW_LIST.F_PIN = '$id_user'");
+    $query->execute();
+    $user_following_b = $query->get_result();
+    $query->close();                     
   
   }
 	
@@ -107,32 +120,63 @@
 
       <!-- IF USER HAVE FOLLOWERS -->
 
-      <?php if (mysqli_num_rows($user_following) > 0): ?>
+      <?php if (mysqli_num_rows($user_following_a) > 0 || mysqli_num_rows($user_following_b) > 0): ?>
 
-        <?php foreach($user_following as $follow): ?>
+        <?php foreach($user_following_a as $follow): ?>
 
-        <?php $images = explode('|', $follow['THUMB_ID'] ); ?>
+          <?php $images = explode('|', $follow['THUMB_ID'] ); ?>
 
-        <div class="row small-text one-followers">
-          <div class="col-1 col-md-1 col-lg-1" style="margin-right: 10px;">
-            <a href="tab3-profile.php?store_id=<?= $follow['CODE'] ?>&f_pin=<?= $id_user ?>">
-              <img src="../images/<?= $images[0] ?>" class="followers-ava" style="object-fit: cover; height: 30px; border-radius: 50%">
-            </a>
-          </div>
-          <div class="col-7 col-md-7 col-lg-7" style="margin-right: 20px;">
-            <a href="tab3-profile.php?store_id=<?= $follow['CODE'] ?>&f_pin=<?= $id_user ?>">
-              <div><?= $follow['NAME'] ?></div>
-            </a>
-            <div class="smallest-text text-grey"><?= date('d/m/y', $follow['FOLLOW_DATE']/1000) ?></div>
+          <div class="row small-text one-followers">
+            <div class="col-1 col-md-1 col-lg-1" style="margin-right: 10px;">
+              <a href="tab3-profile.php?store_id=<?= $follow['CODE'] ?>&f_pin=<?= $id_user ?>">
+                <img src="../images/<?= $images[0] ?>" class="followers-ava" style="object-fit: cover; height: 30px; border-radius: 50%">
+              </a>
             </div>
-          <div class="col-3 col-md-3 col-lg-3">
-            <input type="hidden" name="f_pin" value="<?= $id_user ?>">
-            <input type="hidden" name="shop_id" value="<?= $follow['CODE'] ?>">
-            <button class="btn-follow" onclick="openModal('<?= $follow['NAME'] ?>','<?= $follow['CODE'] ?>')" type="button" style="padding-left:5px; padding-right:5px" data-translate="tab5following-3" data-toggle="modal" data-target="#unfollowModal">Unfollow</button>
+            <div class="col-7 col-md-7 col-lg-7" style="margin-right: 20px;">
+              <a href="tab3-profile.php?store_id=<?= $follow['CODE'] ?>&f_pin=<?= $id_user ?>">
+                <div><?= $follow['NAME'] ?></div>
+              </a>
+              <div class="smallest-text text-grey"><?= date('d/m/y', $follow['FOLLOW_DATE']/1000) ?></div>
+              </div>
+            <div class="col-3 col-md-3 col-lg-3">
+              <input type="hidden" name="f_pin" value="<?= $id_user ?>">
+              <input type="hidden" name="shop_id" value="<?= $follow['CODE'] ?>">
+              <button class="btn-follow" onclick="openModal1('<?= $follow['NAME'] ?>','<?= $follow['CODE'] ?>')" type="button" style="padding-left:5px; padding-right:5px" data-translate="tab5following-3" data-toggle="modal" data-target="#unfollowModal1">Unfollow</button>
+            </div>
           </div>
-        </div>
 
         <?php endforeach; ?>
+
+        <?php foreach($user_following_b as $follow): ?>
+
+          <?php $images = explode('|', $follow['IMAGE'] ); ?>
+
+          <div class="row small-text one-followers">
+            <div class="col-1 col-md-1 col-lg-1" style="margin-right: 10px;">
+              <a href="tab5-profile.php?id_visit=<?= $follow['F_PIN'] ?>&f_pin=<?= $id_user ?>">
+                
+                <?php if ($follow['IMAGE']): ?>
+                  <img src="http://202.158.33.26/filepalio/image/<?= $images[0] ?>" class="followers-ava" style="object-fit: cover; height: 30px; border-radius: 50%">
+                <?php else: ?>
+                  <img src="../assets/img/tab5/no-avatar.jpg" class="followers-ava" style="object-fit: cover; height: 30px; border-radius: 50%">
+                <?php endif; ?>
+                
+              </a>
+            </div>
+            <div class="col-7 col-md-7 col-lg-7" style="margin-right: 20px;">
+              <a href="tab5-profile.php?id_visit=<?= $follow['F_PIN'] ?>&f_pin=<?= $id_user ?>">
+                <div><?= $follow['FIRST_NAME'] ?></div>
+              </a>
+              <div class="smallest-text text-grey"><?= date('d/m/y', $follow['FOLLOW_DATE']/1000) ?></div>
+              </div>
+            <div class="col-3 col-md-3 col-lg-3">
+              <input type="hidden" name="f_pin" value="<?= $id_user ?>">
+              <input type="hidden" name="l_pin" value="<?= $follow['F_PIN'] ?>">
+              <button class="btn-follow" onclick="openModal2('<?= $follow['FIRST_NAME'] ?>','<?= $follow['F_PIN'] ?>')" type="button" style="padding-left:5px; padding-right:5px" data-translate="tab5following-3" data-toggle="modal" data-target="#unfollowModal2">Unfollow</button>
+            </div>
+          </div>
+
+          <?php endforeach; ?>
 
       <?php else: ?>
       
@@ -146,17 +190,35 @@
 
   <!-- UNFOLLOW CONFIRMATION MODAL -->
 
-  <div class="modal fade" id="unfollowModal" tabindex="-1" role="dialog" aria-labelledby="unfollowModalLabel" aria-hidden="true">
+  <div class="modal fade" id="unfollowModal1" tabindex="-1" role="dialog" aria-labelledby="unfollowModal1Label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content" style="height:100%">
         <div class="modal-body">
-          <span data-translate="tab5following-5" style="font-size: 14px">Are you sure to unfollow</span><span style="font-size: 14px" id="text-shop-name"></span><span style="font-size: 14px">?</span>
+          <span data-translate="tab5following-5" style="font-size: 14px">Are you sure to unfollow</span><span style="font-size: 14px" id="text-shop-name1"></span><span style="font-size: 14px">?</span>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" onclick="closeModal()" style="font-size: 14px; color: #6945A5; border: 1px solid #6945A5; background-color: #FFFFFF" data-dismiss="modal" data-translate="tab5following-7">No</button>
           <form action="../logics/tab5/unfollow_shop" method="POST">
             <input type="hidden" name="f_pin" value="<?= $id_user ?>">
             <input type="hidden" name="shop_id" id="shop_id" value="">
+            <button type="submit" class="btn" style="font-size: 14px; color: #FFFFFF; background-color: #6945A5" data-translate="tab5following-6">Yes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="unfollowModal2" tabindex="-1" role="dialog" aria-labelledby="unfollowModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="height:100%">
+        <div class="modal-body">
+          <span data-translate="tab5following-5" style="font-size: 14px">Are you sure to unfollow</span><span style="font-size: 14px" id="text-shop-name2"></span><span style="font-size: 14px">?</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeModal()" style="font-size: 14px; color: #6945A5; border: 1px solid #6945A5; background-color: #FFFFFF" data-dismiss="modal" data-translate="tab5following-7">No</button>
+          <form action="../logics/tab5/user_unfollow?src=following" method="POST">
+            <input type="hidden" name="f_pin" value="<?= $id_user ?>">
+            <input type="hidden" name="l_pin" id="l_pin" value="">
             <button type="submit" class="btn" style="font-size: 14px; color: #FFFFFF; background-color: #6945A5" data-translate="tab5following-6">Yes</button>
           </form>
         </div>
@@ -189,14 +251,21 @@
 
   // OPEN & CLOSE MODAL
 
-  function openModal(name, code){
-    $('#unfollowModal').modal('show');
-    $('#text-shop-name').text(name);
+  function openModal1(name, code){
+    $('#unfollowModal1').modal('show');
+    $('#text-shop-name1').text(name);
     $('#shop_id').val(code);
   }
 
+  function openModal2(name, code){
+    $('#unfollowModal2').modal('show');
+    $('#text-shop-name2').text(name);
+    $('#l_pin').val(code);
+  }
+
   function closeModal(){
-    $('#unfollowModal').modal('hide');
+    $('#unfollowModal1').modal('hide');
+    $('#unfollowModal2').modal('hide');
   }
 
   // SCRIPT SEARCH

@@ -1001,13 +1001,17 @@ $('#staticBackdrop').on('hidden.bs.modal', function() {
     resumeAll();
 })
 
-async function showProductModal(product_code) {
+// async function showProductModal(product_code) {
 
-    event.preventDefault();
+//     event.preventDefault();
 
-    let add = await ShowProduct.build(product_code);
-    // let response = await add.question();
+//     let add = await ShowProduct.build(product_code);
+//     // let response = await add.question();
 
+// }
+
+function showProductModal(product_code) {
+    window.location.href = "profile-product_comment.php?product_code=" + product_code + "&f_pin=" + f_pin;
 }
 
 function checkVideoCarousel() {

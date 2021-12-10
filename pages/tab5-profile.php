@@ -407,7 +407,7 @@
 							</form>
 						<?php endif; ?>
 
-						<button class="account-button small-text fw-bold" style="background-color: white; color: #6945A5" data-translate="tab5main-11">Message</button>
+						<button class="account-button small-text fw-bold" style="background-color: white; color: #6945A5" data-translate="tab5main-11" onclick="Android.openMessage('<?= $id_visit ?>')">Message</button>
 						
 					</div>
 				</div>
@@ -511,7 +511,7 @@
 
 					<?php if (substr($thumbnail[0], -3) == "mp4"): ?>
 
-						<li class="nav-item text-center">
+						<li class="nav-item text-center" style="margin-right: 10px">
 							<video src="../images/<?= $thumbnail[0] ?>#t=0.5" style="background-color: #C3C3C3; height: 60px; width: 60px; border-radius: 50%; object-fit: cover; object-position: center" 
 							onclick="openHighlight('<?= $thumb_id ?>','<?= $highlight['TITLE'] ?>','<?= $product_code ?>',
 							'<?= $text ?>','<?= $mute ?>')"></video><br />
@@ -521,7 +521,7 @@
 
 					<?php else: ?>
 
-						<li class="nav-item text-center">
+						<li class="nav-item text-center" style="margin-right: 10px">
 							<img src="../images/<?= $thumbnail[0] ?>" style="background-color: #C3C3C3; height: 60px; width: 60px; border-radius: 50%; margin-bottom: 4px; object-fit: cover; object-position: center" 
 							onclick="openHighlight('<?= $thumb_id ?>','<?= $highlight['TITLE'] ?>',
 							'<?= $product_code ?>','<?= $text ?>', '<?= $mute ?>')"><br />
@@ -804,6 +804,10 @@
 	var already_pass = false;
 
 	function openHighlight(thumb_id, title, product_code, text, mute){
+
+		if (window.Android){
+			Android.openFullscreen();
+		}
 
 		// alert(product_code);
 
@@ -1255,6 +1259,10 @@
 	// ON CLOSE HIGHLIGHT
 
 	$('#highlightModal').on('hidden.bs.modal', function () {
+
+		if (window.Android){
+			Android.closeFullscreen();
+		}
 		
 		$('#highlight_loading_0').stop();
 		$("#highlight_loading_0").css("width","0%");

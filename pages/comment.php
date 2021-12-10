@@ -60,7 +60,7 @@ if (!(substr($shop_thumb_id, 0, 4) === "http")) {
       </div>
     </div> -->
     <div class="bg-purple mb-3" id="header">
-      <div class="row mx-0" style="background-color: #6945A5; padding: 10px 0 10px 0;">
+      <div class="row mx-0" style="background-color: #6945A5; padding: 14px 0 14px 0;">
         <div class="col-4">
           <a onclick="goBack();">
             <img src="../assets/img/tab5/Back-(White).png" style="width:30px">
