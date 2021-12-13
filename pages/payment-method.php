@@ -93,12 +93,12 @@
                                             PAY WITH A NEW CARD
                                         </div>
                                         <div class="row px-2 py-2">
-                                            <input class="col-12 ps-0 border-0 border-bottom" type="text" name="card-number" id="card-number" placeholder="Card Number">
+                                            <input class="col-12 ps-0 border-0 border-bottom" type="number" name="card-number" maxlength="16" id="card-number" placeholder="Card Number">
                                         </div>
                                         <div class="row px-2">
                                             <input class="col-5 ps-0 border-0 border-bottom me-3" type="text" name="card-name" id="card-name" placeholder="Name on Card">
-                                            <input class="col-3 ps-0 border-0 border-bottom me-2" type="text" name="card-expiry" id="card-expiry" placeholder="Expiry">
-                                            <input class="col-3 ps-0 border-0 border-bottom" type="text" name="card-cvv" id="card-cvv" placeholder="CVV">
+                                            <input class="col-3 ps-0 border-0 border-bottom me-2" type="number" name="card-expiry" id="card-expiry" placeholder="Expiry">
+                                            <input class="col-3 ps-0 border-0 border-bottom" type="number" name="card-cvv" id="card-cvv" placeholder="CVV">
                                         </div>
                                     </fieldset>
                                 </form>

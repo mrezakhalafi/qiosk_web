@@ -52,8 +52,8 @@
     $user_following_a = $query->get_result();
     $query->close();
 
-    $query = $dbconn->prepare("SELECT * FROM FOLLOW_LIST LEFT JOIN USER_LIST ON FOLLOW_LIST.L_PIN = 
-                              USER_LIST.F_PIN WHERE FOLLOW_LIST.F_PIN = '$id_user'");
+    $query = $dbconn->prepare("SELECT FOLLOW_LIST.*, USER_LIST.*, FOLLOW_LIST.CREATED_DATE AS CD FROM FOLLOW_LIST LEFT JOIN USER_LIST ON FOLLOW_LIST.L_PIN = 
+                              USER_LIST.F_PIN WHERE FOLLOW_LIST.F_PIN = '$id_user' ORDER BY FOLLOW_LIST.CREATED_DATE DESC");
     $query->execute();
     $user_following_b = $query->get_result();
     $query->close();                     
@@ -149,7 +149,8 @@
 
         <?php foreach($user_following_b as $follow): ?>
 
-          <?php $images = explode('|', $follow['IMAGE'] ); ?>
+          <?php $images = explode('|', $follow['IMAGE'] ); 
+          $date = date_create($follow['CD']); ?>
 
           <div class="row small-text one-followers">
             <div class="col-1 col-md-1 col-lg-1" style="margin-right: 10px;">
@@ -167,7 +168,7 @@
               <a href="tab5-profile.php?id_visit=<?= $follow['F_PIN'] ?>&f_pin=<?= $id_user ?>">
                 <div><?= $follow['FIRST_NAME'] ?></div>
               </a>
-              <div class="smallest-text text-grey"><?= date('d/m/y', $follow['FOLLOW_DATE']/1000) ?></div>
+              <div class="smallest-text text-grey"><?= date_format($date, 'd/m/y'); ?></div>
               </div>
             <div class="col-3 col-md-3 col-lg-3">
               <input type="hidden" name="f_pin" value="<?= $id_user ?>">

@@ -56,14 +56,14 @@ function numberWithDots(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function countTotal(merchant){
+function countTotal(merchant, tab_name){
 
     let totalPrice = 0;
 
     if(merchant == 'all'){
         cart.forEach(cartitem => {
             cartitem.items.forEach(item => {
-                if (item.selected != undefined) {
+                if (item.selected == 'checked') {
                     totalPrice += item.itemQuantity * item.itemPrice;
                 }
             })
@@ -72,7 +72,11 @@ function countTotal(merchant){
         cart.forEach(cartitem => {
             if (cartitem.merchant_name == merchant) {
                 cartitem.items.forEach(item => {
-                    totalPrice += item.itemQuantity * item.itemPrice;
+                    if(tab_name == 'cart' && item.selected == 'checked'){
+                        totalPrice += item.itemQuantity * item.itemPrice;
+                    } else if(tab_name == 'saved' && item.selected != 'checked') {
+                        totalPrice += item.itemQuantity * item.itemPrice;
+                    }
                 })
             }
         })
@@ -81,7 +85,7 @@ function countTotal(merchant){
     return "Rp " + numberWithDots(totalPrice);
 };
 
-function changeValue(id, mod, merchant){
+function changeValue(id, mod, merchant, tab_name){
     if(mod == "add"){
         document.getElementById(id).value = parseInt(document.getElementById(id).value) + 1;
     } else {
@@ -95,14 +99,14 @@ function changeValue(id, mod, merchant){
             if (item.itemName == id.split('-')[0]) {
                 item.itemQuantity = parseInt(document.getElementById(id).value);
                 localStorage.setItem("cart", JSON.stringify(cart));
-                countTotal(merchant);
-                payment();
+                countTotal(merchant, tab_name);
+                tab_name == 'cart' ? populateCart() : populateSaved();
             }
         })
 
         if (item.merchant_name == merchant) {
-            let total_merchant = document.getElementById("total-"+merchant.split(/\s+/).join('-'));
-            total_merchant.innerText = countTotal(merchant);
+            let total_merchant = document.getElementById("total-"+merchant.split(/\s+/).join('-')+tab_name == 'cart' ? 'cart' : 'saved');
+            total_merchant.innerText = countTotal(merchant, tab_name);
         }
     })
 };
@@ -110,13 +114,18 @@ function changeValue(id, mod, merchant){
 function checkItem(item_name, tab_name){
     cart.forEach((merchant) => {
         merchant.items.find((element) => {
+            // if item on saved moved to cart
             if (element.itemName == item_name && element.selected == undefined) {
-                element.selected = 'checked'
+                element.selected = 'checked' // move to cart
                 document.getElementById('checkout-button').classList.remove('d-none');
                 localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // of item on item cart move to saved
             } else if (element.itemName == item_name && element.selected != undefined) {
-                element.selected = undefined;
+                element.selected = undefined; // move to saved
                 localStorage.setItem('cart', JSON.stringify(cart));
+
+                // delete checkout button if item in cart 0
                 if (countTotal('all') == 'Rp 0') {
                     document.getElementById('checkout-button').classList.add('d-none');
                 }
@@ -130,7 +139,9 @@ function checkItem(item_name, tab_name){
 }
 
 function populateSaved(){
-    let saved = JSON.parse(localStorage.getItem("cart")).filter(merchant => merchant.items.every(item => item.selected == undefined));
+    let saved = JSON.parse(localStorage.getItem("cart"));
+    saved.forEach(merchant => merchant.items = merchant.items.filter(item => item.selected == undefined));
+    saved = saved.filter(merchant => merchant.items.length > 0);
 
     document.getElementById('cart-items').classList.add('d-none');
     document.getElementById('pricetag').classList.add('d-none');
@@ -159,14 +170,14 @@ function populateSaved(){
                         '</div>'+
                     '</div>'+
                     '<div class="col-6 align-items-center text-end small-text">'+
-                        `<a onclick=${window.open(`/tab3-profile?store_id=${item.items[0].store_id}&f_pin=${getFpin()}`,"_self")}>`+
+                        `<a href="tab3-profile?store_id=${item.items[0].store_id}&f_pin=${getFpin()}" target = "_self">`+
                             '<img class="view-store" src="../assets/img/cart/store_purple.png"> View store'+
                         '</a>'+
                     '</div>'+
                 '</div>'+
 
                 '<!-- item 1 -->'+
-                `<div class="row mt-3" id="${merchant_name}-items"></div>`+
+                `<div class="row mt-3" id="${merchant_name}-items-saved"></div>`+
 
             '</div>'+
 
@@ -175,8 +186,8 @@ function populateSaved(){
                     '<div class="col-6 font-semibold">'+
                         'Total'+
                     '</div>'+
-                    `<div id="total-${merchant_name.split(/\s+/).join('-')}" class="col-6 font-semibold text-end">`+
-                        `${countTotal(merchant_name)}`+
+                    `<div id="total-${merchant_name.split(/\s+/).join('-')}-saved" class="col-6 font-semibold text-end">`+
+                        `${countTotal(merchant_name, 'saved')}`+
                     '</div>'+
                 '</div>'+
             '</div>'+
@@ -184,7 +195,7 @@ function populateSaved(){
             '<hr class="shop-border">'; 
 
             cartItems.innerHTML += html_shop;
-            let shopItems = document.getElementById(`${merchant_name}-items`);
+            let shopItems = document.getElementById(`${merchant_name}-items-saved`);
 
             item.items.forEach(item => {
 
@@ -215,13 +226,13 @@ function populateSaved(){
                             `<div class="row">`+
                                 `<div class="col-5">`+
                                     '<div class="input-group counter mt-2" style="width: 75px;">'+
-                                        `<button class="btn btn-outline-secondary btn-decrease" type="button" onclick="changeValue('${item.itemName}-quantity', 'sub', '${merchant_name}');">-</button>`+
+                                        `<button class="btn btn-outline-secondary btn-decrease" type="button" onclick="changeValue('${item.itemName}-quantity', 'sub', '${merchant_name}', 'saved');">-</button>`+
                                                 `<input id="${item.itemName}-quantity" type="number" maxlength="3" class="form-control text-center" min="1" value="${item.itemQuantity}">`+
-                                        `<button class="btn btn-outline-secondary btn-increase" type="button" onclick="changeValue('${item.itemName}-quantity', 'add', '${merchant_name}');">+</button>`+
+                                        `<button class="btn btn-outline-secondary btn-increase" type="button" onclick="changeValue('${item.itemName}-quantity', 'add', '${merchant_name}', 'saved');">+</button>`+
                                     '</div>'+
                                 `</div>`+
                                 '<div class="col-6 d-flex align-items-end justify-content-center">'+
-                                    `<div class="text-grey" onclick="checkItem('${item.itemName}', 'items')">Move to Cart</div>`+
+                                    `<div class="text-grey" onclick="checkItem('${item.itemName}', 'cart')">Move to Cart</div>`+
                                 '</div>'+
                             '</div>'+
                         '</div>'+
@@ -243,128 +254,131 @@ function populateSaved(){
 }
 
 function populateCart(mode){
-    let unsaved = JSON.parse(localStorage.getItem("cart")).filter(merchant => merchant.items.every(item => item.selected == 'checked'));
+    // get all item in the cart (your cart tab)
+    let unsaved = JSON.parse(localStorage.getItem("cart"));
+    unsaved.forEach(merchant => merchant.items = merchant.items.filter(item => item.selected == 'checked'));
+    unsaved = unsaved.filter(merchant => merchant.items.length > 0);
 
     document.getElementById('cart-items').classList.remove('d-none');
     document.getElementById('cart-saved').classList.add('d-none');
 
+    document.getElementById('cart-items').innerHTML = '';
+
+    // if there are item(s) on your cart tab
     if (unsaved.length > 0) {
-        let cartBody = document.getElementById('cart-body');
-        cartBody.classList.remove('d-none');
 
-        let checkoutButton = document.getElementById('checkout-button');
-        checkoutButton.classList.remove('d-none');
+        document.getElementById('cart-empty').classList.add('d-none');
+        document.getElementById('cart-body').classList.remove('d-none');
+        document.getElementById('checkout-button').classList.remove('d-none');
 
-        let cartEmpty = document.getElementById('cart-empty');
-        cartEmpty.classList.add('d-none');
+        unsaved.slice().reverse().forEach(item => {
+            let merchant_name = item.merchant_name;
+
+            let cartItems = document.getElementById('cart-items');
+
+            let html_shop = 
+            `<div class="container-fluid p-4 shop">` +
+
+                '<!-- shop name -->'+
+                '<div class="row">'+
+                    '<div class="col-6">'+
+                        '<div class="row font-semibold store-name">'+
+                            `<div class="col-2"><img class="verified" src="../assets/img/cart/Verified.png"></div><div class="col-10 px-1">${merchant_name}</div>`+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="col-6 align-items-center text-end small-text">'+
+                        `<a href="tab3-profile?store_id=${item.items[0].store_id}&f_pin=${getFpin()}" target = "_self">`+
+                            '<img class="view-store" src="../assets/img/cart/store_purple.png"> View store'+
+                        '</a>'+
+                    '</div>'+
+                '</div>'+
+
+                '<!-- item 1 -->'+
+                `<div class="row mt-3" id="${merchant_name}-items-cart"></div>`+
+
+            '</div>'+
+
+            '<div class="container-fluid px-4 py-2">'+
+                '<div class="row">'+
+                    '<div class="col-6 font-semibold">'+
+                        'Total'+
+                    '</div>'+
+                    `<div id="total-${merchant_name.split(/\s+/).join('-')}-cart" class="col-6 font-semibold text-end">`+
+                        `${countTotal(merchant_name, 'cart')}`+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+
+            '<hr class="shop-border">'; 
+
+            cartItems.innerHTML += html_shop;
+            let shopItems = document.getElementById(`${merchant_name}-items-cart`);
+
+            item.items.forEach(item => {
+
+                function ext(url) {
+                    return (url = url.substr(1 + url.lastIndexOf("/")).split('?')[0]).split('#')[0].substr(url.lastIndexOf(".") + 1);
+                }
+
+                let thumbnail_url;
+                if(ext(item.thumbnail) != 'mp4'){
+                    thumbnail_url = `<img class="product-img" src="${item.thumbnail}">`;
+                } else {
+                    thumbnail_url = `<video class="product-img" autoplay muted>
+                        <source src="${item.thumbnail}" type="video/mp4" />
+                    </video>`;
+                }
+
+                let html_item = 
+                `<div class="row mt-3">`+
+                    '<!-- img -->'+
+                    '<div class="col-3">'+
+                        `${thumbnail_url}`+
+                    '</div>'+
+                    '<!-- details -->'+
+                    '<div class="col-8 col-details font-medium">'+
+                        '<div class="ps-3">'+
+                            `<span class="item-name">${item.itemName}</span>`+
+                            `<div class="item-price">Rp ${numberWithDots(item.itemPrice)}</div>`+
+                            `<div class="row">`+
+                                `<div class="col-5">`+
+                                    '<div class="input-group counter mt-2" style="width: 75px;">'+
+                                        `<button class="btn btn-outline-secondary btn-decrease" type="button" onclick="changeValue('${item.itemName}-quantity', 'sub', '${merchant_name}', 'cart');">-</button>`+
+                                                `<input id="${item.itemName}-quantity" type="number" maxlength="3" class="form-control text-center" min="1" value="${item.itemQuantity}">`+
+                                        `<button class="btn btn-outline-secondary btn-increase" type="button" onclick="changeValue('${item.itemName}-quantity', 'add', '${merchant_name}', 'cart');">+</button>`+
+                                    '</div>'+
+                                `</div>`+
+                                '<div class="col-6 d-flex align-items-end justify-content-center">'+
+                                    `<div class="text-grey" onclick="checkItem('${item.itemName}', 'saved')">Save for later</div>`+
+                                '</div>'+
+                            '</div>'+
+                        '</div>'+
+                    '</div>'+
+                    '<!-- delete item -->'+
+                    '<div class="col-1 col-delete">'+
+                        '<div class="delete-btn">'+
+                            `<img onclick="deleteItem('${merchant_name}', '${item.itemName}', 'cart');" class="delete-icon" src="../assets/img/cart/Delete.png">`+
+                        '</div>'+
+                    '</div>'+
+                '</div>';
+
+                shopItems.innerHTML += html_item;
+                payment();
+            })
+        })
+
     } else {
         document.getElementById('cart-empty').classList.remove('d-none');
         document.getElementById('pricetag').classList.add('d-none');
     }
-
-    let cartItems = document.getElementById('cart-items');
-    cartItems.innerHTML = '';
-
-    unsaved.slice().reverse().forEach(item => {
-        let merchant_name = item.merchant_name;
-
-        let cartItems = document.getElementById('cart-items');
-
-        let html_shop = 
-        `<div class="container-fluid p-4 shop">` +
-
-            '<!-- shop name -->'+
-            '<div class="row">'+
-                '<div class="col-6">'+
-                    '<div class="row font-semibold store-name">'+
-                        `<div class="col-2"><img class="verified" src="../assets/img/cart/Verified.png"></div><div class="col-10 px-1">${merchant_name}</div>`+
-                    '</div>'+
-                '</div>'+
-                '<div class="col-6 align-items-center text-end small-text">'+
-                    `<a href="tab3-profile?store_id=${item.items[0].store_id}&f_pin=${getFpin()}">`+
-                        '<img class="view-store" src="../assets/img/cart/store_purple.png"> View store'+
-                    '</a>'+
-                '</div>'+
-            '</div>'+
-
-            '<!-- item 1 -->'+
-            `<div class="row mt-3" id="${merchant_name}-items"></div>`+
-
-        '</div>'+
-
-        '<div class="container-fluid px-4 py-2">'+
-            '<div class="row">'+
-                '<div class="col-6 font-semibold">'+
-                    'Total'+
-                '</div>'+
-                `<div id="total-${merchant_name.split(/\s+/).join('-')}" class="col-6 font-semibold text-end">`+
-                    `${countTotal(merchant_name)}`+
-                '</div>'+
-            '</div>'+
-        '</div>'+
-
-        '<hr class="shop-border">'; 
-
-        cartItems.innerHTML += html_shop;
-        let shopItems = document.getElementById(`${merchant_name}-items`);
-
-        item.items.forEach(item => {
-
-            function ext(url) {
-                return (url = url.substr(1 + url.lastIndexOf("/")).split('?')[0]).split('#')[0].substr(url.lastIndexOf(".") + 1);
-            }
-
-            let thumbnail_url;
-            if(ext(item.thumbnail) != 'mp4'){
-                thumbnail_url = `<img class="product-img" src="${item.thumbnail}">`;
-            } else {
-                thumbnail_url = `<video class="product-img" autoplay muted>
-                    <source src="${item.thumbnail}" type="video/mp4" />
-                </video>`;
-            }
-
-            let html_item = 
-            `<div class="row mt-3">`+
-                '<!-- img -->'+
-                '<div class="col-3">'+
-                    `${thumbnail_url}`+
-                '</div>'+
-                '<!-- details -->'+
-                '<div class="col-8 col-details font-medium">'+
-                    '<div class="ps-3">'+
-                        `<span class="item-name">${item.itemName}</span>`+
-                        `<div class="item-price">Rp ${numberWithDots(item.itemPrice)}</div>`+
-                        `<div class="row">`+
-                            `<div class="col-5">`+
-                                '<div class="input-group counter mt-2" style="width: 75px;">'+
-                                    `<button class="btn btn-outline-secondary btn-decrease" type="button" onclick="changeValue('${item.itemName}-quantity', 'sub', '${merchant_name}');">-</button>`+
-                                            `<input id="${item.itemName}-quantity" type="number" maxlength="3" class="form-control text-center" min="1" value="${item.itemQuantity}">`+
-                                    `<button class="btn btn-outline-secondary btn-increase" type="button" onclick="changeValue('${item.itemName}-quantity', 'add', '${merchant_name}');">+</button>`+
-                                '</div>'+
-                            `</div>`+
-                            '<div class="col-6 d-flex align-items-end justify-content-center">'+
-                                `<div class="text-grey" onclick="checkItem('${item.itemName}'), 'saved'">Save for later</div>`+
-                            '</div>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<!-- delete item -->'+
-                '<div class="col-1 col-delete">'+
-                    '<div class="delete-btn">'+
-                        `<img onclick="deleteItem('${merchant_name}', '${item.itemName}', 'items');" class="delete-icon" src="../assets/img/cart/Delete.png">`+
-                    '</div>'+
-                '</div>'+
-            '</div>';
-
-            shopItems.innerHTML += html_item;
-            payment();
-        })
-    })
 };
 
 async function payment() {
 
-    let unsaved = JSON.parse(localStorage.getItem("cart")).filter(merchant => merchant.items.every(item => item.selected == 'checked'));
+    let unsaved = JSON.parse(localStorage.getItem("cart"));
+    unsaved.forEach(merchant => merchant.items = merchant.items.filter(item => item.selected == 'checked'));
+    unsaved = unsaved.filter(merchant => merchant.items.length > 0);
+
     if (unsaved.length == 0){
 
         let cartBody = document.getElementById('cart-body');
@@ -448,10 +462,10 @@ async function deleteItem(merchant_name, product_name, tab_name) {
         // update localstorage
         localStorage.setItem('cart', JSON.stringify(cart));
         cart = JSON.parse(localStorage.getItem('cart'));
-        countTotal(merchant_name);
+        countTotal(merchant_name, tab_name);
     }
 
-    if (tab_name == 'items'){
+    if (tab_name == 'cart'){
         populateCart();
     } else {
         populateSaved();

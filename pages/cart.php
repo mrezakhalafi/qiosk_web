@@ -119,7 +119,7 @@
     <!-- checkout -->
     <div id="checkout-button" class="container-fluid checkout-btn py-3 d-none">
         <div class="row">
-            <a href="checkout.php">
+            <a href="checkout.php" target = "_self">
                 <div class="col-12 text-center">
                     Checkout
                 </div>

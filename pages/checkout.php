@@ -21,7 +21,7 @@
         <div class="col-12">
             <div class="row" style="background-color: #6945A5; padding: 10px 0 10px 0; position: sticky; z-index: 10; top: 0;">
                 <div class="col-4">
-                    <a onclick="goBack();">
+                    <a onclick="window.location = document.referrer;">
                         <img src="../assets/img/tab5/Back-(White).png" style="width:30px">
                     </a>
                 </div>
