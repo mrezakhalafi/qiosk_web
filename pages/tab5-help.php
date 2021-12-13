@@ -60,7 +60,7 @@ session_start();
     <div class="container">
         <div class="row mt-2 mb-2">
             <div class="col-1 col-md-1 col-lg-1">
-                <img class="section-menu-icon" src="../assets/img/icons/user-grey.png">
+                <img class="section-menu-icon" src="../assets/img/tab5/bubble_chat.png" style="width: 13px;">
             </div>
             <div class="col-10 col-md-10 col-lg-10">
                 <small data-translate="tab5help-2">Report A Problem</small>
@@ -69,7 +69,7 @@ session_start();
         <a href="">
             <div class="row mt-2 mb-2">
                 <div class="col-1 col-md-1 col-lg-1">
-                    <img class="section-menu-icon" src="../assets/img/icons/user-grey.png">
+                    <img class="section-menu-icon" src="../assets/img/tab5/document.png" style="width: 13px">
                 </div>
                 <div class="col-10 col-md-10 col-lg-10">
                     <small data-translate="tab5help-3">Support Request</small>
@@ -78,7 +78,7 @@ session_start();
         </a>
         <div class="row mt-2 mb-2">
             <div class="col-1 col-md-1 col-lg-1">
-                <img class="section-menu-icon" src="../assets/img/icons/user-grey.png">
+                <img class="section-menu-icon" src="../assets/img/tab5/lock.png" style="width: 13px">
             </div>
             <div class="col-10 col-md-10 col-lg-10">
                 <small data-translate="tab5help-4">Privacy and Security Help</small>

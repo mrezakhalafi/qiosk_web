@@ -159,7 +159,7 @@ function populateSaved(){
                         '</div>'+
                     '</div>'+
                     '<div class="col-6 align-items-center text-end small-text">'+
-                        `<a href="tab3-profile?store_id=${item.items[0].store_id}&f_pin=${getFpin()}">`+
+                        `<a onclick=${window.open(`/tab3-profile?store_id=${item.items[0].store_id}&f_pin=${getFpin()}`,"_self")}>`+
                             '<img class="view-store" src="../assets/img/cart/store_purple.png"> View store'+
                         '</a>'+
                     '</div>'+

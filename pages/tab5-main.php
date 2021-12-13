@@ -277,7 +277,7 @@
 		<div class="col-12 col-md-12 col-lg-12">
 			<div class="row align-items-center" style="background-color: #6945A5; padding: 10px 0 30px 0; padding-bottom: 65px">
 				<div id="searchFilter-a" class="col-10 col-md-10 col-lg-10 d-flex align-items-center justify-content-center text-white pl-2 pr-2">
-					<form id="searchFilterForm-a" action="search-result" method="GET" style="width: 95%;">
+					<form autocomplete="off" id="searchFilterForm-a" action="search-result" method="GET" style="width: 95%;">
 
 						<?php
 							$query = "";

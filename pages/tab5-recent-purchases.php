@@ -78,7 +78,7 @@
                     </a>
                 </div>
                 <div id="searchFilter-a" class="col-9 d-flex align-items-center justify-content-center text-white pl-2 pr-2">
-                    <form id="searchFilterForm-a" action="search-result" method=GET style="width: 90%;">
+                    <form autocomplete="off" id="searchFilterForm-a" action="search-result" method=GET style="width: 90%;">
 
                         <?php
                             $query = "";

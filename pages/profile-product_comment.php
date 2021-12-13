@@ -349,7 +349,7 @@ while ($wish = $wishlist->fetch_assoc()) {
         echo '</div>';
         echo '<div class="col-sm mt-2">';
         echo '<span class="prod-name"><img class="verified-icon-prod" src="../assets/img/icons/Verified.png">' . $store_name . '</span>&emsp;';
-        echo '<span class="prod-desc">' . strip_tags($desc) . '</span>';
+        echo '<span class="prod-desc">' . mb_strimwidth($desc,0,40,"...") . '</span>';
         echo '</div>';
         echo '</div>';
         ?>

@@ -4,8 +4,9 @@ function eraseQuery() {
     }
 
     $("#delete-query").click(function () {
-        $('#searchFilterForm-a input#query').val('');
-        $('#delete-query').addClass('d-none');
+        // $('#searchFilterForm-a input#query').val('');
+        // $('#delete-query').addClass('d-none');
+        window.location.href = "/qiosk_web/pages/search-result?query=";
     })
 
     $('#searchFilterForm-a input#query').keyup(function () {

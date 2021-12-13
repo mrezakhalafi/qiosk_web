@@ -71,7 +71,7 @@ session_start();
         <div class="container">
             <div class="row mt-2 mb-2">
                 <div class="col-1 col-md-1 col-lg-1">
-                    <img class="section-menu-icon" src="../assets/img/icons/Language.png">
+                    <img class="section-menu-icon" src="../assets/img/tab5/mail.png" style="width:13px">
                 </div>
                 <div class="col-8 col-md-8 col-lg-8">
                     <small data-translate="tab5notifications-2">Incoming Message(s)</small>
@@ -91,7 +91,7 @@ session_start();
             </div>
             <div class="row mt-2 mb-2">
                 <div class="col-1 col-md-1 col-lg-1">
-                    <img class="section-menu-icon" src="../assets/img/icons/Language.png">
+                    <img class="section-menu-icon" style="width:13px" src="../assets/img/tab5/phone.png">
                 </div>
                 <div class="col-8 col-md-8 col-lg-8">
                     <small data-translate="tab5notifications-3">Incoming Call(s)</small>
@@ -111,7 +111,7 @@ session_start();
             </div>
             <div class="row mt-2 mb-2">
                 <div class="col-1 col-md-1 col-lg-1">
-                    <img class="section-menu-icon" src="../assets/img/icons/user-grey.png">
+                    <img class="section-menu-icon" style="width:15px" src="../assets/img/tab5/vibrate.png">
                 </div>
                 <div class="col-9 col-md-9 col-lg-9">
                     <small data-translate="tab5notifications-4">Vibrate Mode</small>
