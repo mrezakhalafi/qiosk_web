@@ -403,8 +403,8 @@ async function payment() {
         time_detail.forEach(td => {
 
             let html_delivery =
-                '<div class="row mb-2">' +
-                    '<div class="col-1 delivery-options" style="margin-right: 5px;" onclick="checkThis(this);"></div>' +
+                '<div class="row mb-2" style="border: 1px solid lightgray">' +
+                    '<div class="col-1 d-flex align-items-center justify-content-center p-0 delivery-options" style="margin-right: 5px;" onclick="checkThis(this);"><span style="height: 15px;width: 15px;background-color: transparent;border: 1px solid lightgray;border-radius: 50%;display: inline-block;"></span></div>' +
                     '<div class="col-9">' +
                         `<div class="row fw-bold">${td.service} ${delivery}</div>` +
                         `<div class="row gray-text">Delivered on or before ${td.time_delivery_end} ${td.service == 'same_day' ? 'today' : 'next day'}</div>` +
@@ -589,7 +589,7 @@ function checkThis(e) {
     let verif = '<img src="../assets/img/tab5/Verified.png" alt="verified-icon" class="small-icon">';
     let deliv = document.querySelectorAll('.delivery-options');
     deliv.forEach(d => {
-        d.innerHTML = ""
+        d.innerHTML = `<span style="height: 15px;width: 15px;background-color: transparent;border: 1px solid lightgray;border-radius: 50%;display: inline-block;"></span>`;
     });
 
     e.innerHTML = verif;

@@ -139,7 +139,7 @@ modalAddToCart.addEventListener('shown.bs.modal', function() {
     if (window.Android) {
         window.Android.setIsProductModalOpen(true);
     }
-    checkButtonPos();
+    // checkButtonPos();
     playModalVideo();
 });
 

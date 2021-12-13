@@ -1157,7 +1157,7 @@ function addToCartModal() {
   $('#modal-addtocart').on('shown.bs.modal', function () {
     $('.modal').css('overflow', 'hidden');
     $('.modal').css('overscroll-behavior-y', 'contain');
-    checkButtonPos();
+    // checkButtonPos();
     pullRefresh();
     pauseAllVideo();
     playModalVideo();

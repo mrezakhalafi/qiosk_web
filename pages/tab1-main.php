@@ -49,7 +49,16 @@ $f_pin = $_GET['f_pin'];
     }
 
     .product-img {
-      height: 300px !important;
+      height: 200px !important;
+      width:auto;
+    }
+
+    .prod-addtocart .col-3 {
+      width: 33.33333333%;
+    }
+
+    .prod-addtocart .col-9 {
+      width: 66.66666667%;
     }
   }
   </style>

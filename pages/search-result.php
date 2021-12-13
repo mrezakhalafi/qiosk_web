@@ -110,7 +110,7 @@
         ?>
                 <div class="row mb-3" onclick="openShopProfile('<?= $shop_code ?>');">
                     <div class="col-3 d-flex align-items-center justify-content-center">
-                        <img class="logo-merchant" src="../images/<?= $shop_pic[0] ?>" height="50px" width="50px">
+                        <img class="logo-merchant" src="../images/<?= $shop_pic[0] ?>" height="50px" width="50px" style="object-fit: cover; object-position: center">
                     </div>
                     <div class="col-9 small-left-padding d-flex align-items-center">
                         <div class="col-7">
@@ -137,9 +137,9 @@
                         <div class="col-3 d-flex align-items-center justify-content-center">
 
                             <?php if ($user_pic): ?>
-                                <img class="logo-merchant" src="http://202.158.33.26/filepalio/image/<?= $user_pic ?>" height="50px" width="50px">
+                                <img class="logo-merchant" src="http://202.158.33.26/filepalio/image/<?= $user_pic ?>" height="50px" width="50px" style="object-fit: cover; object-position: center">
                             <?php else: ?>
-                                <img class="logo-merchant" src="../assets/img/tab5/no-avatar.jpg" height="50px" width="50px">
+                                <img class="logo-merchant" src="../assets/img/tab5/no-avatar.jpg" height="50px" width="50px" style="object-fit: cover; object-position: center">
                             <?php endif; ?>
 
                         </div>
@@ -186,9 +186,9 @@
                         <div class="col-3 d-flex align-items-center justify-content-center">
 
                             <?php if ($user_pic): ?>
-                                <img class="logo-merchant" src="http://202.158.33.26/filepalio/image/<?= $user_pic ?>" height="50px" width="50px">
+                                <img class="logo-merchant" src="http://202.158.33.26/filepalio/image/<?= $user_pic ?>" height="50px" width="50px" style="object-fit: cover; object-position: center">
                             <?php else: ?>
-                                <img class="logo-merchant" src="../assets/img/tab5/no-avatar.jpg" height="50px" width="50px">
+                                <img class="logo-merchant" src="../assets/img/tab5/no-avatar.jpg" height="50px" width="50px" style="object-fit: cover; object-position: center">
                             <?php endif; ?>
 
                         </div>
@@ -238,7 +238,7 @@
         ?>
                 <div class="row mb-3" onclick="openShopProfile('<?= $shop_code ?>');">
                     <div class="col-3 d-flex align-items-center justify-content-center">
-                        <img class="logo-merchant" src="../images/<?= $shop_pic[0] ?>" height="50px" width="50px">
+                        <img class="logo-merchant" src="../images/<?= $shop_pic[0] ?>" height="50px" width="50px" style="object-fit: cover; object-position: center">
                     </div>
                     <div class="col-9 small-left-padding d-flex align-items-center">
                         <div class="col-7">
