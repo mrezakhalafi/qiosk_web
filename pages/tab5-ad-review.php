@@ -1,3 +1,29 @@
+<?php
+
+	// KONEKSI
+
+	include_once($_SERVER['DOCUMENT_ROOT'] . '/nx_cook/logics/chat_dbconn.php');
+	$dbconn = paliolite();
+	session_start();
+
+	// ID SHOP GET
+
+	if (isset($_GET['id'])){
+		$id_shop = $_GET['id'];
+	}else if(isset($_SESSION['id_shop'])){
+		$id_shop = $_SESSION["id_shop"];
+	}else if(isset($_COOKIE['id_shop'])){
+		$id_shop = $_COOKIE['id_shop'];
+	}
+
+	// CHECK SHOP ID
+
+	if (!isset($id_shop)) {
+		die("ID Shop Tidak Diset.");
+	}
+
+?>
+
 <!doctype html>
 
 <html lang="en">
@@ -5,7 +31,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Project</title>
+  <title>Qiosk</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <link href="../assets/css/tab5-style.css" rel="stylesheet">

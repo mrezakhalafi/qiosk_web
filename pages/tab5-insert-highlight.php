@@ -106,17 +106,17 @@
     <!-- </div> -->
 
     <a href="tab5-main">
-        <img src="../assets/img/icons/Plus-(White).png" style="width: 40px; height: 40px; position: absolute; top: 0; margin-top: 10px; margin-left: 10px; transform: rotate(45deg);">
+        <img src="../assets/img/tab5/plus-black.png" id="close" style="width: 40px; height: 40px; position: absolute; top: 0; margin-top: 10px; margin-left: 10px; transform: rotate(45deg);">
     </a>
 
-    <img src="../assets/img/tab5/aa.png" onclick="insertText()" style="position: absolute; top: 0; margin-top: 13px; right: 0; margin-right: 20px" class="navbar-back-white">
-    <img src="../assets/img/tab5/tagged.png" onclick="openModal()" style="position: absolute; top: 0; margin-top: 14px; right: 0; margin-right: 60px; width: 23px; height: 23px" class="navbar-back-white">
-    <img src="../assets/img/tab5/sound.png" id="mute" onclick="muteVideo()" style="position: absolute; top: 0; margin-top: 14px; right: 0; margin-right: 95px; width: 32px; height: 23px" class="navbar-back-white">
+    <img src="../assets/img/tab5/aa-black.png" id="aa" onclick="insertText()" style="position: absolute; top: 0; margin-top: 13px; right: 0; margin-right: 20px" class="navbar-back-white">
+    <img src="../assets/img/tab5/tagged-black.png" id="tagged" onclick="openModal()" style="position: absolute; top: 0; margin-top: 14px; right: 0; margin-right: 60px; width: 23px; height: 23px" class="navbar-back-white">
+    <img src="../assets/img/tab5/sound-black.png" id="mute" onclick="muteVideo()" style="position: absolute; top: 0; margin-top: 14px; right: 0; margin-right: 95px; width: 32px; height: 23px" class="navbar-back-white">
     <img src="../assets/img/tab5/sound-red.png" id="unmute" onclick="unmuteVideo()" style="position: absolute; top: 0; margin-top: 14px; right: 0; margin-right: 95px; width: 32px; height: 23px; display: none" class="navbar-back-white">
 
     <div id="btn-place" class="fixed-bottom">
         <div class="row text-center">
-            <button class="btn-app-notification" id="btn-1" style="border:none" onclick="openModal()" data-translate="tab5inserthighlight-1">Add to Highlight</button>
+            <button class="btn-app-notification" id="btn-1" style="border:none; background-color: grey" onclick="openModal()" data-translate="tab5inserthighlight-1">Add to Highlight</button>
             <button class="btn-app-notification" id="btn-2" style="border:none; display:none" data-translate="tab5inserthighlight-2">Submit</button>
         </div>
     </div>
@@ -438,6 +438,11 @@
 		reader.onload = function(){;
             setImage(reader.result);
             $('#file-input-1').attr('disabled','disabled');
+            $('.btn-app-notification').css('background-color', '#6945A5');
+            $('#close').attr("src","../assets/img/icons/Plus-(White).png");
+            $('#aa').attr("src","../assets/img/tab5/aa.png");
+            $('#tagged').attr("src","../assets/img/tab5/tagged.png");
+            $('#mute').attr("src","../assets/img/tab5/sound.png");
             is_insert_media = 1;
         };
         reader.readAsDataURL(event.target.files[0]);
