@@ -329,7 +329,7 @@
 						<!-- IF USER DOESN'T HAVE PICTURE USE DEFAULT -->
 
 						<?php if ($user["IMAGE"]): ?>
-							<img src="http://202.158.33.27/filepalio/image/<?= $user['IMAGE'] ?>" class="ava-profile">
+							<img src="http://202.158.33.26/filepalio/image/<?= $user['IMAGE'] ?>" class="ava-profile">
 						<?php else: ?>
 							<img src="../assets/img/tab5/no-avatar.jpg" class="ava-profile">
 						<?php endif; ?>

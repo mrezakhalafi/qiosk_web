@@ -332,9 +332,9 @@
                             </div>
                             
                             <?php if (isset($address)): ?>
-                                <div class="col-11 p-0 text-black" style="font-size: 10px"><?= $address ?></div>
+                                <div class="col-11 p-0 text-black" style="font-size: 11px"><?= $address ?></div>
                             <?php else: ?>
-                                <div class="col-11 p-0 text-black" style="font-size: 10px">Jakarta, Indonesia</div>
+                                <div class="col-11 p-0 text-black" style="font-size: 11px">Jakarta, Indonesia</div>
                             <?php endif; ?>
                             
                         </div>
@@ -404,7 +404,7 @@
                     <?php if (isset($quote)): ?>
                         <div class="row"><?= $quote ?></div>
                     <?php else: ?>
-                        <div class="row">Deksripsi dari user ini belum di set.</div>
+                        <div class="row">Description of this user has not been set.</div>
                     <?php endif; ?>
 
 

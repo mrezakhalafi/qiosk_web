@@ -399,7 +399,7 @@
                     </div>
                 <?php else: ?>
                     <div class="user-desc" style="width:80%">
-                        Deskripsi dari user ini belum di set.
+                        Description of this user has not been set.
                     </div>
                 <?php endif; ?>
 
