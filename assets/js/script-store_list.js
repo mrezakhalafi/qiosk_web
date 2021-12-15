@@ -188,7 +188,7 @@ var fillGridStack = async function ($grid, sort_by, lim, off) {
         // '<div class="inner" onclick="openStore(\'' + element.CODE + '\',\'' + merchantWebURL + '\');" ' +
         // ' oncontextmenu="openStoreMenu(\'' + element.CODE + '\',\'' + element.NAME + '\')"' +
         // '>' +
-        '<a href="tab3-profile.php?store_id=' + element.CODE + '&f_pin=' + f_pin + '">' + 
+        '<a href="tab3-profile.php?store_id=' + element.CODE + '&f_pin=' + f_pin + '">' +
         '<div class="inner">' +
         // '<img id="store-image-' + element.CODE + '" class="content-image" src="' + element.THUMB_ID + '" />' +
         '<div id="store-carousel-' + element.CODE + '" class="carousel slide" ' +
@@ -217,7 +217,7 @@ var fillGridStack = async function ($grid, sort_by, lim, off) {
         }).format(element.REWARD_PTS) +
         '</span>' +
         '</div>' +
-        '</div>' + 
+        '</div>' +
         '</a>'
       //  +
       // '</div></div>' 
@@ -280,7 +280,7 @@ var fillGridStack = async function ($grid, sort_by, lim, off) {
   }, 3000);
 
   $('#loading').addClass('d-none');
-  
+
   // Promise.all(Array.from(document.querySelectorAll('.carousel-item.active img.content-image')).filter(img => !img.complete).map(img => new Promise(resolve => {
   //   img.onload = img.onerror = resolve;
   // }))).then(() => {
@@ -351,7 +351,7 @@ function fillGridWidgets(grid, sort_by, lim, off) {
         // '<div class="inner" onclick="openStore(\'' + element.CODE + '\',\'' + merchantWebURL + '\');" ' +
         // ' oncontextmenu="openStoreMenu(\'' + element.CODE + '\',\'' + element.NAME + '\')"' +
         // '>' +
-        '<a href="tab3-profile.php?store_id=' + element.CODE + '&f_pin=' + f_pin + '">' + 
+        '<a href="tab3-profile.php?store_id=' + element.CODE + '&f_pin=' + f_pin + '">' +
         '<div class="inner">' +
         '<div id="store-carousel-' + element.CODE + '" class="carousel slide" ' +
         ('data-bs-ride="carousel" data-bs-interval="false"') +
@@ -658,6 +658,8 @@ function prefetchStores() {
 
   var productData = JSON.parse(localStorage.getItem("store_pics_data"));
   productData.forEach(storeEntry => {
+    let newThumb = storeEntry.THUMB_ID.replaceAll("http://202.158.33.26", "");
+    storeEntry.THUMB_ID = newThumb;
     $thumb_ids = storeEntry.THUMB_ID.split("|");
     $thumb_ids.forEach(function (thumbid, index) {
       if (!thumbid.startsWith("http")) {
@@ -800,21 +802,25 @@ function fetchProductPics() {
         if (productImageCountMap.has(storeEntry.STORE_CODE) && productImageCountMap.get(storeEntry.STORE_CODE) >= 3) {
           return;
         }
-
+        let newThumb = storeEntry.THUMB_ID.replaceAll("http://202.158.33.26", "");
+        storeEntry.THUMB_ID = newThumb;
         $thumb_ids = storeEntry.THUMB_ID.split("|");
         $thumb_ids.forEach(function (thumbid, index) {
-          if (!thumbid.startsWith("http")) {
-            var root = 'http://' + location.host;
-            var profPic = "";
+          // if (!thumbid.startsWith("http")) {
+          //   var root = 'http://' + location.host;
+          //   var profPic = "";
 
-            if (thumbid == null || thumbid == "") {
-              profPic = "/qiosk_web/assets/img/palio.png";
-            } else {
-              // profpic = root + ":2809/file/image/" + storeEntry.THUMB_ID;
-              profPic = "/qiosk_web/images/" + thumbid;
-            }
-            $thumb_ids[index] = profPic;
-          }
+          //   if (thumbid == null || thumbid == "") {
+          //     profPic = "/qiosk_web/assets/img/palio.png";
+          //   } else {
+          //     // profpic = root + ":2809/file/image/" + storeEntry.THUMB_ID;
+          //     profPic = "/qiosk_web/images/" + thumbid;
+          //   }
+          //   $thumb_ids[index] = profPic;
+          // } else {
+          let profpic = thumbid.replace("http://202.158.33.26", "");
+          $thumb_ids[index] = profpic;
+          // }
         });
         if (!productImageMap.has(storeEntry.STORE_CODE)) {
           productImageMap.set(storeEntry.STORE_CODE, $thumb_ids);
@@ -828,7 +834,7 @@ function fetchProductPics() {
           productImageCountMap.set(storeEntry.STORE_CODE, productImageCountMap.get(storeEntry.STORE_CODE) + 1);
         }
       });
-      localStorage.setItem("store_pics_data", xmlHttp.responseText);
+      localStorage.setItem("store_pics_data", JSON.stringify(productData));
       fillGridStack('#content-grid', currentSort, limit, offset);
     }
   }
@@ -876,7 +882,7 @@ function filterStoreData($filterCategory, $filterSearch, isSearching) {
     }
 
   });
-  if (isSearching){
+  if (isSearching) {
     fillGridStack('#content-grid', currentSort, limit, offset);
   }
   fetchRewardPoints();
@@ -1000,7 +1006,7 @@ $('#header').click(function () {
 //       topPosition = topPosition - (st - lastScrollTop);
 //     }
 //     const tp = '' + topPosition + "px";
-    
+
 //     // Scroll Up
 //     if (st + $(window).height() < $(document).height()) {
 //       $('#header-layout').css('top', tp);
@@ -1013,23 +1019,23 @@ let headerHeight = $('#header-layout').outerHeight();
 
 function hasScrolled() {
   var st = $(this).scrollTop();
-  
+
   // Make sure they scroll more than delta
-  if(Math.abs(lastScrollTop - st) <= delta)
-      return;
-  
+  if (Math.abs(lastScrollTop - st) <= delta)
+    return;
+
   // If they scrolled down and are past the navbar, add class .nav-up.
   // This is necessary so you never see what is "behind" the navbar.
-  if (st > lastScrollTop && st > navbarHeight){
-      // Scroll Down
-      $('#header-layout').css('top', -headerHeight + 'px');
+  if (st > lastScrollTop && st > navbarHeight) {
+    // Scroll Down
+    $('#header-layout').css('top', -headerHeight + 'px');
   } else {
-      // Scroll Up
-      if(st + $(window).height() < $(document).height()) {
-        $('#header-layout').css('top', '0px');
-      }
+    // Scroll Up
+    if (st + $(window).height() < $(document).height()) {
+      $('#header-layout').css('top', '0px');
+    }
   }
-  
+
   lastScrollTop = st;
 }
 
@@ -1044,7 +1050,7 @@ function scrollFunction() {
   if ($(document).scrollTop() > navbarHeight) {
     if (!isSearchHidden)
       // headerOut();
-    $("#scroll-top").css('display', 'block');
+      $("#scroll-top").css('display', 'block');
   } else {
     $("#scroll-top").css('display', 'none');
   }
@@ -1340,7 +1346,7 @@ function updateCartCounter() {
   } else {
     $('#cart-counter').addClass('d-none');
   }
-} 
+}
 
 $(function () {
   // selectCategoryFilter();

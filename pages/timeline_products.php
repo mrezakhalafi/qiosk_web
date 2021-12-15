@@ -101,7 +101,7 @@ if (empty($products_final)) {
         $store_id = $products_final[$i]["SHOP_CODE"];
         $desc = nl2br($products_final[$i]["DESCRIPTION"]);
         $thumb_id = $products_final[$i]["THUMB_ID"];
-        $thumb_ids = explode("|", $thumb_id);
+        $thumb_ids_raw = explode("|", $thumb_id);
         $store_thumb_id = $products_final[$i]["STORE_THUMB_ID"];
         $store_name = $products_final[$i]["STORE_NAME"];
         $store_link = $products_final[$i]["STORE_LINK"];
@@ -121,6 +121,12 @@ if (empty($products_final)) {
             $thumb = "/qiosk_web/images/" . $imgs[0];
         } else {
             $thumb = $imgs[0];
+        }
+
+        $thumb_ids = array();
+        
+        foreach ($thumb_ids_raw as $thid) {
+            array_push($thumb_ids, str_replace("http://202.158.33.26","",$thid));
         }
 
         // if ($i > 0) {

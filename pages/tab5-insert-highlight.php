@@ -80,6 +80,19 @@
             color: red;
             margin-left: -3px;
         }
+
+        /* FOR FULL WIDTH MODAL */
+
+        .modal-dialog {
+            max-width: 100%;
+            margin: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            margin-top: 10px;
+        }
+        
     </style>
 </head>
 
