@@ -1352,7 +1352,9 @@
 				var user = JSON.parse(xmlHttp.responseText);
 
 				var name = user['FIRST_NAME']+" "+user['LAST_NAME'];
+				$('.ava-profile').attr('src','http://202.158.33.26/filepalio/image/'+user['IMAGE']);
 				console.log(name);
+				console.log(user['IMAGE']); 4-5-4 > 5-6-5 
 				$('#place_name').text(name);
 			}
 		}

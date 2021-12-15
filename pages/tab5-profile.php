@@ -338,15 +338,7 @@
 					</div>
 					<div class="col-6 col-md-6 col-lg-6" style="margin-left: -5px; margin-right: 5px">
 						<div class="row profile-name" onclick="profileAndroid()" style="font-size: 12px; margin-bottom: 4px">
-
-                        	<!-- IF USER HAVEN'T CHANGED PROFILE = NAME IS RED -->
-
-							<?php if ($user['IS_CHANGED_PROFILE'] == 1): ?>
-								<b><?= $user['FIRST_NAME'] . " " . $user['LAST_NAME'] ?></b>
-							<?php else: ?>
-								<b style="color: #ba2323"><?= $user['FIRST_NAME'] . " " . $user['LAST_NAME'] ?></b>
-							<?php endif; ?>
-
+							<b><?= $user['FIRST_NAME'] . " " . $user['LAST_NAME'] ?></b>
 						</div>
 						<img src="../assets/img/icons/Delivery-Address-black.png" alt="" srcset="" height="12px;" style="position: absolute; margin-left: -15px; margin-top: 2px">
 						
