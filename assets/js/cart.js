@@ -255,7 +255,11 @@ function populateSaved(){
 
 function populateCart(mode){
     // get all item in the cart (your cart tab)
-    let unsaved = JSON.parse(localStorage.getItem("cart"));
+    let cartStr = localStorage.getItem("cart");
+    if(!cartStr){
+        cartStr = "[]";
+    }
+    let unsaved = JSON.parse(cartStr);
     unsaved.forEach(merchant => merchant.items = merchant.items.filter(item => item.selected == 'checked'));
     unsaved = unsaved.filter(merchant => merchant.items.length > 0);
 
@@ -1322,4 +1326,10 @@ class AddressModal {
 async function changeDeliveryAddress() {
     // let response = await AddressModal.build();
     window.open('/qiosk_web/pages/tab5-change-address' , '_self')
+}
+
+function pauseVideos() {
+    $('video').each(function () {
+        $(this).get(0).pause();
+    });
 }
