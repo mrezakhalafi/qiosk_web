@@ -157,7 +157,7 @@
               <a href="tab5-profile.php?id_visit=<?= $follow['F_PIN'] ?>&f_pin=<?= $id_user ?>">
                 
                 <?php if ($follow['IMAGE']): ?>
-                  <img src="http://202.158.33.26/filepalio/image/<?= $images[0] ?>" class="followers-ava" style="object-fit: cover; height: 30px; border-radius: 50%">
+                  <img src="https://qmera.io/filepalio/image/<?= $images[0] ?>" class="followers-ava" style="object-fit: cover; height: 30px; border-radius: 50%">
                 <?php else: ?>
                   <img src="../assets/img/tab5/no-avatar.jpg" class="followers-ava" style="object-fit: cover; height: 30px; border-radius: 50%">
                 <?php endif; ?>

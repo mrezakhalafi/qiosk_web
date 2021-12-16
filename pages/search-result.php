@@ -137,7 +137,7 @@
                         <div class="col-3 d-flex align-items-center justify-content-center">
 
                             <?php if ($user_pic): ?>
-                                <img class="logo-merchant" src="http://202.158.33.26/filepalio/image/<?= $user_pic ?>" height="50px" width="50px" style="object-fit: cover; object-position: center">
+                                <img class="logo-merchant" src="https://qmera.io/filepalio/image/<?= $user_pic ?>" height="50px" width="50px" style="object-fit: cover; object-position: center">
                             <?php else: ?>
                                 <img class="logo-merchant" src="../assets/img/tab5/no-avatar.jpg" height="50px" width="50px" style="object-fit: cover; object-position: center">
                             <?php endif; ?>
@@ -186,7 +186,7 @@
                         <div class="col-3 d-flex align-items-center justify-content-center">
 
                             <?php if ($user_pic): ?>
-                                <img class="logo-merchant" src="http://202.158.33.26/filepalio/image/<?= $user_pic ?>" height="50px" width="50px" style="object-fit: cover; object-position: center">
+                                <img class="logo-merchant" src="https://qmera.io/filepalio/image/<?= $user_pic ?>" height="50px" width="50px" style="object-fit: cover; object-position: center">
                             <?php else: ?>
                                 <img class="logo-merchant" src="../assets/img/tab5/no-avatar.jpg" height="50px" width="50px" style="object-fit: cover; object-position: center">
                             <?php endif; ?>

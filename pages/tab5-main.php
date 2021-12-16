@@ -329,7 +329,7 @@
 						<!-- IF USER DOESN'T HAVE PICTURE USE DEFAULT -->
 
 						<?php if ($user["IMAGE"]): ?>
-							<img src="http://202.158.33.26/filepalio/image/<?= $user['IMAGE'] ?>" class="ava-profile">
+							<img src="https://qmera.io/filepalio/image/<?= $user['IMAGE'] ?>" class="ava-profile">
 						<?php else: ?>
 							<img src="../assets/img/tab5/no-avatar.jpg" class="ava-profile">
 						<?php endif; ?>
@@ -1352,9 +1352,9 @@
 				var user = JSON.parse(xmlHttp.responseText);
 
 				var name = user['FIRST_NAME']+" "+user['LAST_NAME'];
-				$('.ava-profile').attr('src','http://202.158.33.26/filepalio/image/'+user['IMAGE']);
+				$('.ava-profile').attr('src','https://qmera.io/filepalio/image/'+user['IMAGE']);
 				console.log(name);
-				console.log(user['IMAGE']); 4-5-4 > 5-6-5 
+				console.log(user['IMAGE']);
 				$('#place_name').text(name);
 			}
 		}

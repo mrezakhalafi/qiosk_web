@@ -59,7 +59,7 @@
 
     while ($product = $products->fetch_assoc()){
         $owner = "{$product['OWNER_FIRST_NAME']} {$product['OWNER_LAST_NAME']}";
-        $avatar = "http://202.158.33.26/filepalio/image/{$product['AVATAR']}";
+        $avatar = "https://qmera.io/filepalio/image/{$product['AVATAR']}";
         $views = $product['TOTAL_VIEWS'] ?? 0;
         $created_at = $product['CREATED_AT'];
         $quote = $product['QUOTE'];

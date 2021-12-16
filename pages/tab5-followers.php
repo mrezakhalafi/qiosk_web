@@ -209,11 +209,11 @@
               <?php if ($follow['IMAGE']): ?>
                 <?php if ($follow['F_PIN'] == $id_user): ?>
                   <a href="tab5-main">
-                    <img src="http://202.158.33.26/filepalio/image/<?= $follow['IMAGE'] ?>" class="followers-ava">
+                    <img src="https://qmera.io/filepalio/image/<?= $follow['IMAGE'] ?>" class="followers-ava">
                   </a>
                 <?php else: ?>
                   <a href="tab5-profile?id_visit=<?= $follow['F_PIN'] ?>">
-                    <img src="http://202.158.33.26/filepalio/image/<?= $follow['IMAGE'] ?>" class="followers-ava">
+                    <img src="https://qmera.io/filepalio/image/<?= $follow['IMAGE'] ?>" class="followers-ava">
                   </a>
                 <?php endif; ?>
               <?php else: ?>

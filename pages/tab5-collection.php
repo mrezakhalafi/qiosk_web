@@ -316,7 +316,7 @@
             <div class="row mb-3">
                 <div class="col-3">
                     <?php if ($avatar): ?>
-                        <img class="ava-profile" style="margin-top: 4px; margin-left: 9px" src="http://202.158.33.26/filepalio/image/<?= $avatar; ?>">
+                        <img class="ava-profile" style="margin-top: 4px; margin-left: 9px" src="https://qmera.io/filepalio/image/<?= $avatar; ?>">
                     <?php else: ?>
                         <img class="ava-profile" style="margin-top: 4px; margin-left: 9px" src="../assets/img/tab5/no-avatar.jpg">
                     <?php endif; ?>
