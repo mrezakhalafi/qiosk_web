@@ -142,6 +142,7 @@
     }else{
         $current = $arrayResult[$singleOrder['TRANSACTION_ID']];
         $current->AMOUNT += $singleOrder['AMOUNT'];
+        $current->THUMB_ID .= "|".$singleOrder['THUMB_ID'];
         $current->PRICE += $singleOrder['PRICE'] * $singleOrder['AMOUNT'];
         $current->P_CODE = $current->P_CODE."|".$singleOrder['P_CODE'];
         $arrayResult[$singleOrder['TRANSACTION_ID']] = $current;

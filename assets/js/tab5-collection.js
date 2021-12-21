@@ -174,11 +174,11 @@ class Addtocart {
         console.log(thumb_ext);
 
         if ($image_type_arr.includes(thumb_ext)) {
-            thumb_content = `<img class="product-img" src="${ thumb_id }">`;
+            thumb_content = `<img class="product-img" src="${ thumb_id.replace("http://202.158.33.26","") }">`;
         } else if ($video_type_arr.includes(thumb_ext)) {
             thumb_content = `
             <video class="product-img" controls>
-            <source src="${thumb_id}">
+            <source src="${thumb_id.replace("http://202.158.33.26","")}">
             </video>
             `;
         }

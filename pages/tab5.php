@@ -459,6 +459,8 @@
 
 	// SCRIPT CHANGE LANGUAGE BY SELECT
 
+	var androidLang;
+
 	function changeLanguageSelect(lang) {
 
 		localStorage.lang = lang;
@@ -473,6 +475,17 @@
 
 		change_lang(lang);
 
+		if (lang == 1){
+			androidLang = "in";
+		}else if(lang == 0){
+			androidLang = "en";
+		}
+
+		console.log(androidLang);
+
+		if (window.Android){
+			Android.changeLang(androidLang);
+		}
 	}
 
 	// RESET QUERY SEARCH

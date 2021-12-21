@@ -669,7 +669,7 @@ function hideAddToCart() {
 }
 
 function pauseAll() {
-    $('video.content-image').each(function () {
+    $('video.content-image, video').each(function () {
         $(this).get(0).pause();
     })
 }

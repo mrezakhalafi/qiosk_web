@@ -117,11 +117,19 @@ function drawActivityNotif(arr) {
             `;
         })
     } else {
-        activityTab.innerHTML = `<div class="row">
-            <div class="col-12 text-center">
-                <h6>Belum ada notifikasi</h6>
-            </div>
-        </div>`;
+        if (localStorage.lang == 1) {
+            activityTab.innerHTML = `<div class="row">
+                <div class="col-12 text-center">
+                    <h6>Belum ada notifikasi</h6>
+                </div>
+            </div>`;
+        } else {
+            activityTab.innerHTML = `<div class="row">
+                <div class="col-12 text-center">
+                    <h6>No new notifications</h6>
+                </div>
+            </div>`;
+        }
     }
 }
 
@@ -303,11 +311,19 @@ function drawOrderNotif(arr) {
             orderTab.innerHTML += all;
         })
     } else {
-        orderTab.innerHTML = `<div class="row">
-            <div class="col-12 text-center">
-                <h6>Belum ada notifikasi</h6>
-            </div>
-        </div>`;
+        if (localStorage.lang == 1) {
+            activityTab.innerHTML = `<div class="row">
+                <div class="col-12 text-center">
+                    <h6>Belum ada notifikasi</h6>
+                </div>
+            </div>`;
+        } else {
+            activityTab.innerHTML = `<div class="row">
+                <div class="col-12 text-center">
+                    <h6>No new notifications</h6>
+                </div>
+            </div>`;
+        }
     }
 }
 

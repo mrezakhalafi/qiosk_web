@@ -941,7 +941,7 @@ function playVid() {
 }
 
 function pauseAll() {
-  $('.carousel-item video, .timeline-image video').each(function () {
+  $('.carousel-item video, .timeline-image video, video').each(function () {
     $(this).get(0).pause();
   })
   visibleCarousel.clear();
