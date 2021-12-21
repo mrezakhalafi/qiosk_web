@@ -26,7 +26,7 @@ foreach ($cart as $c) {
     $query->close();
 
     // insert to purchase table
-    $query = $dbconn->prepare("INSERT INTO PURCHASE (TRANSACTION_ID, MERCHANT_ID, PRODUCT_ID, PRICE, AMOUNT, METHOD, FPIN) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $query = $dbconn->prepare("INSERT INTO PURCHASE (TRANSACTION_ID, MERCHANT_ID, PRODUCT_ID, POST_ID, PRICE, AMOUNT, METHOD, FPIN) VALUES (?, ?, ?, NULL, ?, ?, ?, ?)");
     $query->bind_param("sssiiss", $transaction_id, $merchant_id, $p_code, $price, $amount, $method, $fpin);
     $query->execute();
     $query->close();

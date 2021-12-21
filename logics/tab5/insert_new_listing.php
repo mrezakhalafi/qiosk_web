@@ -139,9 +139,9 @@ if ($allImagesUploaded==1){
 
   $query ="INSERT INTO palio_lite.PRODUCT (CODE, MERCHANT_CODE, NAME, CREATED_DATE, SHOP_CODE, 
             DESCRIPTION, THUMB_ID, CATEGORY, SCORE, TOTAL_LIKES, PRICE, IS_SHOW, FILE_TYPE, 
-            REWARD_POINT, QUANTITY, VARIATION) VALUES ('".$code."','1','".$product_title."','".(time()*1000)."',
+            REWARD_POINT, QUANTITY, VARIATION, IS_POST) VALUES ('".$code."','1','".$product_title."','".(time()*1000)."',
             '".$id_shop."','".$product_description."','".$listing_thumbnail."','".$category."','1',
-            '1','".$price."','1','0','0','".$stock."','".$variation."')";
+            '1','".$price."','1','0','0','".$stock."','".$variation."','0')";
 
   $queryDetails = "INSERT INTO PRODUCT_SHIPMENT_DETAIL (PRODUCT_CODE, LENGTH, WIDTH, HEIGHT, 
                     IS_FRAGILE, WEIGHT) VALUES ('".$code."','1','1','1','1','".$weight."')";

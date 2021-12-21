@@ -240,7 +240,7 @@
                     
                     <?php endforeach; ?>
 
-                    <input type="hidden" class="category" name="category" value="">
+                    <input type="hidden" class="category" name="category" value="<?= $dataProduct['CATEGORY'] ?>">
 
                     </ul>
                 </div>

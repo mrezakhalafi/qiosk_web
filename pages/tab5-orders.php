@@ -29,10 +29,10 @@
 
     $query = $_GET['query'];
     
-    $query = $dbconn->prepare("SELECT PURCHASE.*, SHOP.*, PRODUCT.THUMB_ID, PRODUCT.CODE AS P_CODE 
+    $query = $dbconn->prepare("SELECT PURCHASE.*, SHOP.*, PRODUCT.THUMB_ID, PRODUCT.CODE AS P_CODE, PURCHASE.PRICE AS TOTAL_PRICE 
                                 FROM PURCHASE LEFT JOIN SHOP ON PURCHASE.MERCHANT_ID = SHOP.CODE 
-                                LEFT JOIN PRODUCT ON PURCHASE.PRODUCT_ID = PRODUCT.CODE 
-                                WHERE FPIN ='".$id_user."' AND TRANSACTION_ID IN (SELECT 
+                                LEFT JOIN PRODUCT ON PURCHASE.PRODUCT_ID = PRODUCT.CODE
+                                WHERE FPIN ='".$id_user."' AND PRODUCT_ID IS NOT NULL AND TRANSACTION_ID IN (SELECT 
                                 B.TRANSACTION_ID FROM PRODUCT A LEFT JOIN PURCHASE B ON A.CODE = 
                                 B.PRODUCT_ID LEFT JOIN SHOP S ON S.CODE = A.SHOP_CODE WHERE A.NAME 
                                 LIKE '%".$query."%' OR S.NAME LIKE '%".$query."%' GROUP BY 
@@ -44,13 +44,14 @@
   }else{
 
     $query = $dbconn->prepare("SELECT PURCHASE.*, SHOP.*, PRODUCT.THUMB_ID, PRODUCT.CODE AS 
-                                P_CODE FROM PURCHASE LEFT JOIN SHOP ON PURCHASE.MERCHANT_ID = 
+                                P_CODE, PURCHASE.PRICE AS TOTAL_PRICE FROM PURCHASE LEFT JOIN SHOP ON PURCHASE.MERCHANT_ID = 
                                 SHOP.CODE LEFT JOIN PRODUCT ON PURCHASE.PRODUCT_ID = 
-                                PRODUCT.CODE WHERE FPIN ='".$id_user."' ORDER BY 
+                                PRODUCT.CODE WHERE FPIN ='".$id_user."' AND PRODUCT_ID IS NOT NULL ORDER BY 
                                 PURCHASE.CREATED_AT DESC");
     $query->execute();
     $userOrders = $query->get_result();
     $query->close();
+
   }
 
   // DUMMY DELIVERY PRICE
@@ -140,8 +141,8 @@
 
     }else{
         $current = $arrayResult[$singleOrder['TRANSACTION_ID']];
-        $current->PRICE += $singleOrder['PRICE'] * $singleOrder['AMOUNT'];
         $current->AMOUNT += $singleOrder['AMOUNT'];
+        $current->PRICE += $singleOrder['PRICE'] * $singleOrder['AMOUNT'];
         $current->P_CODE = $current->P_CODE."|".$singleOrder['P_CODE'];
         $arrayResult[$singleOrder['TRANSACTION_ID']] = $current;
     }
@@ -256,7 +257,7 @@
               <?= date_format($order_date,"F d, Y"); ?>
             </div>
             <div class="orders-text" style="font-weight:600">
-              Rp <?= number_format($total_price+$delivery,0,",",",") ?>
+              Rp <?= number_format($total_price + $delivery,0,",",",") ?>
             </div>
             <div class="orders-text" style="font-weight:600">
               <?= $recentOrders['AMOUNT'] ?> <span data-translate="tab5orders-7">Items<span>

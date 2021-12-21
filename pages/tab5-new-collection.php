@@ -18,7 +18,7 @@ $query = $dbconn->prepare("SELECT p.*, s.NAME AS MERCHANT_NAME, pr.CODE AS PRODU
 FROM PURCHASE p
 LEFT JOIN SHOP s ON p.MERCHANT_ID = s.CODE
 LEFT JOIN PRODUCT pr ON p.PRODUCT_ID = pr.CODE
-WHERE p.FPIN = '$f_pin' AND pr.CODE IS NOT NULL");
+WHERE p.FPIN = '$f_pin' AND pr.CODE IS NOT NULL AND s.IS_QIOSK = 2");
 $query->execute();
 $results = $query->get_result();
 $query->close();
@@ -33,7 +33,7 @@ $query = $dbconn->prepare("SELECT w.*, pr.PRICE, s.NAME AS MERCHANT_NAME, pr.COD
 FROM WISHLIST_PRODUCT w
 LEFT JOIN PRODUCT pr ON w.PRODUCT_CODE = pr.CODE
 LEFT JOIN SHOP s ON pr.SHOP_CODE = s.CODE
-WHERE w.FPIN = '$f_pin' AND pr.CODE IS NOT NULL");
+WHERE w.FPIN = '$f_pin' AND pr.CODE IS NOT NULL AND s.IS_QIOSK = 2");
 $query->execute();
 $results = $query->get_result();
 $query->close();

@@ -10,6 +10,7 @@ var grid_stack = GridStack.init({
   disableOneColumnMode: true,
   column: 3,
   margin: 2.5,
+  animate: false,
 });
 
 var ua = window.navigator.userAgent;
@@ -642,7 +643,7 @@ $(function () {
   fetchStores();
   updateStoreViewer();
   activeCategoryTab();
-  // selectCategoryFilter();
+  selectCategoryFilter();
 });
 
 var storeMap = new Map();
@@ -662,18 +663,8 @@ function prefetchStores() {
     storeEntry.THUMB_ID = newThumb;
     $thumb_ids = storeEntry.THUMB_ID.split("|");
     $thumb_ids.forEach(function (thumbid, index) {
-      if (!thumbid.startsWith("http")) {
-        var root = 'http://' + location.host;
-        var profPic = "";
-
-        if (thumbid == null || thumbid == "") {
-          profPic = "/qiosk_web/assets/img/palio.png";
-        } else {
-          // profpic = root + ":2809/file/image/" + storeEntry.THUMB_ID;
-          profPic = "/qiosk_web/images/" + thumbid;
-        }
-        $thumb_ids[index] = profPic;
-      }
+      let profpic = thumbid.replace("http://202.158.33.26", "");
+          $thumb_ids[index] = profpic;
     });
     if (!productImageMap.has(storeEntry.STORE_CODE)) {
       productImageMap.set(storeEntry.STORE_CODE, $thumb_ids);
@@ -806,18 +797,6 @@ function fetchProductPics() {
         storeEntry.THUMB_ID = newThumb;
         $thumb_ids = storeEntry.THUMB_ID.split("|");
         $thumb_ids.forEach(function (thumbid, index) {
-          // if (!thumbid.startsWith("http")) {
-          //   var root = 'http://' + location.host;
-          //   var profPic = "";
-
-          //   if (thumbid == null || thumbid == "") {
-          //     profPic = "/qiosk_web/assets/img/palio.png";
-          //   } else {
-          //     // profpic = root + ":2809/file/image/" + storeEntry.THUMB_ID;
-          //     profPic = "/qiosk_web/images/" + thumbid;
-          //   }
-          //   $thumb_ids[index] = profPic;
-          // } else {
           let profpic = thumbid.replace("http://202.158.33.26", "");
           $thumb_ids[index] = profpic;
           // }
@@ -1143,10 +1122,10 @@ function searchFilter() {
     history.pushState({
       'search': query,
       'filter': filter
-    }, "Palio Browser", dest);
+    }, "Qiosk", dest);
     offset = 0;
     filterStoreData(filter, query, true);
-  }, 3000);
+  }, 500);
 }
 
 function selectCategoryFilter() {
@@ -1349,7 +1328,7 @@ function updateCartCounter() {
 }
 
 $(function () {
-  // selectCategoryFilter();
+  selectCategoryFilter();
   updateCounter();
 
   let urlParams = new URLSearchParams(window.location.search);

@@ -1352,7 +1352,11 @@
 				var user = JSON.parse(xmlHttp.responseText);
 
 				var name = user['FIRST_NAME']+" "+user['LAST_NAME'];
-				$('.ava-profile').attr('src','https://qmera.io/filepalio/image/'+user['IMAGE']);
+
+				if (user['IMAGE']){
+					$('.ava-profile').attr('src','https://qmera.io/filepalio/image/'+user['IMAGE']);
+				}
+
 				console.log(name);
 				console.log(user['IMAGE']);
 				$('#place_name').text(name);

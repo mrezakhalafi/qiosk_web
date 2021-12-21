@@ -240,13 +240,13 @@ $follow_sts = $is_follow['CNT'];
 
                     // check file type 
                     $thumb_ext = pathinfo($p[1], PATHINFO_EXTENSION);
-                    $image_name = str_replace($thumb_ext, "", $p[1]);
+                    $img = str_replace($thumb_ext, "", $p[1]);
+                    $image_name = str_replace("http://202.158.33.26", "", $img);
                     if (in_array($thumb_ext, $image_type_arr)) {
-                        echo '<img src="' . $p[1] . '" width="99%" alt="' . $p[0] . '">';
+                        echo '<img src="' . str_replace("http://202.158.33.26", "", $p[1]) . '" width="99%" alt="' . $p[0] . '">';
                     } else if (in_array($thumb_ext, $video_type_arr)) {
-                        echo '<video muted loop autoplay poster="' . $image_name . 'webp" width="99%"><source src="' . $p[1] . '"></video>';
+                        echo '<video muted loop autoplay poster="' . $image_name . 'webp" width="99%"><source src="' . str_replace("http://202.158.33.26", "", $p[1]) . '"></video>';
                     }
-
                     // echo '<img src="' . $p[1] . '" width="99%" alt="' . $p[0] . '">';
                     echo '</a>';
                     echo '<img class="position-absolute bottom-0 end-0 m-2" onclick="addToCart(\'' . $p[2] . '\');" src="../assets/img/icons/Add-to-Cart.png" width="20%">';

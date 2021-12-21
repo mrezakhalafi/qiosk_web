@@ -142,7 +142,7 @@ var fillGridWidgets = function ($grid, lim, off) {
         }
     }
 
-    let batch = dataFiltered.slice(start, end);
+    let batch = dataFiltered.slice(start+1, end);
 
     batch.forEach((element, i) => {
         var size = 1;
@@ -309,7 +309,7 @@ function fetchStoreData() {
                     window.Android.setCurrentStoreData(storeData);
                 }
             } catch (err) {
-                console.log(err);
+                // console.log(err);
             }
         }
     }
@@ -328,7 +328,7 @@ function visitStore($store_code, $f_pin, $is_entering) {
         let xmlHttp = new XMLHttpRequest();
         xmlHttp.onreadystatechange = function () {
             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-                // console.log(xmlHttp.responseText);
+                // // console.log(xmlHttp.responseText);
             }
         }
         xmlHttp.open("post", "/qiosk_web/logics/visit_store");
@@ -411,7 +411,7 @@ $(function () {
                 $(".nav-link#profile-tab").addClass("active");
             }
         } else {
-            // console.log("no pos set");
+            // // console.log("no pos set");
             $(".tab-pane#timeline").addClass("show active");
             $(".nav-link#timeline-tab").addClass("active");
             $(".tab-pane#profile").removeClass("show active");
@@ -464,6 +464,7 @@ function fetchProducts() {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
             data = JSON.parse(xmlHttp.responseText);
             productArr = data;
+            
             // $('#post-count').text(data.length);
             data.forEach(productEntry => {
                 if (!productEntry.THUMB_ID.startsWith("http")) {
@@ -473,9 +474,9 @@ function fetchProducts() {
                 var thumbs = productEntry.THUMB_ID.split("|");
                 thumbs.forEach(image => {
                     if (!productImageMap.has(productEntry.CODE)) {
-                        productImageMap.set(productEntry.CODE, [image]);
+                        productImageMap.set(productEntry.CODE, [image.replace("http://202.158.33.26", "")]);
                     } else {
-                        productImageMap.set(productEntry.CODE, productImageMap.get(productEntry.CODE).concat([image]));
+                        productImageMap.set(productEntry.CODE, productImageMap.get(productEntry.CODE).concat([image.replace("http://202.158.33.26", "")]));
                     }
                 });
             });
@@ -488,7 +489,7 @@ function fetchProducts() {
                     window.Android.setCurrentProductsData(xmlHttp.responseText);
                 }
             } catch (err) {
-                console.log(err);
+                // console.log(err);
             }
         }
     }
@@ -555,7 +556,7 @@ function changeStoreShowcaseSettings($newSettings) {
     let xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function () {
         if (xmlHttp.readyState == 4) {
-            console.log(xmlHttp.responseText);
+            // console.log(xmlHttp.responseText);
             if (xmlHttp.status == 200) {
                 showAlert("Berhasil mengubah pengaturan.");
                 fetchProducts();
@@ -572,7 +573,7 @@ function showAlert(word) {
     if (window.Android) {
         window.Android.showAlert(word);
     } else {
-        console.log(word);
+        // console.log(word);
     }
 }
 
@@ -589,16 +590,16 @@ function openDetailProduct(pr) {
     $('#modal-addtocart .product-price').html('');
     $('#modal-addtocart .prod-details .col-11').html('');
 
-    // console.log(getPr);
+    // // console.log(getPr);
 
     let product_imgs = getPr.THUMB_ID.split('|');
     let product_name = getPr.NAME;
     let product_price = numberWithCommas(getPr.PRICE);
     let product_desc = getPr.DESCRIPTION;
 
-    // console.log(product_imgs);
-    // console.log(product_price);
-    // console.log(product_desc);
+    // // console.log(product_imgs);
+    // // console.log(product_price);
+    // // console.log(product_desc);
 
     let product_showcase = "";
 
@@ -713,11 +714,12 @@ function addToCartModal() {
     var iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
 
     $('[data-bs-target="#modal-addtocart"]').click(function () {
+        // console.log('asd');
         $('#modal-addtocart .modal-dialog').css('top', fixedPos);
         $('#modal-addtocart .modal-dialog').css('height', window.innerHeight - fixedPos);
         let bottomPos = parseInt(fixedPos.replace('px', '')) + 25;
         if (iOSSafari || iOS) {
-            console.log('is iOS/apple');
+            // console.log('is iOS/apple');
             bottomPos = parseInt(fixedPos.replace('px', '')) + 90;
         }
         $('#modal-addtocart .prod-addtocart').css('bottom', bottomPos + 'px');
@@ -818,7 +820,7 @@ function followStore($storeCode, f_pin) {
     let xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function () {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-            // console.log(xmlHttp.responseText);
+            // // console.log(xmlHttp.responseText);
             updateScoreShop($storeCode);
         }
     }
@@ -834,7 +836,7 @@ function eraseQuery() {
     })
 
     $('#searchFilterForm-a input#query').keyup(function () {
-        console.log('is typing: ' + $(this).val());
+        // console.log('is typing: ' + $(this).val());
         if ($(this).val() != '') {
             $('#delete-query').removeClass('d-none');
         } else {
@@ -1066,7 +1068,7 @@ $(function () {
     $(window).scroll(function () {
         // make sure u give the container id of the data to be loaded in.
         if ($(window).scrollTop() + $(window).height() > $("#content-grid").height() && !busy) {
-            console.log('add');
+            // console.log('add');
           busy = true;
           offset = limit + offset;
           // displayRecords(limit, offset);

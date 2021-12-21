@@ -298,9 +298,9 @@
 
           </div>
           <div class="col-7 col-md-7 col-xl-8">
-            <div class="orders-text"><?= date_format($order_date,"F d, Y"); ?></div>
-            <div class="orders-text">Rp <?= number_format($total_price+$delivery,0,",",",") ?></div>
-            <div class="orders-text"><?= $recentOrders['AMOUNT'] ?> <span data-translate="tab5yourorders-8">Items</span></div>
+            <div class="orders-text" style="font-weight: 600"><?= date_format($order_date,"F d, Y"); ?></div>
+            <div class="orders-text" style="font-weight: 600">Rp <?= number_format($total_price+$delivery,0,",",",") ?></div>
+            <div class="orders-text" style="font-weight: 600"><?= $recentOrders['AMOUNT'] ?> <span data-translate="tab5yourorders-8">Items</span></div>
           </div>
           <div class="col-2 col-md-2 col-lg-3">
             <?php if ($recentOrders['STATUS'] == 0): ?>
@@ -439,9 +439,9 @@
 
           </div>
           <div class="col-9 col-md-9 col-xl-10">
-            <div class="orders-text"><?= date_format($order_date,"F d, Y"); ?></div>
-            <div class="orders-text">Rp <?= number_format($total_price+$delivery,0,",",",") ?></div>
-            <div class="orders-text"><?= $recentOrders['AMOUNT'] ?> <span data-translate="tab5yourorders-8">Items</span></div>
+            <div class="orders-text" style="font-weight: 600"><?= date_format($order_date,"F d, Y"); ?></div>
+            <div class="orders-text" style="font-weight: 600">Rp <?= number_format($total_price+$delivery,0,",",",") ?></div>
+            <div class="orders-text" style="font-weight: 600"><?= $recentOrders['AMOUNT'] ?> <span data-translate="tab5yourorders-8">Items</span></div>
           </div>
         </div>
       </div>

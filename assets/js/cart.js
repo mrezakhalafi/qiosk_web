@@ -205,10 +205,10 @@ function populateSaved(){
 
                 let thumbnail_url;
                 if(ext(item.thumbnail) != 'mp4'){
-                    thumbnail_url = `<img class="product-img" src="${item.thumbnail}">`;
+                    thumbnail_url = `<img class="product-img" src="${item.thumbnail.replace("http://202.158.33.26", "")}">`;
                 } else {
                     thumbnail_url = `<video class="product-img" autoplay muted>
-                        <source src="${item.thumbnail}" type="video/mp4" />
+                        <source src="${item.thumbnail.replace("http://202.158.33.26", "")}" type="video/mp4" />
                     </video>`;
                 }
 
@@ -326,10 +326,10 @@ function populateCart(mode){
 
                 let thumbnail_url;
                 if(ext(item.thumbnail) != 'mp4'){
-                    thumbnail_url = `<img class="product-img" src="${item.thumbnail}">`;
+                    thumbnail_url = `<img class="product-img" src="${item.thumbnail.replace("http://202.158.33.26", "")}">`;
                 } else {
                     thumbnail_url = `<video class="product-img" autoplay muted>
-                        <source src="${item.thumbnail}" type="video/mp4" />
+                        <source src="${item.thumbnail.replace("http://202.158.33.26", "")}" type="video/mp4" />
                     </video>`;
                 }
 

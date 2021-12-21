@@ -76,7 +76,8 @@
                         $nameFilter = $filters[$i]["NAME"];
                         echo '<li class="nav-item">';
 
-                        echo '<a class="nav-link" id="categoryFilter-' . $idFilter . '" href="tab3-main.php?filter=' . $idFilter . '">' . $nameFilter . '</a>';
+                        // echo '<a class="nav-link" id="categoryFilter-' . $idFilter . '" href="tab3-main.php?filter=' . $idFilter . '">' . $nameFilter . '</a>';
+                        echo '<a class="nav-link" id="categoryFilter-' . $idFilter . '">' . $nameFilter . '</a>';
                         echo '</li>';
                     }
 
