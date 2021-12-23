@@ -64,7 +64,7 @@
             <div id="category-tabs" class="row small-text">
                 <ul class="nav nav-tabs horizontal-slide" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link" id="categoryFilter-all" href="tab3-main.php">All</a>
+                        <a class="nav-link" id="categoryFilter-all">All</a>
                     </li>
                     <?php
 

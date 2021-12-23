@@ -26,7 +26,7 @@
     $query = $dbconn->prepare("SELECT PURCHASE.*, SHOP.*, PRODUCT.THUMB_ID, PRODUCT.CODE AS 
                                 P_CODE FROM PURCHASE LEFT JOIN SHOP ON PURCHASE.MERCHANT_ID = 
                                 SHOP.CODE LEFT JOIN PRODUCT ON PURCHASE.PRODUCT_ID = 
-                                PRODUCT.CODE WHERE FPIN ='".$id_user."' ORDER BY 
+                                PRODUCT.CODE WHERE FPIN ='".$id_user."' AND PURCHASE.PRODUCT_ID IS NOT NULL ORDER BY 
                                 PURCHASE.CREATED_AT DESC");
     $query->execute();
     $userOrders = $query->get_result();

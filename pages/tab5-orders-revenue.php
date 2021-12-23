@@ -23,7 +23,7 @@
 
 	// SELECT ORDER FROM PURCHASE
 
-	$query = $dbconn->prepare("SELECT * FROM PURCHASE WHERE MERCHANT_ID = '$id_shop' ORDER BY CREATED_AT DESC");
+	$query = $dbconn->prepare("SELECT * FROM PURCHASE WHERE MERCHANT_ID = '$id_shop' AND PRODUCT_ID IS NOT NULL ORDER BY CREATED_AT DESC");
 	$query->execute();
 	$orders = $query->get_result();
 	$query->close();

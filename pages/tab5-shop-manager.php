@@ -41,7 +41,7 @@
 
 	// SELECT SHOP ORDERS & REVENUE
 
-	$query = $dbconn->prepare("SELECT * FROM PURCHASE WHERE MERCHANT_ID = '$id_shop'");
+	$query = $dbconn->prepare("SELECT * FROM PURCHASE WHERE MERCHANT_ID = '$id_shop' AND PRODUCT_ID IS NOT NULL");
 	$query->execute();
 	$orders = $query->get_result();
 	$query->close();
@@ -56,7 +56,7 @@
 
 	// COUNT ORDER WITH NO DUPLICATE USER
 
-	$query = $dbconn->prepare("SELECT COUNT(*) FROM PURCHASE WHERE MERCHANT_ID = '$id_shop' 
+	$query = $dbconn->prepare("SELECT COUNT(*) FROM PURCHASE WHERE MERCHANT_ID = '$id_shop' AND PRODUCT_ID IS NOT NULL 
 								GROUP BY TRANSACTION_ID");
 	$query->execute();
 	$count = $query->get_result();
@@ -64,7 +64,7 @@
 
 	// COUNT ORDER WITH NO DUPLICATE USER
 
-	$query = $dbconn->prepare("SELECT COUNT(*) FROM PURCHASE WHERE MERCHANT_ID = '$id_shop' 
+	$query = $dbconn->prepare("SELECT COUNT(*) FROM PURCHASE WHERE MERCHANT_ID = '$id_shop' AND PRODUCT_ID IS NOT NULL
 								AND CREATED_AT LIKE '%".date('Y-m-d')."%' GROUP BY TRANSACTION_ID");
 	$query->execute();
 	$count_today = $query->get_result();

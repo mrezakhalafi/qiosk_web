@@ -13,7 +13,7 @@ $day_income6 = 0;
 
 $day1 = date('Y-m-d');
 
-$query = $dbconn->prepare("SELECT * FROM PURCHASE WHERE MERCHANT_ID = '$id_shop' AND 
+$query = $dbconn->prepare("SELECT * FROM PURCHASE WHERE MERCHANT_ID = '$id_shop' AND PRODUCT_ID IS NOT NULL AND 
                           CREATED_AT LIKE '%".$day1."%'");
 $query->execute();
 $orders_day1 = $query->get_result();

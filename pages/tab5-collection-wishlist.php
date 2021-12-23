@@ -44,7 +44,7 @@
                                 LEFT JOIN PRODUCT p ON cp.PRODUCT_CODE = p.CODE
                                 LEFT JOIN SHOP s ON p.SHOP_CODE = s.CODE
                                 LEFT JOIN USER_LIST_EXTENDED ule ON u.F_PIN = ule.F_PIN 
-                                WHERE c.COLLECTION_CODE = '$collection_code'");
+                                WHERE c.COLLECTION_CODE = '$collection_code' AND cp.IS_POST = 0");
     $query->execute();
     $products = $query->get_result();
     $query->close();

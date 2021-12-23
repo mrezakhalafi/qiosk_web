@@ -48,7 +48,7 @@
                                 ON c.F_PIN = u.F_PIN LEFT JOIN COLLECTION_PRODUCT cp ON c.COLLECTION_CODE = 
                                 cp.COLLECTION_CODE LEFT JOIN PRODUCT p ON cp.PRODUCT_CODE = p.CODE
                                 LEFT JOIN SHOP s ON p.SHOP_CODE = s.CODE LEFT JOIN USER_LIST_EXTENDED z 
-                                ON c.F_PIN = z.F_PIN WHERE c.COLLECTION_CODE = '$collection_code'
+                                ON c.F_PIN = z.F_PIN WHERE c.COLLECTION_CODE = '$collection_code' AND cp.IS_POST = 0
                                 ORDER BY cp.CREATED_AT DESC");
 
     $query->execute();
