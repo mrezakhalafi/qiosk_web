@@ -55,7 +55,7 @@
 
   <!-- SECTION OPEN YOUR SHOP -->
 
-  <div class="section-shop container text-center">
+  <div class="section-shop container text-center" style="margin-bottom: 100px">
       <img width="300px" style="margin-top: -50px" src="../assets/img/tab5/new_open_shop.png">
       <h3 class="shop-title"><b data-translate="tab5shop-2">Open Your Shop on Q</b></h3>
       <div class="shop-sub-text small-text">

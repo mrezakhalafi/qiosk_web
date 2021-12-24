@@ -109,7 +109,7 @@
 
   <!-- SECTION OPEN YOUR SHOP TITLE AVA -->
 
-  <form action="../logics/tab5/register_merchant" method="POST" enctype="multipart/form-data">
+  <form action="../logics/tab5/register_merchant" method="POST" enctype="multipart/form-data" style="margin-bottom: 100px">
     <div class="section-open-your-shop text-center">
       <span>
         <b data-translate="tab5openshop-2">Open Your Shop on Qiosk</b>
