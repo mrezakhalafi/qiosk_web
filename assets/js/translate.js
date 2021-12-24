@@ -37,6 +37,7 @@ import { tab5notifications } from '../../language/tab5-notifications.js';
 import { tab5settings } from '../../language/tab5-settings.js';
 import { tab5inserthighlight } from '../../language/tab5-insert-highlight.js';
 import { comment } from '../../language/comment.js';
+import { tab3main } from '../../language/tab3-main.js';
 
 if(localStorage.lang == null){
     localStorage.lang = 0;
@@ -49,7 +50,7 @@ var dictionary = Object.assign({}, tab5, tab5main, tab5collectionself, tab5recen
                 tab5appnotification, tab5shop, tab5openshop, tab5successopenshop, tab5orderdetails,
                 tab5newpost, tab5ads, tab5promotioninsight, tab5createanad, tab5adreview, tab5finance,
                 tab5changeaddress, tab5following, tab5help, tab5security, tab5notifications, tab5settings,
-                tab5inserthighlight, comment);
+                tab5inserthighlight, comment, tab3main);
 
 var langs = ['en', 'id'];
 var current_lang_index = localStorage.lang;

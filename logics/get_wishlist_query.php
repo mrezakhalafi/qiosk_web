@@ -24,7 +24,7 @@ $rows = array();
 while ($wish = $wishlist->fetch_assoc()) {
 
     // get product details
-    if ($query = $dbconn->prepare("SELECT NAME, THUMB_ID, PRICE FROM PRODUCT WHERE CODE = ? AND NAME LIKE '%".$search_query."%'")) {
+    if ($query = $dbconn->prepare("SELECT CODE, NAME, THUMB_ID, PRICE FROM PRODUCT WHERE CODE = ? AND NAME LIKE '%".$search_query."%'")) {
         $query->bind_param('s', $wish['PRODUCT_CODE']);
         $query->execute();
         $product = $query->get_result()->fetch_assoc();

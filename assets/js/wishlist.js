@@ -7,7 +7,7 @@ function getWishlist() {
 
     let formData = new FormData();
     formData.append("fpin", window.Android.getFPin());
-    // formData.append("fpin", "024ef50e8c");
+    // formData.append("fpin", "02c7b32af1");
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/qiosk_web/logics/get_wishlist");
@@ -23,8 +23,8 @@ function getWishlist() {
 
                 let wishlist_html = 
                 '<div class="col-6 col-md-6 col-lg-4 col-xl-3 single-wishlist mb-1">'+
-                `<img src="${element.THUMB_ID.split("|")[0]}" class="wishlist-images">`+
-                '<img src="../assets/img/tab5/Add-to-Cart.png" class="add-to-cart">'+
+                `<img src="${element.THUMB_ID.split("|")[0].replace("http://202.158.33.26", "")}" class="wishlist-images">`+
+                '<img src="../assets/img/tab5/Add-to-Cart.png" class="add-to-cart" onclick="addToCart(\'' + element.CODE + '\', 1)">'+
                 '<div class="row wishlist-desc gx-0">'+
                     `<b class="small-text">${element.NAME}</b>`+
                     `<p class="wishlist-price">Rp. ${numberWithDots(element.PRICE)}</p>`+
@@ -81,7 +81,7 @@ function getWishlistQuery(query) {
     let formData = new FormData();
     formData.append("fpin", window.Android.getFPin());
     formData.append("query", query);
-    // formData.append("fpin", "024ef50e8c");
+    // formData.append("fpin", "02c7b32af1");
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/qiosk_web/logics/get_wishlist_query");
@@ -97,8 +97,8 @@ function getWishlistQuery(query) {
 
                 let wishlist_html = 
                 '<div class="col-6 col-md-6 col-lg-4 col-xl-3 single-wishlist mb-1">'+
-                `<img src="${element.THUMB_ID.split("|")[0]}" class="wishlist-images">`+
-                '<img src="../assets/img/tab5/Add-to-Cart.png" class="add-to-cart">'+
+                `<img src="${element.THUMB_ID.split("|")[0].replace("http://202.158.33.26", "")}" class="wishlist-images">`+
+                '<img src="../assets/img/tab5/Add-to-Cart.png" class="add-to-cart" onclick="addToCart(\'' + element.CODE + '\', 1)">'+
                 '<div class="row wishlist-desc gx-0">'+
                     `<b class="small-text">${element.NAME}</b>`+
                     `<p class="wishlist-price">Rp. ${numberWithDots(element.PRICE)}</p>`+

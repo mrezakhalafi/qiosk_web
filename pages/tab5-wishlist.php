@@ -36,7 +36,14 @@
   <link href="../assets/css/tab5-style.css" rel="stylesheet">
   <link href="../assets/css/tab5-collection-style.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <script src="../assets/js/profile-shop.js?random=<?= time(); ?>"></script>
   <script src="../assets/js/wishlist.js?v=<?php echo time(); ?>"></script>
+
+  <style>
+    .modal-content {
+      height: unset !important;
+    }
+  </style>
 </head>
 
 <body class="bg-white-background" style="display:none">
@@ -70,6 +77,19 @@
       </div>
     </div>
   </nav>
+
+  <div class="modal fade" id="addtocart-success" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h6>Product added to cart!</h6>
+            </div>
+            <div class="modal-footer">
+                <button id="addtocart-success-close" type="button" class="btn btn-addcart" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
   <!-- SECTION WISHLIST -->
 
