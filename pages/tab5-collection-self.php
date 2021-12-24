@@ -442,14 +442,14 @@
                     <!-- IF ALL MEDIA IS VIDEO, OKAY THEN MAKE COVER IS VIDEO THUMBNAIL -->
 
                     <?php if ($product_image_video): ?>
-                        <img src="<?= $product_image_video ?>" alt="" srcset="" height="150px" style="object-fit: cover;">
+                        <img src="../images/<?= $product_image_video ?>" alt="" srcset="" height="150px" style="object-fit: cover;">
                     <?php else: ?>
-                        <video src="<?= $product_image[0] ?>#t=0.5" type="video/mp4" alt="" srcset="" height="150px" style="object-fit: cover;"></video>
+                        <video src="../images/<?= $product_image[0] ?>#t=0.5" type="video/mp4" alt="" srcset="" height="150px" style="object-fit: cover;"></video>
                     <?php endif; ?>
 
                 <?php else: ?>
 
-                    <img src="<?= $product_image[$i] ?>" alt="" srcset="" height="150px" style="object-fit: cover;">
+                    <img src="../images/<?= $product_image[$i] ?>" alt="" srcset="" height="150px" style="object-fit: cover;">
 
                 <?php endif; 
             
@@ -549,7 +549,7 @@
 
                         $items = '<li id="all-store" class="has-story" style="position: relative">' .
                                     '<div class="story">' .
-                                        '<'.$ext.' src="' . $product_image_video . '">' .
+                                        '<'.$ext.' src="../images/' . $product_image_video . '">' .
                                     '</div>' .
                                     '<img src="../assets/img/tab5/Tagged-Product(white).png" style="background-color: #FFA03E; width:20px; height: 20px; padding: 3px; position: absolute; border-radius: 20px; margin-top: -10px">' .
                                     '<row style="margin-top: 10px">' .

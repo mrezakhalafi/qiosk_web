@@ -182,14 +182,14 @@
                     <!-- IF ALL MEDIA IS VIDEO, OKAY THEN MAKE COVER IS VIDEO THUMBNAIL -->
 
                     <?php if ($product_image_video): ?>
-                      <img src="<?= $product_image_video ?>" class="listing-image">
+                      <img src="../images/<?= $product_image_video ?>" class="listing-image">
                     <?php else: ?>
-                      <video src="<?= $product_image[0] ?>#t=0.5" style="object-fit: none" type="video/mp4" class="listing-image"></video>
+                      <video src="../images/<?= $product_image[0] ?>#t=0.5" style="object-fit: none" type="video/mp4" class="listing-image"></video>
                     <?php endif; ?>
 
                   <?php else: ?>
 
-                    <img src="<?= $product_image[$i] ?>" class="listing-image">
+                    <img src="../images/<?= $product_image[$i] ?>" class="listing-image">
                   
                   <?php endif; ?>
 
@@ -264,11 +264,11 @@
 
                 <?php if (substr($product_image[$i], -3) == "mp4"): ?>
 
-                  <img src="<?= $product_image[$i+1] ?>" class="listing-image">
+                  <img src="../images/<?= $product_image[$i+1] ?>" class="listing-image">
 
                 <?php else: ?>
 
-                  <img src="<?= $product_image[$i] ?>" class="listing-image">
+                  <img src="../images/<?= $product_image[$i] ?>" class="listing-image">
                 
                 <?php endif; ?>             
                 

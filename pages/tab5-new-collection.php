@@ -207,12 +207,12 @@ while ($result = $results->fetch_assoc()) {
 
                         if (in_array($thumb_ext, $image_type_arr)) {
                             // echo 'img';
-                            echo '<img class="collections-img" src="' . $thumb_arr[0] . '">';
+                            echo '<img class="collections-img" src="../images/' . $thumb_arr[0] . '">';
                         } else if (in_array($thumb_ext, $video_type_arr)) {
                             // echo 'video';
                             $image_name = str_replace($thumb_ext, "", $thumb_arr[0]);
                             echo '<video autoplay muted class="collections-img" preload="metadata">';
-                            echo '<source src="' . $thumb_arr[0] . '" type="video/' . $thumb_ext . '">';
+                            echo '<source src="../images/' . $thumb_arr[0] . '" type="video/' . $thumb_ext . '">';
                             echo '</video>';
                         }
                     } else {
@@ -278,12 +278,12 @@ while ($result = $results->fetch_assoc()) {
 
                         if (in_array($thumb_ext, $image_type_arr)) {
                             // echo 'img';
-                            echo '<img class="collections-img" src="' . $thumb_arr[0] . '">';
+                            echo '<img class="collections-img" src="../images/' . $thumb_arr[0] . '">';
                         } else if (in_array($thumb_ext, $video_type_arr)) {
                             // echo 'video';
                             $image_name = str_replace($thumb_ext, "", $thumb_arr[0]);
                             echo '<video autoplay muted class="collections-img" preload="metadata">';
-                            echo '<source src="' . $thumb_arr[0] . '" type="video/' . $thumb_ext . '">';
+                            echo '<source src="../images/' . $thumb_arr[0] . '" type="video/' . $thumb_ext . '">';
                             echo '</video>';
                         }
                     } else {

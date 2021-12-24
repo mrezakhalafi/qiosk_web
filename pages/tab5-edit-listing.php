@@ -162,9 +162,9 @@
                                                     <!-- CHECK IF FILE IS VIDEO OR IMAGES -->
 
                                                     <?php if (substr($product_image[$i], -3) == "mp4"): ?>
-                                                        <video src="<?= $product_image[$i] ?>#t=0.5" loop autoplay muted id="image-preview-<?= $i ?>" class="upload-listing-border" style="object-fit: none">                                                
+                                                        <video src="../images/<?= $product_image[$i] ?>#t=0.5" loop autoplay muted id="image-preview-<?= $i ?>" class="upload-listing-border" style="object-fit: none">                                                
                                                     <?php else: ?>
-                                                        <img src="<?= $product_image[$i] ?>" id="image-preview-<?= $i ?>" class="upload-listing-border">
+                                                        <img src="../images/<?= $product_image[$i] ?>" id="image-preview-<?= $i ?>" class="upload-listing-border">
                                                     <?php endif; ?>
 
                                                 </label>

@@ -612,14 +612,14 @@
 										<!-- IF ALL MEDIA IS VIDEO, OKAY THEN MAKE COVER IS VIDEO THUMBNAIL -->
 
 										<?php if ($product_image_video): ?>
-											<img src="<?= $product_image_video ?>" class="single-big-collection">
+											<img src="../images/<?= $product_image_video ?>" class="single-big-collection">
 										<?php else: ?>
-											<video src="<?= $product_image[0] ?>#t=0.5" style="object-fit: none" type="video/mp4" class="single-big-collection"></video>
+											<video src="../images/<?= $product_image[0] ?>#t=0.5" style="object-fit: none" type="video/mp4" class="single-big-collection"></video>
 										<?php endif; ?>
 
 									<?php else : ?>
 
-										<img src="<?= $product_image[$i] ?>" class="single-big-collection">
+										<img src="../images/<?= $product_image[$i] ?>" class="single-big-collection">
 
 									<?php endif; ?>
 
@@ -661,14 +661,14 @@
 										<!-- IF ALL MEDIA IS VIDEO, OKAY THEN MAKE COVER IS VIDEO THUMBNAIL -->
 
 										<?php if ($product_image_video): ?>
-											<img src="<?= $product_image_video ?>" class="single-big-collection">
+											<img src="../images/<?= $product_image_video ?>" class="single-big-collection">
 										<?php else: ?>
-											<video src="<?= $product_image[0] ?>#t=0.5" style="object-fit: none" type="video/mp4" class="single-small-collection"></video>
+											<video src="../images/<?= $product_image[0] ?>#t=0.5" style="object-fit: none" type="video/mp4" class="single-small-collection"></video>
 										<?php endif; ?>
 
 									<?php else : ?>
 
-										<img src="<?= $product_image[$i] ?>" class="single-small-collection">
+										<img src="../images/<?= $product_image[$i] ?>" class="single-small-collection">
 
 									<?php endif; ?>
 									</a>
@@ -977,7 +977,7 @@
 											</div>
 										</div>
 										<div class="col-3 col-md-4 col-lg-4" style="margin-bottom: 15px">
-											`+ext+` src="`+product_image_video+`" id="product_image" style="width: 70px; height: 70px; object-fit: cover; object-position: center">`+ext2+`
+											`+ext+` src="../images/`+product_image_video+`" id="product_image" style="width: 70px; height: 70px; object-fit: cover; object-position: center">`+ext2+`
 										</div>
 										<div class="col-9 col-md-8 col-lg-8" style="margin-top: -8px; margin-bottom: 15px">
 											<span id="product_name" class="small-text" style="color: #FFFFFF">`+objResult[item]['NAME']+`</span>

@@ -210,14 +210,14 @@
                         <!-- IF ALL MEDIA IS VIDEO, OKAY THEN MAKE COVER IS VIDEO THUMBNAIL -->
 
                         <?php if ($product_image_video): ?>
-                            <img src="<?= $product_image_video ?>" class="receipt-item-image">
+                            <img src="../images/<?= $product_image_video ?>" class="receipt-item-image">
                         <?php else: ?>
-                            <video src="<?= $product_image[0] ?>#t=0.5" style="object-fit: none" type="video/mp4" class="receipt-item-image"></video>
+                            <video src="../images/<?= $product_image[0] ?>#t=0.5" style="object-fit: none" type="video/mp4" class="receipt-item-image"></video>
                         <?php endif; ?>
 
                     <?php else: ?>
 
-                        <img src="<?= $product_image[$i] ?>" class="receipt-item-image">
+                        <img src="../images/<?= $product_image[$i] ?>" class="receipt-item-image">
 
                     <?php endif; ?>
 

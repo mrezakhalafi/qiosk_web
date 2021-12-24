@@ -208,14 +208,14 @@
                 <!-- IF ALL MEDIA IS VIDEO, OKAY THEN MAKE COVER IS VIDEO THUMBNAIL -->
 
                 <?php if ($product_image_video): ?>
-                  <img src="<?= $product_image_video ?>" class="live-featured-image">
+                  <img src="../images/<?= $product_image_video ?>" class="live-featured-image">
                 <?php else: ?>
-                  <video src="<?= $product_image[0] ?>#t=0.5" style="object-fit: none" type="video/mp4" class="live-featured-image"></video>
+                  <video src="../images/<?= $product_image[0] ?>#t=0.5" style="object-fit: none" type="video/mp4" class="live-featured-image"></video>
                 <?php endif; ?>
 
               <?php else: ?>
 
-                <img src="<?= $product_image[$i] ?>" class="live-featured-image">
+                <img src="../images/<?= $product_image[$i] ?>" class="live-featured-image">
 
               <?php endif; ?>
 
@@ -380,14 +380,14 @@
                         <!-- IF ALL MEDIA IS VIDEO, OKAY THEN MAKE COVER IS VIDEO THUMBNAIL -->
 
                         <?php if ($product_image_video): ?>
-                          <img src="<?= $product_image_video ?>" class="tagged-image">
+                          <img src="../images/<?= $product_image_video ?>" class="tagged-image">
                         <?php else: ?>
-                          <video src="<?= $product_image[0] ?>#t=0.5" style="object-fit: none" type="video/mp4" class="tagged-image"></video>
+                          <video src="../images/<?= $product_image[0] ?>#t=0.5" style="object-fit: none" type="video/mp4" class="tagged-image"></video>
                         <?php endif; ?>
 
                       <?php else: ?>
 
-                        <img src="<?= $product_image[$i] ?>" class="tagged-image">
+                        <img src="../images/<?= $product_image[$i] ?>" class="tagged-image">
 
                       <?php endif; ?>
                       
@@ -635,7 +635,7 @@
         `<div class="row single-featured-product" id="single-product-`+$(this).data("code-product")+`">
           <div class="col-2 col-md-2 col-lg-2">
 
-          <`+ext+` src="`+media+`" class="live-featured-image">`+ext2+`
+          <`+ext+` src="../images/`+media+`" class="live-featured-image">`+ext2+`
 
           </div>
           <div class="col-8 col-md-8 col-lg-9 featured-product-desc">
@@ -858,7 +858,7 @@
                         <input class="form-check-input check-form-input check-form-input" `+$checked+` type="checkbox" data-code-product="`+objResult[item]['CODE']+`" data-name-product="`+objResult[item]['NAME']+`" 
                         data-price-product="`+objResult[item]['PRICE']+`" data-image-product="`+product_image_video+`" value="`+objResult[item]['NAME']+`" id="myCheck`+objResult[item]['ID']+`">
 
-                        <`+ext+` src="`+product_image_video+`" class="tagged-image">`+ext2+`
+                        <`+ext+` src="../images/`+product_image_video+`" class="tagged-image">`+ext2+`
                         
                         <img src="../assets/img/tab5/Settings-(White).png" class="tagged-product-settings" id="dropdownMenuSelectLanguage" data-bs-toggle="dropdown" aria-expanded="false">
                         <ul class="dropdown-menu" style="min-width: auto !important; position: absolute" aria-labelledby="dropdownMenuLanguage">
