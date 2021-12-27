@@ -372,6 +372,7 @@ function populateCart(mode){
         })
 
     } else {
+        document.getElementById('checkout-button').classList.add('d-none');
         document.getElementById('cart-empty').classList.remove('d-none');
         document.getElementById('pricetag').classList.add('d-none');
     }

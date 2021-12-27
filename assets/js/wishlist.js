@@ -36,7 +36,7 @@ function getWishlist() {
                 let wishlist_html = 
                 '<div class="col-6 col-md-6 col-lg-4 col-xl-3 single-wishlist mb-1">'
                 +ext+` src="${element.THUMB_ID.split("|")[0].replace("http://202.158.33.26", "")}`+is_vid+`" class="wishlist-images">`+ext2+
-                '<img style="position: relative; z-index: 9999" src="../assets/img/tab5/Add-to-Cart.png" class="add-to-cart" onclick="addToCart(\'' + element.CODE + '\', 1)">'+
+                '<img style="position: relative; z-index: 25" src="../assets/img/tab5/Add-to-Cart.png" class="add-to-cart" onclick="addToCart(\'' + element.CODE + '\', 1)">'+
                 '<div class="row wishlist-desc gx-0">'+
                     `<b class="small-text">${element.NAME}</b>`+
                     `<p class="wishlist-price">Rp. ${numberWithDots(element.PRICE)}</p>`+
@@ -120,9 +120,9 @@ function getWishlistQuery(query) {
                 }
 
                 let wishlist_html = 
-                '<div class="col-6 col-md-6 col-lg-4 col-xl-3 single-wishlist mb-1">'+
+                '<div class="col-6 col-md-6 col-lg-4 col-xl-3 single-wishlist mb-1">'
                 +ext+` src="${element.THUMB_ID.split("|")[0].replace("http://202.158.33.26", "")}`+is_vid+`" class="wishlist-images">`+ext2+
-                '<img style="position: relative; z-index: 9999" src="../assets/img/tab5/Add-to-Cart.png" class="add-to-cart" onclick="addToCart(\'' + element.CODE + '\', 1)">'+
+                '<img style="position: relative; z-index: 25" src="../assets/img/tab5/Add-to-Cart.png" class="add-to-cart" onclick="addToCart(\'' + element.CODE + '\', 1)">'+
                 '<div class="row wishlist-desc gx-0">'+
                     `<b class="small-text">${element.NAME}</b>`+
                     `<p class="wishlist-price">Rp. ${numberWithDots(element.PRICE)}</p>`+

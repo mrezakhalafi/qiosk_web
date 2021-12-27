@@ -7,7 +7,7 @@ function paliolite()
     // $password = "";
     // $database = "palio_lite";
     // $host = "202.158.33.26:3306";
-    $host = "192.168.0.56:3306";
+    $host = "192.168.0.34:3306";
     $user = "nup";
     $password = "5m1t0l_aptR";
     $database = "palio_lite";
