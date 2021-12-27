@@ -317,7 +317,7 @@
             </form>
         <?php endif; ?>
 
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center" style="margin-bottom: 40px">
             <button class="btn-help-with-order" data-translate="tab5receipt-13">Help with Order</button>
         </div>
     </div>

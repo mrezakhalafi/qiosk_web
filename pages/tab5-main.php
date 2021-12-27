@@ -999,7 +999,7 @@
 											</div>
 										</div>
 										<div class="col-3 col-md-4 col-lg-4" style="margin-bottom: 15px">
-											`+ext+` src="../images/`+product_image_video+`" id="product_image" style="width: 70px; height: 70px; object-fit: cover; object-position: center">`+ext2+`
+											`+ext+` src="../images/`+product_image_video.replace("http://202.158.33.26/qiosk_web/images/", "")+`" id="product_image" style="width: 70px; height: 70px; object-fit: cover; object-position: center">`+ext2+`
 										</div>
 										<div class="col-9 col-md-8 col-lg-8" style="margin-top: -8px; margin-bottom: 15px">
 											<span id="product_name" class="small-text" style="color: #FFFFFF">`+objResult[item]['NAME']+`</span>

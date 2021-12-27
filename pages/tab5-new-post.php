@@ -516,7 +516,7 @@
                     <div class="form-check form-check-tagged" style="padding-left: 0 !important">
                       <input class="form-check-input check-form-input check-form-input" `+$checked+` type="checkbox" data-code-tagged="`+objResult[item]['CODE']+`" value="`+objResult[item]['NAME']+`" id="myCheck`+objResult[item]['ID']+`">
 
-                      <`+ext+` src="../images/`+product_image_video+`" class="tagged-image">`+ext2+`
+                      <`+ext+` src="../images/`+product_image_video.replace("http://202.158.33.26/qiosk_web/images/", "")+`" class="tagged-image">`+ext2+`
                       
                       <img src="../assets/img/tab5/Settings-(White).png" class="tagged-product-settings" id="dropdownMenuSelectLanguage" data-bs-toggle="dropdown" aria-expanded="false">
                       <ul class="dropdown-menu" style="min-width: auto !important; position: absolute" aria-labelledby="dropdownMenuLanguage">
@@ -640,7 +640,7 @@
               <div class="form-check form-check-tagged" style="padding-left: 0 !important">
                 <input class="form-check-input check-form-input check-form-input" type="checkbox" `+$checked+` data-code-tagged="`+objResult[item]['CODE']+`" value="`+objResult[item]['NAME']+`" id="myCheck`+objResult[item]['ID']+`">
 
-                <`+ext+` src="../images/`+product_image_video+`" class="tagged-image">`+ext2+`
+                <`+ext+` src="../images/`+product_image_video.replace("http://202.158.33.26/qiosk_web/images/", "")+`" class="tagged-image">`+ext2+`
                 
                 <img src="../assets/img/tab5/Settings-(White).png" class="tagged-product-settings" id="dropdownMenuSelectLanguage" data-bs-toggle="dropdown" aria-expanded="false">
                 <ul class="dropdown-menu" style="min-width: auto !important; position: absolute" aria-labelledby="dropdownMenuLanguage">

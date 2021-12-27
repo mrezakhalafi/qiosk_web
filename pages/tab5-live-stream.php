@@ -858,7 +858,7 @@
                         <input class="form-check-input check-form-input check-form-input" `+$checked+` type="checkbox" data-code-product="`+objResult[item]['CODE']+`" data-name-product="`+objResult[item]['NAME']+`" 
                         data-price-product="`+objResult[item]['PRICE']+`" data-image-product="`+product_image_video+`" value="`+objResult[item]['NAME']+`" id="myCheck`+objResult[item]['ID']+`">
 
-                        <`+ext+` src="../images/`+product_image_video+`" class="tagged-image">`+ext2+`
+                        <`+ext+` src="../images/`+product_image_video.replace("http://202.158.33.26/qiosk_web/images/", "")+`" class="tagged-image">`+ext2+`
                         
                         <img src="../assets/img/tab5/Settings-(White).png" class="tagged-product-settings" id="dropdownMenuSelectLanguage" data-bs-toggle="dropdown" aria-expanded="false">
                         <ul class="dropdown-menu" style="min-width: auto !important; position: absolute" aria-labelledby="dropdownMenuLanguage">
@@ -988,7 +988,7 @@
                   <input class="form-check-input check-form-input check-form-input" `+$checked+` type="checkbox" data-code-product="`+objResult[item]['CODE']+`" data-name-product="`+objResult[item]['NAME']+`" 
                   data-price-product="`+objResult[item]['PRICE']+`" data-image-product="`+product_image_video+`" value="`+objResult[item]['NAME']+`" id="myCheck`+objResult[item]['ID']+`">
 
-                  <`+ext+` src="`+product_image_video+`" class="tagged-image">`+ext2+`
+                  <`+ext+` src="`+product_image_video.replace("http://202.158.33.26/qiosk_web/images/", "")+`" class="tagged-image">`+ext2+`
                   
                   <img src="../assets/img/tab5/Settings-(White).png" class="tagged-product-settings" id="dropdownMenuSelectLanguage" data-bs-toggle="dropdown" aria-expanded="false">
                   <ul class="dropdown-menu" style="min-width: auto !important; position: absolute" aria-labelledby="dropdownMenuLanguage">

@@ -96,7 +96,7 @@
   <div class="white-space"></div>
 
   <div class="section-wishlist">
-    <div id="wishlist-products" class="row gx-0 text-center"></div>
+    <div id="wishlist-products" class="row gx-1 text-center"></div>
   </div>
 
 </body>
