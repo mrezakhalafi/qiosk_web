@@ -277,14 +277,14 @@
               <!-- IF ALL MEDIA IS VIDEO, OKAY THEN MAKE COVER IS VIDEO THUMBNAIL -->
 
               <?php if ($product_image_video): ?>
-                <img src="../images/<?= $product_image_video ?>" class="store-shop">
+                <img src="../images/<?= str_replace("http://202.158.33.26/qiosk_web/images/", "", $product_image_video) ?>" class="store-shop">
               <?php else: ?>
-                <video src="../images/<?= $product_image[0] ?>" autoplay muted loop style="object-fit: cover; object-position: center; margin-bottom: -10px" type="video/mp4" class="store-shop"></video>
+                <video src="../images/<?= str_replace("http://202.158.33.26/qiosk_web/images/", "", $product_image[0]) ?>" autoplay muted loop style="object-fit: cover; object-position: center; margin-bottom: -10px" type="video/mp4" class="store-shop"></video>
               <?php endif; ?>
 
             <?php else: ?>
 
-              <img src="../images/<?= $product_image[$i] ?>" class="store-shop">
+              <img src="../images/<?= str_replace("http://202.158.33.26/qiosk_web/images/", "", $product_image[$i]) ?>" class="store-shop">
 
             <?php endif; ?>
 

@@ -442,14 +442,14 @@
                     <!-- IF ALL MEDIA IS VIDEO, OKAY THEN MAKE COVER IS VIDEO THUMBNAIL -->
 
                     <?php if ($product_image_video): ?>
-                        <img src="../images/<?= $product_image_video ?>" alt="" srcset="" height="150px" style="object-fit: cover;">
+                        <img src="../images/<?= str_replace("http://202.158.33.26/qiosk_web/images/", "", $product_image_video) ?>" alt="" srcset="" height="150px" style="object-fit: cover;">
                     <?php else: ?>
-                        <video src="../images/<?= $product_image[0] ?>#t=0.5" type="video/mp4" alt="" srcset="" height="150px" style="object-fit: cover;"></video>
+                        <video src="../images/<?= str_replace("http://202.158.33.26/qiosk_web/images/", "", $product_image[0]) ?>#t=0.5" type="video/mp4" alt="" srcset="" height="150px" style="object-fit: cover;"></video>
                     <?php endif; ?>
 
                 <?php else: ?>
 
-                    <img src="../images/<?= $product_image[$i] ?>" alt="" srcset="" height="150px" style="object-fit: cover;">
+                    <img src="../images/<?= str_replace("http://202.158.33.26/qiosk_web/images/", "", $product_image[$i]) ?>" alt="" srcset="" height="150px" style="object-fit: cover;">
 
                 <?php endif; 
 
@@ -542,7 +542,7 @@
 
                             $items = '<li onclick="showAddModal(\'' . $c['PRODUCT_CODE'] . '\');" id="all-store" class="has-story">' .
                                 '<div class="story">' .
-                                '<'.$ext.' style="object-fit: cover; object-position: center" src="../images/' . $product_image_video . '">' .
+                                '<'.$ext.' style="object-fit: cover; object-position: center" src="../images/' . str_replace("http://202.158.33.26/qiosk_web/images/", "", $product_image_video) . '">' .
                                 '</div>' .
                                 '<span>' . $product_name . '</span>' .
                                 '<p style="white-space: nowrap;">Rp ' . number_format($c['PRODUCT_PRICE'], 0, ",", ",") . '</p>' .

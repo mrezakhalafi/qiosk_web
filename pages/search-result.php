@@ -21,7 +21,7 @@
     <script src="../assets/js/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
-    
+
 
 <body style="background-color: white;">
     <div class="container-fluid">
@@ -40,7 +40,7 @@
                             $query = $_REQUEST['query'];
                         }
                         ?>
-                        <input id="query" placeholder="Search" type="text" class="search-query" name="query" onclick="onFocusSearch()" value="<?= $query; ?>">
+                        <input id="query" type="text" class="search-query" name="query" onclick="onFocusSearch()" value="<?= $query; ?>">
                         <img class="d-none" id="delete-query" src="../assets/img/icons/X-fill.png">
                         <img id="voice-search" src="../assets/img/icons/Voice-Command.png">
                     </form>
@@ -53,10 +53,10 @@
                 </a>
                 <div class="col-1">
                     <a href="notifications.php">
-                    <div class="position-relative">
-                        <img class="float-end" src="../assets/img/icons/Shop Manager/App-Notification-(white).png" style="width:30px">
-                        <span id='counter-notifs'></span>
-                    </div>
+                        <div class="position-relative">
+                            <img class="float-end" src="../assets/img/icons/Shop Manager/App-Notification-(white).png" style="width:30px">
+                            <span id='counter-notifs'></span>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -127,18 +127,18 @@
             foreach ($result_users as $res) {
 
                 $user_pic = $res['IMAGE'];
-                $name = $res['FIRST_NAME']." ".$res['LAST_NAME'];
+                $name = $res['FIRST_NAME'] . " " . $res['LAST_NAME'];
                 $f_pin = $res['F_PIN'];
 
 
-            ?>      
+            ?>
                 <a href="tab5-profile?id_visit=<?= $f_pin ?>">
                     <div class="row mb-3">
                         <div class="col-3 d-flex align-items-center justify-content-center">
 
-                            <?php if ($user_pic): ?>
+                            <?php if ($user_pic) : ?>
                                 <img class="logo-merchant" src="https://qmera.io/filepalio/image/<?= $user_pic ?>" height="50px" width="50px" style="object-fit: cover; object-position: center">
-                            <?php else: ?>
+                            <?php else : ?>
                                 <img class="logo-merchant" src="../assets/img/tab5/no-avatar.jpg" height="50px" width="50px" style="object-fit: cover; object-position: center">
                             <?php endif; ?>
 
@@ -153,7 +153,6 @@
                     </div>
                 </a>
             <?php }
-            
         } else { ?>
 
             <div class="row mb-3">
@@ -176,18 +175,18 @@
             foreach ($result as $res) {
 
                 $user_pic = $res['IMAGE'];
-                $name = $res['FIRST_NAME']." ".$res['LAST_NAME'];
+                $name = $res['FIRST_NAME'] . " " . $res['LAST_NAME'];
                 $f_pin = $res['F_PIN'];
 
 
-        ?>      
+        ?>
                 <a href="tab5-profile?id_visit=<?= $f_pin ?>">
                     <div class="row mb-3">
                         <div class="col-3 d-flex align-items-center justify-content-center">
 
-                            <?php if ($user_pic): ?>
+                            <?php if ($user_pic) : ?>
                                 <img class="logo-merchant" src="https://qmera.io/filepalio/image/<?= $user_pic ?>" height="50px" width="50px" style="object-fit: cover; object-position: center">
-                            <?php else: ?>
+                            <?php else : ?>
                                 <img class="logo-merchant" src="../assets/img/tab5/no-avatar.jpg" height="50px" width="50px" style="object-fit: cover; object-position: center">
                             <?php endif; ?>
 
@@ -267,7 +266,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 <script src="../assets/js/script-search_result.js?random=<?= time(); ?>"></script>
 <script>
-
     $(".nav-tabs li.nav-item a.nav-link").click(function() {
         $(".nav-tabs li.nav-item a.nav-link").removeClass('active');
     });
@@ -275,24 +273,31 @@
     $('#section-profile').hide();
     $('#section-shop').hide();
 
-    function searchAccount(){
+    function searchAccount() {
         $('#section-profile').show();
         $('#section-top').hide();
         $('#section-shop').hide();
     }
 
-    function searchTop(){
+    function searchTop() {
         $('#section-profile').hide();
         $('#section-top').show();
         $('#section-shop').hide();
     }
 
-    function searchShop(){
+    function searchShop() {
         $('#section-profile').hide();
         $('#section-top').hide();
         $('#section-shop').show();
     }
 
+    if (localStorage.lang == 0) {
+
+        $('input#query').attr('placeholder', 'Search');
+    } else {
+        $('input#query').attr('placeholder', 'Pencarian');
+    }
 </script>
 <script src="../assets/js/update_counter.js"></script>
+
 </html>

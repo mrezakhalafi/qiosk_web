@@ -229,14 +229,14 @@
               <!-- IF ALL MEDIA IS VIDEO, OKAY THEN MAKE COVER IS VIDEO THUMBNAIL -->
 
               <?php if ($product_image_video): ?>
-                <img src="../images/<?= $product_image_video ?>" class="orders-thumbnail">
+                <img src="../images/<?= str_replace("http://202.158.33.26/qiosk_web/images/","",$product_image_video) ?>" class="orders-thumbnail">
               <?php else: ?>
-                <video src="../images/<?= $product_image[0] ?>#t=0.5" style="object-fit: none" type="video/mp4" class="orders-thumbnail"></video>
+                <video src="../images/<?= str_replace("http://202.158.33.26/qiosk_web/images/","",$product_image[0]) ?>#t=0.5" style="object-fit: none" type="video/mp4" class="orders-thumbnail"></video>
               <?php endif; ?>
 
             <?php else: ?>
 
-              <img src="../images/<?= $product_image[$i] ?>" class="orders-thumbnail">
+              <img src="../images/<?= str_replace("http://202.158.33.26/qiosk_web/images/","",$product_image[$i]) ?>" class="orders-thumbnail">
 
             <?php endif; ?>
 

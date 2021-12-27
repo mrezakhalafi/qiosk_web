@@ -129,7 +129,7 @@ $follow_sts = $is_follow['CNT'];
                             $query = $_REQUEST['query'];
                         }
                         ?>
-                        <input id="query" placeholder="Search" type="text" class="search-query" name="query" onclick="onFocusSearch()" value="<?= $query; ?>">
+                        <input id="query" type="text" class="search-query" name="query" onclick="onFocusSearch()" value="<?= $query; ?>">
                         <img class="d-none" id="delete-query" src="../assets/img/icons/X-fill.png">
                         <img id="voice-search" src="../assets/img/icons/Voice-Command.png">
                         <!-- </div> -->
@@ -332,6 +332,12 @@ $follow_sts = $is_follow['CNT'];
     const be_id = "<?php echo $store_be ?>";
     let isFollowed = <?php echo $follow_sts ?>;
     console.log('isfollowed : ' + isFollowed);
+    if (localStorage.lang == 0) {
+
+$('input#query').attr('placeholder', 'Search');
+} else {
+$('input#query').attr('placeholder', 'Pencarian');
+}
 </script>
 <script type="text/javascript" src="../assets/js/update-score-shop.js?random=<?= time(); ?>"></script>
 <script src="../assets/js/profile-shop.js?random=<?= time(); ?>"></script>

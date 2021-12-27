@@ -162,6 +162,13 @@ $f_pin = $_GET['f_pin'];
     // $('#addtocart-success').on('hidden.bs.modal', function() {
     //   location.reload();
     // });
+
+    if (localStorage.lang == 0) {
+
+      $('input#query').attr('placeholder', 'Search');
+    } else {
+      $('input#query').attr('placeholder', 'Pencarian');
+    }
   </script>
 
   <!-- <script src="../assets/js/paliopay-dictionary.js?random=<?= time(); ?>"></script>

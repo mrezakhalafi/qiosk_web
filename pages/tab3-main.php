@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="../assets/css/gridstack-extra.min.css" />
     <script type="text/javascript" src="../assets/js/gridstack-static.js"></script>
     <script type="text/javascript" src="../assets/js/pulltorefresh.js"></script>
-    
+
 
 <body class="tab3">
     <div class="container-fluid">
@@ -40,7 +40,7 @@
                             $query = $_REQUEST['query'];
                         }
                         ?>
-                        <input id="query" placeholder="Search" type="text" class="search-query" name="query" onclick="onFocusSearch()" value="<?= $query; ?>">
+                        <input id="query" type="text" class="search-query" name="query" onclick="onFocusSearch()" value="<?= $query; ?>">
                         <img class="d-none" id="delete-query" src="../assets/img/icons/X-fill.png">
                         <img id="voice-search" src="../assets/img/icons/Voice-Command.png" onclick="voiceSearch()">
                         <!-- </div> -->
@@ -54,10 +54,10 @@
                 </a>
                 <div class="col-1" style="margin-right: .5rem;">
                     <a href="notifications.php">
-                    <div class="position-relative me-4">
-                        <img class="float-end" src="../assets/img/icons/Shop Manager/App-Notification-(white).png" style="width:30px">
-                        <span id='counter-notifs'></span>
-                    </div>
+                        <div class="position-relative me-4">
+                            <img class="float-end" src="../assets/img/icons/Shop Manager/App-Notification-(white).png" style="width:30px">
+                            <span id='counter-notifs'></span>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -96,7 +96,7 @@
             </div>
             <div class="d-none" id="no-stores">
                 <div class="col-sm mt-2">
-                    <h5 class="prod-name" style="text-align:center;">Tidak ada toko yang sesuai kriteria</h5>
+                    <h5 class="prod-name" data-translate="tab3main-1" style="text-align:center;"></h5>
                 </div>
             </div>
             <div id="content-grid" class="grid-stack grid-stack-3">
@@ -146,7 +146,25 @@
 <script src="../assets/js/update_counter.js?random=<?= time(); ?>"></script>
 <script type="text/javascript" src="../assets/js/script-store_list.js?random=<?= time(); ?>"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script type="module" src="../assets/js/translate.js"></script>
 <script>
+
+    if (localStorage.lang == 0) {
+        document.querySelector(".prod-name").innerHTML = "No shops with matching criteria";
+        $('input#query').attr('placeholder', 'Search');
+    } else{
+        document.querySelector(".prod-name").innerHTML = "Tidak ada toko yang sesuai kriteria";
+        $('input#query').attr('placeholder', 'Pencarian');
+    }
+
+    window.addEventListener('storage', () => {
+        if (localStorage.lang == 0) {
+            document.querySelector(".prod-name").innerHTML = "No shops with matching criteria";
+        } else{
+            document.querySelector(".prod-name").innerHTML = "Tidak ada toko yang sesuai kriteria";
+        }
+    });
+
     function myFunction() {
         var x = document.getElementById("stack-top");
         if (x.style.display === "none") {

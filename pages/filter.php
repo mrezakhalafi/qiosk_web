@@ -7,7 +7,7 @@
                 if (isset($_REQUEST['query'])) {
                     $query = $_REQUEST['query'];
                 }
-                echo '<input id="query" name="query" type="text" class="search-query" placeholder="Search" onclick="onFocusSearch()" value="' . $query . '"/>';
+                echo '<input id="query" name="query" type="text" class="search-query" onclick="onFocusSearch()" value="' . $query . '"/>';
                 echo '<img class="d-none" id="delete-query" src="../assets/img/icons/X-fill.png">';
                 echo '<img id="voice-search" src="../assets/img/icons/Voice-Command.png" onclick="voiceSearch()">';
                 ?>

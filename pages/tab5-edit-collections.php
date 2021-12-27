@@ -126,17 +126,19 @@ while ($result = $results->fetch_assoc()) {
                         $thumb_ext = pathinfo($thumb_arr[0], PATHINFO_EXTENSION);
                         // echo $thumb_ext;
 
+                        $thumb = str_replace("http://202.158.33.26","",$thumb_arr[0]);
+
                         $image_type_arr = array("jpg", "jpeg", "png", "webp");
                         $video_type_arr = array("mp4", "mov", "wmv", 'flv', 'webm', 'mkv', 'gif', 'm4v', 'avi', 'mpg');
 
                         if (in_array($thumb_ext, $image_type_arr)) {
                             // echo 'img';
-                            echo '<img class="collections-img" src="' . $thumb_arr[0] . '">';
+                            echo '<img class="collections-img" src="' . $thumb . '">';
                         } else if (in_array($thumb_ext, $video_type_arr)) {
                             // echo 'video';
                             $image_name = str_replace($thumb_ext, "", $thumb_arr[0]);
                             echo '<video muted class="collections-img" preload="metadata" poster="' . $image_name . 'webp">';
-                            echo '<source src="' . $thumb_arr[0] . '" type="video/' . $thumb_ext . '">';
+                            echo '<source src="' . $thumb . '" type="video/' . $thumb_ext . '">';
                             echo '</video>';
                         }
                         ?>

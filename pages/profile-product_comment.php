@@ -190,7 +190,7 @@ while ($wish = $wishlist->fetch_assoc()) {
         $store_id = $res["SHOP_CODE"];
         $desc = nl2br($res["DESCRIPTION"]);
         $thumb_id = $res["THUMB_ID"];
-        $thumb_ids = explode("|", $thumb_id);
+        $thumb_ids_raw = explode("|", $thumb_id);
         $store_thumb_id = $res["STORE_THUMB_ID"];
         $store_name = $res["STORE_NAME"];
         $store_link = $res["STORE_LINK"];
@@ -198,6 +198,11 @@ while ($wish = $wishlist->fetch_assoc()) {
         $total_follower = $res["TOTAL_FOLLOWER"];
         $total_comment = count(include($_SERVER['DOCUMENT_ROOT'] . '/qiosk_web/logics/fetch_products_comments.php'));
         // $use_adblock = $res["USE_ADBLOCK"];
+        $thumb_ids = array();
+        foreach ($thumb_ids_raw as $thid) {
+            array_push($thumb_ids, str_replace("http://202.158.33.26","",$thid));
+        }
+
         $is_verified = $res["IS_STORE_VERIFIED"];
         if ($category == "4") {
             echo '<div class="product-row my-2" id="product-' . $code . '" data-iscontent="true">';

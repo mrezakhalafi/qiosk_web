@@ -205,14 +205,16 @@ while ($result = $results->fetch_assoc()) {
                         $image_type_arr = array("jpg", "jpeg", "png", "webp");
                         $video_type_arr = array("mp4", "mov", "wmv", 'flv', 'webm', 'mkv', 'gif', 'm4v', 'avi', 'mpg');
 
+                        $thumb = str_replace("http://202.158.33.26","",$thumb_arr[0]);
+
                         if (in_array($thumb_ext, $image_type_arr)) {
                             // echo 'img';
-                            echo '<img class="collections-img" src="../images/' . $thumb_arr[0] . '">';
+                            echo '<img class="collections-img" src="' . $thumb . '">';
                         } else if (in_array($thumb_ext, $video_type_arr)) {
                             // echo 'video';
-                            $image_name = str_replace($thumb_ext, "", $thumb_arr[0]);
+                            $image_name = str_replace($thumb_ext, "", $thumb);
                             echo '<video autoplay muted class="collections-img" preload="metadata">';
-                            echo '<source src="../images/' . $thumb_arr[0] . '" type="video/' . $thumb_ext . '">';
+                            echo '<source src="' . $thumb . '" type="video/' . $thumb_ext . '">';
                             echo '</video>';
                         }
                     } else {
@@ -276,14 +278,16 @@ while ($result = $results->fetch_assoc()) {
                         $image_type_arr = array("jpg", "jpeg", "png", "webp");
                         $video_type_arr = array("mp4", "mov", "wmv", 'flv', 'webm', 'mkv', 'gif', 'm4v', 'avi', 'mpg');
 
+                        $thumb = str_replace("http://202.158.33.26","",$thumb_arr[0]);
+
                         if (in_array($thumb_ext, $image_type_arr)) {
                             // echo 'img';
-                            echo '<img class="collections-img" src="../images/' . $thumb_arr[0] . '">';
+                            echo '<img class="collections-img" src="' . $thumb . '">';
                         } else if (in_array($thumb_ext, $video_type_arr)) {
                             // echo 'video';
                             $image_name = str_replace($thumb_ext, "", $thumb_arr[0]);
                             echo '<video autoplay muted class="collections-img" preload="metadata">';
-                            echo '<source src="../images/' . $thumb_arr[0] . '" type="video/' . $thumb_ext . '">';
+                            echo '<source src="' . $thumb . '" type="video/' . $thumb_ext . '">';
                             echo '</video>';
                         }
                     } else {

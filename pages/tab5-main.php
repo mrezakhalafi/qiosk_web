@@ -622,14 +622,14 @@
 										<!-- IF ALL MEDIA IS VIDEO, OKAY THEN MAKE COVER IS VIDEO THUMBNAIL -->
 
 										<?php if ($product_image_video): ?>
-											<img src="../images/<?= $product_image_video ?>" class="single-big-collection">
+											<img src="../images/<?= str_replace("http://202.158.33.26/qiosk_web/images/", "", $product_image_video) ?>" class="single-big-collection">
 										<?php else: ?>
-											<video src="../images/<?= $product_image[0] ?>#t=0.5" style="object-fit: none" type="video/mp4" class="single-big-collection"></video>
+											<video src="../images/<?= str_replace("http://202.158.33.26/qiosk_web/images/", "", $product_image[0]) ?>#t=0.5" style="object-fit: none" type="video/mp4" class="single-big-collection"></video>
 										<?php endif; ?>
 
 									<?php else : ?>
 
-										<img src="../images/<?= $product_image[$i] ?>" class="single-big-collection">
+										<img src="../images/<?= str_replace("http://202.158.33.26/qiosk_web/images/", "", $product_image[$i]) ?>" class="single-big-collection">
 
 									<?php endif; ?>
 
@@ -677,14 +677,14 @@
 										<!-- IF ALL MEDIA IS VIDEO, OKAY THEN MAKE COVER IS VIDEO THUMBNAIL -->
 
 										<?php if ($product_image_video): ?>
-											<img src="../images/<?= $product_image_video ?>" class="single-big-collection">
+											<img src="../images/<?=  str_replace("http://202.158.33.26/qiosk_web/images/", "", $product_image_video) ?>" class="single-big-collection">
 										<?php else: ?>
-											<video src="../images/<?= $product_image[0] ?>#t=0.5" style="object-fit: none" type="video/mp4" class="single-small-collection"></video>
+											<video src="../images/<?= str_replace("http://202.158.33.26/qiosk_web/images/", "", $product_image[0]) ?>#t=0.5" style="object-fit: none" type="video/mp4" class="single-small-collection"></video>
 										<?php endif; ?>
 
 									<?php else : ?>
 
-										<img src="../images/<?= $product_image[$i] ?>" class="single-small-collection">
+										<img src="../images/<?= str_replace("http://202.158.33.26/qiosk_web/images/", "", $product_image[$i]) ?>" class="single-small-collection">
 
 									<?php endif; ?>
 									</a>
