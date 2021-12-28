@@ -1,8 +1,8 @@
 <?php
 
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include_once($_SERVER['DOCUMENT_ROOT'] . '/qiosk_web/logics/chat_dbconn.php');
 
 if (!isset($_GET['f_pin'])) {
@@ -14,7 +14,7 @@ $dbconn = paliolite();
 $f_pin = $_GET["f_pin"];
 
 // FETCH COLLECTIONS
-$query = $dbconn->prepare("SELECT c.COLLECTION_CODE, c.NAME, c.DESCRIPTION, c.TOTAL_VIEWS, c.STATUS, MAX(p.THUMB_ID) AS COLLECTION_THUMB,
+$query = $dbconn->prepare("SELECT c.COLLECTION_CODE, c.NAME, c.DESCRIPTION, c.TOTAL_VIEWS, c.STATUS, c.CREATED_AT, MAX(p.THUMB_ID) AS COLLECTION_THUMB,
 (SELECT COUNT(*) FROM `COLLECTION_PRODUCT` cp WHERE c.COLLECTION_CODE = cp.COLLECTION_CODE) AS `PRODUCT_COUNT`
 FROM `COLLECTION` c
 LEFT JOIN COLLECTION_PRODUCT cp ON c.COLLECTION_CODE = cp.COLLECTION_CODE
@@ -78,7 +78,7 @@ while ($result = $results->fetch_assoc()) {
                             $query = $_REQUEST['query'];
                         }
                         ?>
-                        <input id="query" placeholder="Search" type="text" class="search-query" name="query" onclick="onFocusSearch()" value="<?= $query; ?>">
+                        <input id="query" type="text" class="search-query" name="query" onclick="onFocusSearch()" value="<?= $query; ?>">
                         <img class="d-none" id="delete-query" src="../assets/img/icons/X-fill.png">
                         <img id="voice-search" src="../assets/img/icons/Voice-Command.png">
                         <!-- </div> -->
@@ -168,16 +168,17 @@ while ($result = $results->fetch_assoc()) {
                                     <?= $col['PRODUCT_COUNT'] ?> items | Updated
                                     <?php
 
+                                    // echo $col['CREATED_AT'];
                                     $seconds = strtotime($col['CREATED_AT']);
 
                                     // print date
                                     $date_diff = round((time() - $seconds) / (60 * 60 * 24));
                                     if ($date_diff == 0) {
-                                        $printed_date = round((time() - $seconds) / 3600);
-                                        if ($printed_date < 0) {
+                                        $printed_date = abs((time() - $seconds) / 3600);
+                                        if ($printed_date < 1) {
                                             $printed_date = "0 hours ago";
                                         } else {
-                                            $printed_date .= " hours ago";
+                                            $printed_date = round($printed_date) . " hours ago";
                                         }
                                         // $printed_date = "today";
                                     } else if ($date_diff == 1) {
@@ -307,7 +308,12 @@ while ($result = $results->fetch_assoc()) {
 <script src="../assets/js/update_counter.js"></script>
 <script type="text/javascript" src="../assets/js/script-edit-collection.js?random=<?= time() ?>"></script>
 <script>
+if (localStorage.lang == 0) {
 
-</script>
+$('input#query').attr('placeholder', 'Search');
+} else {
+$('input#query').attr('placeholder', 'Pencarian');
+}
+    </script>
 
 </html>

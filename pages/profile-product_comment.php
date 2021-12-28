@@ -1,8 +1,8 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 include_once($_SERVER['DOCUMENT_ROOT'] . '/qiosk_web/logics/chat_dbconn.php');
 
 if (isset($_GET['product_code'])) {
@@ -200,7 +200,7 @@ while ($wish = $wishlist->fetch_assoc()) {
         // $use_adblock = $res["USE_ADBLOCK"];
         $thumb_ids = array();
         foreach ($thumb_ids_raw as $thid) {
-            array_push($thumb_ids, str_replace("http://202.158.33.26","",$thid));
+            array_push($thumb_ids, str_replace("http://202.158.33.26", "", $thid));
         }
 
         $is_verified = $res["IS_STORE_VERIFIED"];
@@ -237,7 +237,7 @@ while ($wish = $wishlist->fetch_assoc()) {
         echo '</div>';
         echo '<div class="col-sm mt-2 timeline-image">';
         // echo '<a class="timeline-main" onclick="openStore(\'' . $store_id . '\',\'' . $store_link . '\');">';
-        echo '<a class="timeline-main" id="detail-product-' . $code . '" onclick="showAddModal(\'' . $code . '\');">';
+        // echo '<a class="timeline-main" id="detail-product-' . $code . '">';
         if (count($thumb_ids) == 1) {
             // echo '<img class="single-image img-fluid rounded" src="' . $thumb_id . '">';
             $thumb_ext = pathinfo($thumb_ids[0], PATHINFO_EXTENSION);
@@ -249,7 +249,7 @@ while ($wish = $wishlist->fetch_assoc()) {
                 echo '</div>';
             } else if (in_array($thumb_ext, $video_type_arr)) {
                 echo '<div class="video-wrap">';
-                echo '<video muted playsinline class="myvid" preload="metadata" poster="' . $image_name . 'webp">';
+                echo '<video autoplay muted playsinline class="myvid" preload="metadata" poster="' . $image_name . 'webp">';
                 echo '<source src="' . $thumb_ids[0] . '" type="video/' . $thumb_ext . '">';
                 echo '</video>';
                 echo '<div class="timeline-product-tag-video">';
@@ -316,7 +316,7 @@ while ($wish = $wishlist->fetch_assoc()) {
             echo '</a>';
             echo '</div>';
         }
-        echo '</a>';
+        // echo '</a>';
         echo '</div>';
         echo '<div class="col-sm mt-2 d-flex align-items-center" class="like-comment-container">';
         echo '<div class="like-button" onClick="likeProduct(\'' . $code . '\')">';
@@ -354,7 +354,7 @@ while ($wish = $wishlist->fetch_assoc()) {
         echo '</div>';
         echo '<div class="col-sm mt-2">';
         echo '<span class="prod-name"><img class="verified-icon-prod" src="../assets/img/icons/Verified.png">' . $store_name . '</span>&emsp;';
-        echo '<span class="prod-desc">' . mb_strimwidth($desc,0,40,"...") . '</span>';
+        echo '<span class="prod-desc">' . mb_strimwidth($desc, 0, 40, "...") . '</span>';
         echo '</div>';
         echo '</div>';
         ?>
@@ -420,5 +420,28 @@ while ($wish = $wishlist->fetch_assoc()) {
         </div>
     </div>
 </body>
+
+<script>
+    $('.video-play').click(function() {
+        $('video.myvid').get(0).play();
+        $(this).addClass('d-none');
+    });
+
+    $('video.myvid').click(function() {
+        $(this).get(0).pause();
+        $('.video-play').removeClass('d-none');
+    })
+
+    $('.video-sound').click(function() {
+        let $videoElement = $(this).parent().find("video.myvid");
+        if ($videoElement.prop("muted")) {
+            $videoElement.prop("muted", false);
+            $(this).find("img").attr("src", "../assets/img/video_unmute.png");
+        } else {
+            $videoElement.prop("muted", true);
+            $(this).find("img").attr("src", "../assets/img/video_mute.png");
+        }
+    })
+</script>
 
 </html>

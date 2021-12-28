@@ -4,6 +4,26 @@ let notifs_activity = [];
 // let f_pin = '02185ae524';
 let f_pin = window.Android.getFPin();
 
+window.addEventListener('storage', () => {
+    if (localStorage.lang == 1) {
+        console.log('lol change 1');
+        if (document.getElementById("activity-empty") != null) {
+            document.getElementById("activity-empty").innerHTML = "Tidak ada notifikasi";
+        }
+        if (document.getElementById("order-empty") != null){
+            document.getElementById("order-empty").innerHTML = "Tidak ada notifikasi";
+        }
+    } else {
+        console.log('lol change 0');
+        if (document.getElementById("activity-empty") != null) {
+            document.getElementById("activity-empty").innerHTML = "No new notifications";
+        }
+        if (document.getElementById("order-empty") != null) {
+            document.getElementById("order-empty").innerHTML = "No new notifications";
+        }
+    }
+});
+
 function goBack() {
     if (window.Android) {
         console.log('is Android');
@@ -120,13 +140,13 @@ function drawActivityNotif(arr) {
         if (localStorage.lang == 1) {
             activityTab.innerHTML = `<div class="row">
                 <div class="col-12 text-center">
-                    <h6>Belum ada notifikasi</h6>
+                    <h6 id="activity-empty">Belum ada notifikasi</h6>
                 </div>
             </div>`;
         } else {
             activityTab.innerHTML = `<div class="row">
                 <div class="col-12 text-center">
-                    <h6>No new notifications</h6>
+                    <h6 id="activity-empty">No new notifications</h6>
                 </div>
             </div>`;
         }
@@ -158,7 +178,6 @@ function drawOrderNotif(arr) {
     if (arr.length > 0) {
         orderTab.innerHTML = '';
         arr.forEach(ex => {
-            console.log('start loop');
             let read_sts = '';
             if (ex.read_status == 0) {
                 read_sts = `<div class="col-auto p-0">
@@ -185,17 +204,14 @@ function drawOrderNotif(arr) {
             let ph1 = thumb_id.substr(1 + thumb_id.lastIndexOf("/")).split('?')[0];
             let ph2 = ph1.split('#')[0].substr(ph1.lastIndexOf(".") + 1);
 
-            console.log(ph2);
-
             if ($image_type_arr.includes(ph2)) {
-                thumb = '<img class="logo-order" src="' + thumb_id + '">';
+                thumb = '<img class="logo-order" src="' + thumb_id.split("|")[0].replace("http://202.158.33.26", "") + '">';
             } else if ($video_type_arr.includes(ph2)) {
                 // thumb = await getVideoImage(thumb_id, 3);
                 let img_name = thumb_id.replace(ph2, "");
-                console.log(img_name);
                 thumb = `
                 <video class="logo-order" autoplay muted preload="metadata">
-                <source src="${thumb_id}">
+                <source src="${thumb_id.split("|")[0].replace("http://202.158.33.26", "")}">
                 </video>
                 `;
             }
@@ -314,13 +330,13 @@ function drawOrderNotif(arr) {
         if (localStorage.lang == 1) {
             activityTab.innerHTML = `<div class="row">
                 <div class="col-12 text-center">
-                    <h6>Belum ada notifikasi</h6>
+                    <h6 id="order-empty">Belum ada notifikasi</h6>
                 </div>
             </div>`;
         } else {
             activityTab.innerHTML = `<div class="row">
                 <div class="col-12 text-center">
-                    <h6>No new notifications</h6>
+                    <h6 id="order-empty">No new notifications</h6>
                 </div>
             </div>`;
         }

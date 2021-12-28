@@ -48,7 +48,7 @@
                             $query = $_REQUEST['query'];
                         }
                         ?>
-                        <input id="query" placeholder="Search" type="text" class="search-query" name="query" onclick="onFocusSearch()" value="<?= $query; ?>">
+                        <input id="query" type="text" class="search-query" name="query" onclick="onFocusSearch()" value="<?= $query; ?>">
                         <img class="d-none" id="delete-query" src="../assets/img/icons/X-fill.png">
                         <img id="voice-search" src="../assets/img/icons/Voice-Command.png">
                     </form>
@@ -102,7 +102,11 @@
         <!-- ACTIVITY TAB -->
         <div class="tab-pane fade" id="activity-tab" role="tabpanel" aria-labelledby="activity">
             <div class="container-fluid small-text bg-white pt-4">
-
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h6 id="activity-empty">Belum ada notifikasi</h6>
+                </div>
+            </div>
             </div>
         </div>
 
@@ -128,5 +132,12 @@
 
 <script src="../assets/js/update_counter.js?random=<?= time(); ?>"></script>
 <script src="../assets/js/script-notifications.js?random=<?= time(); ?>"></script>
+<script>
+if (localStorage.lang == 0) {
 
+$('input#query').attr('placeholder', 'Search');
+} else {
+$('input#query').attr('placeholder', 'Pencarian');
+}
+    </script>
 </html>

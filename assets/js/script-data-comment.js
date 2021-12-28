@@ -91,7 +91,7 @@ function getThumbId(fPin, index) {
                 if (personData.length > 0) {
                     var person = personData[0];
                     if (person.IMAGE) {
-                        thumb = 'http://202.158.33.26/filepalio/image/' + person.IMAGE;
+                        thumb = 'https://qmera.io/filepalio/image/' + person.IMAGE;
                     }
                     document.getElementById('user-thumb-' + index).src = thumb;
                 }
@@ -100,7 +100,7 @@ function getThumbId(fPin, index) {
         xmlHttp.open("get", "/qiosk_web/logics/fetch_person?f_pin=" + fPin);
         xmlHttp.send();
     } else {
-        thumb = 'http://202.158.33.26/filepalio/image/' + thumb;
+        thumb = 'https://qmera.io/filepalio/image/' + thumb;
         document.getElementById('user-thumb-' + index).src = thumb;
     }
 }
@@ -124,7 +124,7 @@ function getThumbIdReff(fPin, sub, index) {
                 if (personData.length > 0) {
                     var person = personData[0];
                     if (person.IMAGE) {
-                        thumb = 'http://202.158.33.26/filepalio/image/' + person.IMAGE;
+                        thumb = 'https://qmera.io/filepalio/image/' + person.IMAGE;
                     }
                     document.getElementById('user-thumb-reff-' + sub + index).src = thumb;
                 }
@@ -133,7 +133,7 @@ function getThumbIdReff(fPin, sub, index) {
         xmlHttp.open("get", "/qiosk_web/logics/fetch_person?f_pin=" + fPin);
         xmlHttp.send();
     } else {
-        thumb = 'http://202.158.33.26/filepalio/image/' + thumb;
+        thumb = 'https://qmera.io/filepalio/image/' + thumb;
         document.getElementById('user-thumb-reff-' + sub + index).src = thumb;
     }
 }

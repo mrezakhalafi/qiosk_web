@@ -48,6 +48,20 @@ if (!(substr($shop_thumb_id, 0, 4) === "http")) {
   <link rel="stylesheet" href="../assets/css/paliopay.css?random=<?= time(); ?>" />
   <script src="../assets/js/script-data-comment.js?random=<?= time(); ?>"></script>
   <script type="module" src="../assets/js/translate.js?random=<?= time(); ?>"></script>
+
+  <style>
+    .simple-modal-title {
+      background-color: #6945a5;
+    }
+
+    .simple-modal-button-red{
+      background-color: #6945a5;
+    }
+
+    .simple-modal-button-green {
+      background-color: #ffa03c;
+    }
+  </style>
 </head>
 
 <body>

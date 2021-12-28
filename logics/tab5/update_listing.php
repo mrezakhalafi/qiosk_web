@@ -6,7 +6,8 @@ $dbconn = paliolite();
 // CHANGE THIS IP ACCORDING TO NEEDS
 
 // $ip_address = "http://192.168.0.56/qiosk_web/images/";
-$ip_address = "http://202.158.33.26/qiosk_web/images/";
+// $ip_address = "http://202.158.33.26/qiosk_web/images/";
+$ip_address = "";
 
 // GET ID SHOP
 

@@ -94,7 +94,7 @@ while ($result = $results->fetch_assoc()) {
                             $query = $_REQUEST['query'];
                         }
                         ?>
-                        <input id="query" placeholder="Search" type="text" class="search-query" name="query" onclick="onFocusSearch()" value="<?= $query; ?>">
+                        <input id="query" type="text" class="search-query" name="query" onclick="onFocusSearch()" value="<?= $query; ?>">
                         <img class="d-none" id="delete-query" src="../assets/img/icons/X-fill.png">
                         <img id="voice-search" src="../assets/img/icons/Voice-Command.png">
                         <!-- </div> -->
@@ -367,5 +367,12 @@ while ($result = $results->fetch_assoc()) {
 
 <script src="../assets/js/update_counter.js"></script>
 <script type="text/javascript" src="../assets/js/script-new-collection.js?random=<?= time() ?>"></script>
+<script>
+if (localStorage.lang == 0) {
 
+$('input#query').attr('placeholder', 'Search');
+} else {
+$('input#query').attr('placeholder', 'Pencarian');
+}
+    </script>
 </html>

@@ -6,8 +6,8 @@ function numberWithDots(x) {
 function getWishlist() {
 
     let formData = new FormData();
-    formData.append("fpin", window.Android.getFPin());
-    // formData.append("fpin", "02c7b32af1");
+    // formData.append("fpin", window.Android.getFPin());
+    formData.append("fpin", "02c7b32af1");
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/qiosk_web/logics/get_wishlist");
@@ -18,7 +18,7 @@ function getWishlist() {
 
         } else { // show the result
             let responseObj = xhr.response;
-            // console.table(JSON.parse(responseObj));
+            console.table(JSON.parse(responseObj));
             JSON.parse(responseObj).forEach(element => {
 
                 var ext = '<img';
@@ -107,16 +107,16 @@ function getWishlistQuery(query) {
             // console.table(JSON.parse(responseObj));
             JSON.parse(responseObj).forEach(element => {
 
-                var ext = '<img';
+                var ext = '<img style="height:180px; width: 100%; object-fit: cover; object-position: center"';
                 var ext2 = '';
                 var is_vid = '';
 
                 if (element.THUMB_ID.split("|")[0].substr(-3) == 'mp4'){
-                   ext = '<video style="height:220px; width: 100%; object-fit: cover; object-position: center;"';
+                   ext = '<video style="height:180px; width: 100%; object-fit: cover; object-position: center"';
                    ext2 = '</video>';
                    is_vid = '#t=0.5'
                 }else{
-                    ext = '<img';
+                    ext = '<img style="height:180px; width: 100%; object-fit: cover; object-position: center"';
                 }
 
                 let wishlist_html = 
