@@ -31,6 +31,10 @@
     $query->execute();
     $userOrders = $query->get_result();
     $query->close();
+
+    // FOR DELIVERY PRICE
+    
+    $delivery = 8000;
     
 ?>
 
@@ -212,6 +216,7 @@
                             $current = $arrayResult[$singleOrder['TRANSACTION_ID']];
                             $current->PRICE += $singleOrder['PRICE'] * $singleOrder['AMOUNT'];
                             $current->AMOUNT += $singleOrder['AMOUNT'];
+                            $current->THUMB_ID .= "|".$singleOrder['THUMB_ID'];
                             $current->P_CODE = $current->P_CODE."|".$singleOrder['P_CODE'];
                             $arrayResult[$singleOrder['TRANSACTION_ID']] = $current;
                         }

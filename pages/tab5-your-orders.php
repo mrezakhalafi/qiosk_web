@@ -432,7 +432,7 @@
 
             <div style="position: relative">
               <span class="orders-thumbnail" style="position: absolute; background-color:  #000000; opacity: 0.6; margin-top: -75px"></span>
-              <p style="position: absolute; margin-top: -50px; margin-left: 25px; color: #FFFFFF">+<?= count($total_sub_items) ?></p>
+              <p style="position: absolute; margin-top: -50px; margin-left: 25px; color: #FFFFFF">+<?= count($total_sub_items)-1 ?></p>
             </div>
             
             <?php endif; ?>

@@ -973,7 +973,7 @@
 												<img src="../assets/img/tab5/Tagged-Product(white).png" style="background-color: #FFA03E; width:20px; height: 20px; padding: 3px; margin-top: 4px; position: absolute; border-radius: 20px;">
 											</div>
 											<div class="col-11 col-md-10 col-lg-10">
-												<span class="small-text" style="color: #FFFFFF; padding-left: 5px" id="shop_name"><b>`+objResult[item]['SNAME']+`</b></span>
+												<span class="small-text" style="color: #FFFFFF; padding-left: 15px" id="shop_name"><b>`+objResult[item]['SNAME']+`</b></span>
 											</div>
 										</div>
 										<div class="col-3 col-md-4 col-lg-4" style="margin-bottom: 15px">
