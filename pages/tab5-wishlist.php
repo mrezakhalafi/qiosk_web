@@ -178,11 +178,11 @@
         $('#query').val(localStorage.getItem('search_keyword'));
         $('#delete-query').removeClass('d-none');
 
-        getWishlistQuery('".$_GET['query']."');
+        getWishlistQuery('".$id_user."','".$_GET['query']."');
         ";
       }else{
         echo "
-        getWishlist();
+        getWishlist('".$id_user."');
         ";
       }
 

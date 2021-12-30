@@ -3,14 +3,14 @@ function numberWithDots(x) {
 }
 
 // payment with ovo
-function getWishlist() {
+function getWishlist(id_user) {
 
     let formData = new FormData();
 
     if (window.Android){
         formData.append("fpin", window.Android.getFPin());
     }else{
-        formData.append("fpin", "0275f69fe1");
+        formData.append("fpin", id_user);
     }
 
     // formData.append("fpin", "02c7b32af1");
@@ -41,7 +41,7 @@ function getWishlist() {
 
                 let wishlist_html = 
                 '<div class="col-6 col-md-6 col-lg-4 col-xl-3 single-wishlist mb-1">'
-                +ext+` src="../images/${element.THUMB_ID.split("|")[0].replace("http://202.158.33.26", "")}`+is_vid+`" class="wishlist-images">`+ext2+
+                +ext+` src="${"/qiosk_web/images/" + element.THUMB_ID.split("|")[0].replace("http://202.158.33.26/qiosk_web/images/", "")}`+is_vid+`" class="wishlist-images">`+ext2+
                 '<img style="position: relative; z-index: 25" src="../assets/img/tab5/Add-to-Cart.png" class="add-to-cart" onclick="addToCart(\'' + element.CODE + '\', 1)">'+
                 '<div class="row wishlist-desc gx-0">'+
                     `<b class="small-text">${element.NAME}</b>`+
@@ -94,14 +94,14 @@ function addWishlist(product_code, element) {
 
 // SEARCH WISHLIST
 
-function getWishlistQuery(query) {
+function getWishlistQuery(id_user, query) {
 
     let formData = new FormData();
     
     if (window.Android){
         formData.append("fpin", window.Android.getFPin());
     }else{
-        formData.append("fpin", "0275f69fe1");
+        formData.append("fpin", id_user);
     }
 
     formData.append("query", query);
@@ -133,7 +133,7 @@ function getWishlistQuery(query) {
 
                 let wishlist_html = 
                 '<div class="col-6 col-md-6 col-lg-4 col-xl-3 single-wishlist mb-1">'
-                +ext+` src="../images/${element.THUMB_ID.split("|")[0].replace("http://202.158.33.26", "")}`+is_vid+`" class="wishlist-images">`+ext2+
+                +ext+` src="${"/qiosk_web/images/" + element.THUMB_ID.split("|")[0].replace("http://202.158.33.26/qiosk_web/images/", "")}`+is_vid+`" class="wishlist-images">`+ext2+
                 '<img style="position: relative; z-index: 25" src="../assets/img/tab5/Add-to-Cart.png" class="add-to-cart" onclick="addToCart(\'' + element.CODE + '\', 1)">'+
                 '<div class="row wishlist-desc gx-0">'+
                     `<b class="small-text">${element.NAME}</b>`+
