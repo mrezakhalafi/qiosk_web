@@ -62,7 +62,7 @@
           <?php
             $query = "";
             if (isset($_REQUEST['query'])) {
-              $query = $_REQUEST['query'];
+              $query = $_REQUEST['query']; 
               
             }
           ?>

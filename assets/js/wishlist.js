@@ -27,16 +27,16 @@ function getWishlist(id_user) {
             console.table(JSON.parse(responseObj));
             JSON.parse(responseObj).forEach(element => {
 
-                var ext = '<img';
+                var ext = '<img style="height: 185.5px; object-fit: cover; object-position: center;"';
                 var ext2 = '';
                 var is_vid = '';
 
                 if (element.THUMB_ID.split("|")[0].substr(-3) == 'mp4'){
-                   ext = '<video style="width: 100%; object-fit: cover; object-position: center;"';
+                   ext = '<video style=" height: 185.5px; width: 100%; object-fit: cover; object-position: center;"';
                    ext2 = '</video>';
                    is_vid = '#t=0.5'
                 }else{
-                    ext = '<img';
+                    ext = '<img style="height: 185.5px; object-fit: cover; object-position: center;"';
                 }
 
                 let wishlist_html = 
@@ -119,16 +119,16 @@ function getWishlistQuery(id_user, query) {
             // console.table(JSON.parse(responseObj));
             JSON.parse(responseObj).forEach(element => {
 
-                var ext = '<img';
+                var ext = '<img style="height: 185.5px; object-fit: cover; object-position: center;"';
                 var ext2 = '';
                 var is_vid = '';
 
                 if (element.THUMB_ID.split("|")[0].substr(-3) == 'mp4'){
-                   ext = '<video style="width: 100%; object-fit: cover; object-position: center"';
+                   ext = '<video style="height: 185.5px; width: 100%; object-fit: cover; object-position: center"';
                    ext2 = '</video>';
                    is_vid = '#t=0.5'
                 }else{
-                    ext = '<img';
+                    ext = '<img style="height: 185.5px; object-fit: cover; object-position: center;"';
                 }
 
                 let wishlist_html = 
