@@ -32,7 +32,7 @@ function getWishlist(id_user) {
                 var is_vid = '';
 
                 if (element.THUMB_ID.split("|")[0].substr(-3) == 'mp4'){
-                   ext = '<video style=" height: 185.5px; width: 100%; object-fit: cover; object-position: center;"';
+                   ext = '<video style="margin-bottom: -7px; height: 185.5px; width: 100%; object-fit: cover; object-position: center;"';
                    ext2 = '</video>';
                    is_vid = '#t=0.5'
                 }else{
@@ -124,7 +124,7 @@ function getWishlistQuery(id_user, query) {
                 var is_vid = '';
 
                 if (element.THUMB_ID.split("|")[0].substr(-3) == 'mp4'){
-                   ext = '<video style="height: 185.5px; width: 100%; object-fit: cover; object-position: center"';
+                   ext = '<video style="margin-bottom: -7px; height: 185.5px; width: 100%; object-fit: cover; object-position: center"';
                    ext2 = '</video>';
                    is_vid = '#t=0.5'
                 }else{

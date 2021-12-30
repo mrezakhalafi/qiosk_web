@@ -12,7 +12,7 @@ $dbconn = paliolite();
 
 // get wishlist
 if($query = $dbconn->prepare("SELECT PRODUCT_CODE FROM WISHLIST_PRODUCT WHERE FPIN = ?")){
-    $query->bind_param('s', $fpin);
+    $query->bind_param('s', $fpin); 
     $query->execute();
     $wishlist = $query->get_result();
     $query->close();

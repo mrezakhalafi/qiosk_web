@@ -230,7 +230,7 @@
           <div class="col-4">
 
               <?php if (substr($post['FILE_ID'], -3) == "mp4"): ?>
-                <video src="../images/<?= $post['FILE_ID'] ?>" onclick="openPostModal('<?= $post['FILE_ID'] ?>')" autoplay muted loop class="store-post" style="object-fit: cover; object-position: center; margin-bottom: -10px"></video>
+                <video src="../images/<?= $post['FILE_ID'] ?>" onclick="openPostModalVideo('<?= $post['FILE_ID'] ?>')" autoplay muted loop class="store-post" style="object-fit: cover; object-position: center; margin-bottom: -10px"></video>
               <?php else: ?>
                 <img src="../images/<?= $post['FILE_ID'] ?>" onclick="openPostModal('<?= $post['FILE_ID'] ?>')" class="store-post">
               <?php endif; ?>
@@ -371,6 +371,16 @@
     </div>
   </div>
 
+  <div class="modal fade" id="postModalVideo" tabindex="-1" aria-labelledby="postModalVideo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body p-0">
+            <video src="" id="post_zoom_video" autoplay loop width="100%" height="100%"></video>
+          </div>
+        </div>
+    </div>
+  </div>
+
   <!-- MODAL REELS ZOOM -->
 
   <div class="modal fade" id="reelsModal" tabindex="-1" aria-labelledby="reelsModal" aria-hidden="true">
@@ -503,6 +513,11 @@
   function openPostModal(link){
     $('#postModal').modal('show');
     $('#post_zoom').attr('src','../images/'+link);
+  }
+
+  function openPostModalVideo(link){
+    $('#postModalVideo').modal('show');
+    $('#post_zoom_video').attr('src','../images/'+link);
   }
 
   function openReelsModal(link, id){
