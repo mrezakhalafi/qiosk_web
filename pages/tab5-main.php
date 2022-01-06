@@ -795,6 +795,7 @@
 		if (localStorage.lang == 1) {
 			$('#query').attr('placeholder', 'Pencarian');
 			document.getElementById("main-menu").style.visibility = "visible";
+			$('.user-desc').text('Deksripsi dari user ini belum diisi.');
 			// document.getElementById("profile-menu").style.visibility = "visible";
 			// document.getElementById("collection-menu").style.visibility = "visible";
 		}else if(localStorage.lang == 0){
